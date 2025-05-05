@@ -1,1 +1,2 @@
-# joshmartommarcelino.github.io
+# Web-Development-SA2--Web Development Project---Josh-Martom-Marcelino
+ The student's task is to build an interactive website using web technologies. For this project, they will apply the various techniques explored throughout the module to demonstrate their understanding and ability to implement them effectively. As part of the assessment, the student must choose a theme for the website and create it based on that theme.
