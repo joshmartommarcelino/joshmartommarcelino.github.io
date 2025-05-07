@@ -7,11 +7,11 @@
     --text-dark: #1d3557;
     --background-dark: #121212;
     --background-light: #f1faee;
-    --transition-speed: 0.3s;
+    --transition-rushdown: 0.3s;
     --balance-color: #ff9800;
     --power-color: #e63946;
     --zoning-color: #a5b81c;
-    --speed-color: #3498db;
+    --rushdown-color: #3498db;
     --unique-color: #9c27b0;
 }
 
@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
     text-decoration: none;
     color: var(--primary-color);
-    transition: color var(--transition-speed);
+    transition: color var(--transition-rushdown);
 }
 
 a:hover {
@@ -92,7 +92,7 @@ nav a {
     font-size: 1.1rem;
     padding: 0.5rem 0.75rem;
     border-radius: 4px;
-    transition: all var(--transition-speed);
+    transition: all var(--transition-rushdown);
     position: relative;
 }
 
@@ -108,7 +108,7 @@ nav a::after {
     bottom: -5px;
     left: 0;
     background-color: var(--accent-color);
-    transition: width var(--transition-speed);
+    transition: width var(--transition-rushdown);
 }
 
 nav a:hover::after, 
@@ -217,8 +217,8 @@ nav a.active::after {
     background-color: var(--zoning-color);
 }
 
-.battle-type.speed {
-    background-color: var(--speed-color);
+.battle-type.rushdown {
+    background-color: var(--rushdown-color);
 }
 
 .battle-type.unique {
@@ -317,8 +317,8 @@ nav a.active::after {
     background-color: var(--zoning-color);
 }
 
-.type-filter-btn.battle-type.speed {
-    background-color: var(--speed-color);
+.type-filter-btn.battle-type.rushdown {
+    background-color: var(--rushdown-color);
 }
 
 .type-filter-btn.battle-type.unique {
@@ -443,8 +443,8 @@ nav a.active::after {
     background-color: var(--zoning-color);
 }
 
-.character-type.speed {
-    background-color: var(--speed-color);
+.character-type.rushdown {
+    background-color: var(--rushdown-color);
 }
 
 .character-type.unique {
@@ -531,7 +531,7 @@ footer {
 
 .footer-links a {
     color: #ccc;
-    transition: color var(--transition-speed);
+    transition: color var(--transition-rushdown);
 }
 
 .footer-links a:hover {
@@ -551,7 +551,7 @@ footer {
     height: 40px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    transition: all var(--transition-speed);
+    transition: all var(--transition-rushdown);
 }
 
 .social-icon:hover {
@@ -586,7 +586,7 @@ footer {
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
-    transition: background-color var(--transition-speed);
+    transition: background-color var(--transition-rushdown);
 }
 
 .footer-newsletter button:hover {
@@ -618,7 +618,7 @@ footer {
         width: 80%;
         height: calc(100vh - 70px);
         padding: 2rem;
-        transition: right var(--transition-speed);
+        transition: right var(--transition-rushdown);
         z-index: 100;
     }
     
