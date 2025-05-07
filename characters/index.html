@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilty Gear - Characters</title>
+    <link rel="icon" type="image/x-icon" href="/main/images/LOGO.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="/main/images/IMAGE_1.png" alt="Guilty Gear Logo" class="logo">
+        </div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="/main/index.html">Home</a></li>
+                <li><a href="index.html" class="active">Characters</a></li>
+                <li><a href="../mechanics.html">Game Mechanics</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../community.html">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+      <section class="character-banner">
+        <video autoplay muted loop id="banner-video">
+            <source src="/main/videos/VIDEO_4.mp4" type="video/mp4">
+        </video>
+        <div class="banner-overlay">
+            <h1>CHARACTERS</h1>
+        </div>
+    </section>
+
+        <section class="character-filter">
+          <div class="filter-container">
+              <div class="filter-group">
+                  <h3>Season</h3>
+                  <div class="filter-buttons season-filters">
+                      <button class="season-filter-btn" data-filter="all">ALL</button>
+                      <button class="season-filter-btn" data-filter="season4">Season Pass 4</button>
+                      <button class="season-filter-btn" data-filter="season3">Season Pass 3</button>
+                      <button class="season-filter-btn" data-filter="season2">Season Pass 2</button>
+                      <button class="season-filter-btn" data-filter="season1">Season Pass 1</button>
+                      <button class="season-filter-btn" data-filter="base">Base Roster</button>
+                  </div>
+              </div>
+              
+              <div class="filter-group">
+                  <h3>Battle Type</h3>
+                  <div class="filter-buttons type-filters">
+                      <button class="type-filter-btn" data-filter="all">ALL</button>
+                      <button class="type-filter-btn battle-type balance" data-filter="balance">Balance</button>
+                      <button class="type-filter-btn battle-type power" data-filter="power">Power</button>
+                      <button class="type-filter-btn battle-type zoning" data-filter="zoning">Zoning</button>
+                      <button class="type-filter-btn battle-type speed" data-filter="speed">Speed</button>
+                      <button class="type-filter-btn battle-type unique" data-filter="unique">Unique</button>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="filter-actions">
+              <div id="character-counter" class="character-counter">Showing all characters</div>
+              <button id="reset-filters" class="reset-filters-btn">Reset Filters</button>
+          </div>
+      </section>
+
+        <section class="character-grid">
+            <!-- Base Roster Characters -->
+            <div class="character-card" data-season="base">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Sol Badguy" class="character-img">
+                    <div class="character-type balance">Balance</div>
+                </div>
+                <div class="character-name">SOL</div>
+            </div>
+
+            <div class="character-card" data-season="base">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Ky Kiske" class="character-img">
+                    <div class="character-type balance">Balance</div>
+                </div>
+                <div class="character-name">KY</div>
+            </div>
+
+            <div class="character-card" data-season="base">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="May" class="character-img">
+                    <div class="character-type power">Power</div>
+                </div>
+                <div class="character-name">MAY</div>
+            </div>
+
+            <div class="character-card" data-season="base">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Axl Low" class="character-img">
+                    <div class="character-type zoning">Zoning</div>
+                </div>
+                <div class="character-name">AXL</div>
+            </div>
+
+            <div class="character-card" data-season="base">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Chipp Zanuff" class="character-img">
+                    <div class="character-type speed">Speed</div>
+                </div>
+                <div class="character-name">CHIPP</div>
+            </div>
+
+            <div class="character-card" data-season="base">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Faust" class="character-img">
+                    <div class="character-type unique">Unique</div>
+                </div>
+                <div class="character-name">FAUST</div>
+            </div>
+
+            <div class="character-card" data-season="base">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Potemkin" class="character-img">
+                    <div class="character-type power">Power</div>
+                </div>
+                <div class="character-name">POTEMKIN</div>
+            </div>
+
+            <div class="character-card" data-season="base">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Ramlethal Valentine" class="character-img">
+                    <div class="character-type balance">Balance</div>
+                </div>
+                <div class="character-name">RAMLETHAL</div>
+            </div>
+
+            <!-- Season Pass 1 Characters -->
+            <div class="character-card" data-season="season1">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Goldlewis Dickinson" class="character-img">
+                    <div class="character-type power">Power</div>
+                </div>
+                <div class="character-name">GOLDLEWIS</div>
+            </div>
+
+            <div class="character-card" data-season="season1">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Jack-O' Valentine" class="character-img">
+                    <div class="character-type unique">Unique</div>
+                </div>
+                <div class="character-name">JACK-O'</div>
+            </div>
+
+            <div class="character-card" data-season="season1">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Happy Chaos" class="character-img">
+                    <div class="character-type zoning">Zoning</div>
+                </div>
+                <div class="character-name">HAPPY CHAOS</div>
+            </div>
+
+            <div class="character-card" data-season="season1">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Baiken" class="character-img">
+                    <div class="character-type balance">Balance</div>
+                </div>
+                <div class="character-name">BAIKEN</div>
+            </div>
+
+            <div class="character-card" data-season="season1">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Testament" class="character-img">
+                    <div class="character-type zoning">Zoning</div>
+                </div>
+                <div class="character-name">TESTAMENT</div>
+            </div>
+
+            <!-- Season Pass 2 Characters -->
+            <div class="character-card" data-season="season2">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Bridget" class="character-img">
+                    <div class="character-type speed">Speed</div>
+                </div>
+                <div class="character-name">BRIDGET</div>
+            </div>
+
+            <div class="character-card" data-season="season2">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Sin Kiske" class="character-img">
+                    <div class="character-type balance">Balance</div>
+                </div>
+                <div class="character-name">SIN</div>
+            </div>
+
+            <div class="character-card" data-season="season2">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Bedman?" class="character-img">
+                    <div class="character-type unique">Unique</div>
+                </div>
+                <div class="character-name">BEDMAN?</div>
+            </div>
+
+            <div class="character-card" data-season="season2">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Asuka R" class="character-img">
+                    <div class="character-type zoning">Zoning</div>
+                </div>
+                <div class="character-name">ASUKA</div>
+            </div>
+
+            <!-- Season Pass 3 Characters -->
+            <div class="character-card" data-season="season3">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Johnny Sfondi" class="character-img">
+                    <div class="character-type speed">Speed</div>
+                </div>
+                <div class="character-name">JOHNNY</div>
+            </div>
+
+            <div class="character-card" data-season="season3">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Elphelt Valentine" class="character-img">
+                    <div class="character-type zoning">Zoning</div>
+                </div>
+                <div class="character-name">ELPHELT</div>
+            </div>
+
+            <div class="character-card" data-season="season3">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="A.B.A" class="character-img">
+                    <div class="character-type unique">Unique</div>
+                </div>
+                <div class="character-name">A.B.A</div>
+            </div>
+
+            <!-- Season Pass 4 Characters -->
+            <div class="character-card" data-season="season4">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Slayer" class="character-img">
+                    <div class="character-type power">Power</div>
+                </div>
+                <div class="character-name">SLAYER</div>
+            </div>
+
+            <div class="character-card" data-season="season4">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Dizzy" class="character-img">
+                    <div class="character-type zoning">Zoning</div>
+                </div>
+                <div class="character-name">DIZZY</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="/main/images/IMAGE_1.png" alt="Guilty Gear Logo">
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Characters</a></li>
+                    <li><a href="../mechanics.html">Game Mechanics</a></li>
+                    <li><a href="../history.html">History</a></li>
+                    <li><a href="../community.html">Community</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Guilty Gear</h4>
+                <div class="social-icons">
+                    <a href="https://x.com/ArcSystemWorksU" class="social-icon">
+                        <img src="/main/images/IMAGE_6.png" alt="Twitter">
+                    </a>
+                    <a href="https://discord.com/invite/MXGC8JAGyH" class="social-icon">
+                        <img src="/main/images/IMAGE_7.png" alt="Discord">
+                    </a>
+                    <a href="https://www.youtube.com/@arcsystemworksjapan" class="social-icon">
+                        <img src="/main/images/IMAGE_8.png" alt="YouTube">
+                    </a>
+                    <a href="https://www.twitch.tv/directory/category/guilty-gear-strive" class="social-icon">
+                        <img src="/main/images/IMAGE_9.png" alt="Twitch">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay Updated</h4>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Guilty Gear Fan Site. This is a student project. All game content belongs to Arc System Works.</p>
+        </div>
+    </footer>
+</body>
+</html>
