@@ -440,6 +440,7 @@ footer {
     margin-bottom: 1.5rem;
     position: relative;
     padding-bottom: 0.5rem;
+    display: inline-block;
 }
 
 .footer-links h4::after,
@@ -448,8 +449,9 @@ footer {
     content: '';
     position: absolute;
     left: 0;
+    right: 0; 
     bottom: 0;
-    width: 50px;
+    width: 100%; 
     height: 3px;
     background-color: var(--primary-color);
 }
