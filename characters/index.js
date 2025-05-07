@@ -44,6 +44,27 @@ document.addEventListener('DOMContentLoaded', () => {
     characterCards.forEach(card => {
         card.style.transition = 'opacity 0.4s ease, transform 0.3s ease';
         card.style.opacity = '1';
+        
+        // Extract the battle type from the character card
+        const battleTypeElement = card.querySelector('.character-type');
+        if (battleTypeElement) {
+            // Get the battle type class (balance, power, zoning, etc.)
+            const battleTypeClasses = battleTypeElement.classList;
+            let battleType = '';
+            
+            // Find the class that represents the battle type
+            for (const className of battleTypeClasses) {
+                if (className !== 'character-type') {
+                    battleType = className;
+                    break;
+                }
+            }
+            
+            // Set the data-type attribute for filtering
+            if (battleType) {
+                card.setAttribute('data-type', battleType);
+            }
+        }
     });
 
     // Filter state

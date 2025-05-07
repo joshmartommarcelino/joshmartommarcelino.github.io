@@ -12,6 +12,8 @@
     --power-color: #e63946;
     --zoning-color: #a5b81c;
     --rushdown-color: #3498db;
+    --oneshot-color: #CC5500;
+    --shooting-color: #ADD8E6;
     --unique-color: #9c27b0;
 }
 
@@ -221,6 +223,12 @@ nav a.active::after {
     background-color: var(--rushdown-color);
 }
 
+.battle-type.oneshot{
+    background-color: var(--oneshot-color);
+}
+.battle-type.shooting{
+    background-color: var(--shooting-color);
+}
 .battle-type.unique {
     background-color: var(--unique-color);
 }
@@ -446,7 +454,13 @@ nav a.active::after {
 .character-type.rushdown {
     background-color: var(--rushdown-color);
 }
+.character-type.oneshot {
+    background-color: var(--oneshot-color);
+}
 
+.character-type.shooting {
+    background-color: var(--shooting-color);
+}
 .character-type.unique {
     background-color: var(--unique-color);
 }
