@@ -1,161 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guilty Gear Strive - Characters</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="index.js" defer></script>
-  </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilty Gear - Characters</title>
+    <link rel="icon" type="image/x-icon" href="/main/images/LOGO.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
 <body>
-  <div class="header">
-    <div class="training-badge">TRAINING</div>
-    <img src="/api/placeholder/24/24" alt="Settings" class="settings-icon">
-    <div class="logo">GUILTY GEAR STRIVE</div>
-    <nav>
-      <a href="#" class="">Home</a>
-      <a href="#" class="nav-link">Characters</a>
-      <a href="#" class="nav-link">Guides</a>
-      <a href="#" class="nav-link">Community</a>
-    </nav>
-  </div>
-  
-  <div class="main-content">
-    <div class="character-sidebar">
-      <img src="/api/placeholder/400/500" alt="Sol Badguy" class="character-img">
-      <h1 class="character-name">Sol Badguy</h1>
-      <p class="character-subtitle">The ruthless striker</p>
-      
-      <div class="character-stats">
-        <div class="stat-row">
-          <span class="stat-label">Balance</span>
-          <div class="stars">
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="empty-star">★</span>
-            <span class="empty-star">★</span>
-          </div>
+    <header>
+        <div class="logo-container">
+            <img src="/main/images/IMAGE_1.png" alt="Guilty Gear Logo" class="logo">
         </div>
-        <div class="stat-row">
-          <span class="stat-label">Ease of Use</span>
-          <div class="stars">
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-          </div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="/main/index.html">Home</a></li>
+                <li><a href="index.html" class="active">Characters</a></li>
+                <li><a href="../mechanics.html">Game Mechanics</a></li>
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../community.html">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="character-banner">
+            <div class="banner-overlay">
+                <h1>CHARACTERS</h1>
+            </div>
+        </section>
+
+        <section class="character-filter">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">ALL</button>
+                <button class="filter-btn" data-filter="season4">Season Pass 4</button>
+                <button class="filter-btn" data-filter="season3">Season Pass 3</button>
+                <button class="filter-btn" data-filter="season2">Season pass 2</button>
+                <button class="filter-btn" data-filter="season1">Season pass 1</button>
+            </div>
+            <div class="battle-type-info">
+                <p>Battle types are shown here</p>
+            </div>
+        </section>
+
+        <section class="character-grid">
+            <!-- First Row of Characters -->
+            <div class="character-card" data-season="base">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Sol Badguy" class="character-img">
+                    <div class="character-type balance">Balance</div>
+                </div>
+                <div class="character-name">SOL</div>
+            </div>
+
+            <div class="character-card" data-season="base">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Ky Kiske" class="character-img">
+                    <div class="character-type balance">Balance</div>
+                </div>
+                <div class="character-name">KY</div>
+            </div>
+
+            <div class="character-card" data-season="base">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="May" class="character-img">
+                    <div class="character-type power">Power</div>
+                </div>
+                <div class="character-name">MAY</div>
+            </div>
+
+            <div class="character-card" data-season="base">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Axl Low" class="character-img">
+                    <div class="character-type zoning">Zoning</div>
+                </div>
+                <div class="character-name">AXL</div>
+            </div>
+
+            <!-- Second Row of Characters -->
+            <div class="character-card" data-season="base">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Chipp Zanuff" class="character-img">
+                    <div class="character-type speed">Speed</div>
+                </div>
+                <div class="character-name">CHIPP</div>
+            </div>
+
+            <div class="character-card" data-season="base">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Faust" class="character-img">
+                    <div class="character-type unique">Unique</div>
+                </div>
+                <div class="character-name">FAUST</div>
+            </div>
+
+            <div class="character-card" data-season="base">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Potemkin" class="character-img">
+                    <div class="character-type power">Power</div>
+                </div>
+                <div class="character-name">POTEMKIN</div>
+            </div>
+
+            <div class="character-card" data-season="base">
+                <div class="character-img-container">
+                    <img src="/api/placeholder/400/320" alt="Ramlethal Valentine" class="character-img">
+                    <div class="character-type balance">Balance</div>
+                </div>
+                <div class="character-name">RAMLETHAL</div>
+            </div>
+
+            <!-- Additional characters could be added here -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="/main/images/IMAGE_1.png" alt="Guilty Gear Logo">
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Characters</a></li>
+                    <li><a href="../mechanics.html">Game Mechanics</a></li>
+                    <li><a href="../history.html">History</a></li>
+                    <li><a href="../community.html">Community</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Guilty Gear</h4>
+                <div class="social-icons">
+                    <a href="https://x.com/ArcSystemWorksU" class="social-icon">
+                        <img src="/main/images/IMAGE_6.png" alt="Twitter">
+                    </a>
+                    <a href="https://discord.com/invite/MXGC8JAGyH" class="social-icon">
+                        <img src="/main/images/IMAGE_7.png" alt="Discord">
+                    </a>
+                    <a href="https://www.youtube.com/@arcsystemworksjapan" class="social-icon">
+                        <img src="/main/images/IMAGE_8.png" alt="YouTube">
+                    </a>
+                    <a href="https://www.twitch.tv/directory/category/guilty-gear-strive" class="social-icon">
+                        <img src="/main/images/IMAGE_9.png" alt="Twitch">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay Updated</h4>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
         </div>
-        <div class="stat-row">
-          <span class="stat-label">Power</span>
-          <div class="stars">
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="empty-star">★</span>
-          </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Guilty Gear Fan Site. This is a student project. All game content belongs to Arc System Works.</p>
         </div>
-        <div class="stat-row">
-          <span class="stat-label">Speed</span>
-          <div class="stars">
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="empty-star">★</span>
-            <span class="empty-star">★</span>
-          </div>
-        </div>
-      </div>
-      
-      <p>"Overpowering all foes with savage force"</p>
-    </div>
-    
-    <div class="character-info">
-      <h2 class="section-title">Character Overview</h2>
-      <p>Sol Badguy is the main protagonist of the Guilty Gear series and one of the most iconic characters in fighting games. As the original Guilty Gear, he has tremendous strength and resilience that makes him a formidable opponent.</p>
-      <p>With his aggressive playstyle and powerful moves, Sol is perfect for players who prefer an offensive approach. His simple yet effective moveset makes him an excellent choice for beginners while still offering depth for veteran players.</p>
-      
-      <h2 class="section-title">Key Moves</h2>
-      <div class="move-list">
-        <div class="move-card">
-          <h3 class="move-name">Gun Flame</h3>
-          <div class="move-input">236 + P</div>
-          <p>Sol fires a stream of flames along the ground. Great for spacing and creating pressure.</p>
-        </div>
-        
-        <div class="move-card">
-          <h3 class="move-name">Volcanic Viper</h3>
-          <div class="move-input">623 + S/H</div>
-          <p>Sol's iconic dragon punch. Great anti-air move that can also be used as a combo ender.</p>
-        </div>
-        
-        <div class="move-card">
-          <h3 class="move-name">Bandit Revolver</h3>
-          <div class="move-input">236 + K</div>
-          <p>A powerful spinning kick that can close distance quickly. Can be followed up with additional kicks.</p>
-        </div>
-        
-        <div class="move-card">
-          <h3 class="move-name">Wild Throw</h3>
-          <div class="move-input">623 + D</div>
-          <p>A command grab that can catch opponents off guard. Good for mixing up your offense.</p>
-        </div>
-      </div>
-      
-      <div class="combo-section">
-        <h2 class="section-title">Basic Combos</h2>
-        <ul class="combo-list">
-          <li class="combo-item">
-            <div class="combo-name">Beginner Combo</div>
-            <div class="combo-input">c.S > f.S > 5H > 236K</div>
-            <div class="combo-damage">Damage: 30%</div>
-          </li>
-          
-          <li class="combo-item">
-            <div class="combo-name">Mid-screen Punish</div>
-            <div class="combo-input">c.S > f.S > 5H > 623H > RC > 5K > 6S > 623H</div>
-            <div class="combo-damage">Damage: 45%</div>
-          </li>
-          
-          <li class="combo-item">
-            <div class="combo-name">Heavy Tyrant Rave Combo</div>
-            <div class="combo-input">c.S > 2H > 623S > RC > c.S > j.S > j.H > j.D > 214214H</div>
-            <div class="combo-damage">Damage: 60%</div>
-          </li>
-        </ul>
-      </div>
-      
-      <h2 class="section-title">Strategy</h2>
-      <p>Sol excels at close to mid-range combat with his powerful normals and special moves. His high damage output allows him to quickly turn the tide of battle with just a few successful hits. While Sol's ease of use makes him accessible to newcomers, mastering his Roman Cancel combos and knowing when to use his more situational moves will help you maximize his potential.</p>
-      <p>Key tactics include:</p>
-      <ul>
-        <li>Use Gun Flame to control space and force approaches</li>
-        <li>Punish jump-ins with Volcanic Viper</li>
-        <li>Mix up your offense with Bandit Revolver and Wild Throw</li>
-        <li>Learn when to use Roman Cancels to extend combos and create pressure</li>
-      </ul>
-    </div>
-  </div>
-  
-  <div class="character-select">
-    <img src="/api/placeholder/60/60" alt="Character 1" class="character-icon">
-    <img src="/api/placeholder/60/60" alt="Character 2" class="character-icon">
-    <img src="/api/placeholder/60/60" alt="Character 3" class="character-icon">
-    <img src="/api/placeholder/60/60" alt="Character 4" class="character-icon">
-    <img src="/api/placeholder/60/60" alt="Character 5" class="character-icon">
-    <img src="/api/placeholder/60/60" alt="Character 6" class="character-icon">
-    <img src="/api/placeholder/60/60" alt="Sol Badguy" class="character-icon current-character">
-    <img src="/api/placeholder/60/60" alt="Character 8" class="character-icon">
-    <img src="/api/placeholder/60/60" alt="Character 9" class="character-icon">
-    <img src="/api/placeholder/60/60" alt="Character 10" class="character-icon">
-    <img src="/api/placeholder/60/60" alt="Character 11" class="character-icon">
-    <img src="/api/placeholder/60/60" alt="Character 12" class="character-icon">
-  </div>
-  
-  <div class="footer">
-    © 2025 Guilty Gear Strive Fan Site | This site is not affiliated with Arc System Works
-  </div>
+    </footer>
 </body>
 </html>

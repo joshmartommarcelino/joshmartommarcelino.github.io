@@ -118,22 +118,6 @@ nav a.active::after {
     width: 100%;
 }
 
-.hamburger {
-    display: none;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px 0;
-    background-color: var(--text-light);
-    transition: all var(--transition-speed);
-}
-
 /* Hero Section */
 .hero {
     height: 80vh;
