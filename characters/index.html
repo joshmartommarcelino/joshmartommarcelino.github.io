@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="/images/LOGO.png">
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
+    <script src="character-popup.js" defer></script>
 </head>
 <body>
     <header>
@@ -169,7 +170,7 @@
                     <img src="/images/IMAGE_35.png" alt="Giovanna" class="character-img">
                     <div class="character-type rushdown">Rushdown</div>
                 </div>
-                <div class="character-name">Giovanna</div>
+                <div class="character-name">GIOVANNA</div>
             </div>
 
             <div class="character-card" data-season="base">
@@ -308,6 +309,53 @@
                 <div class="character-name">VENOM</div>
             </div>
         </section>
+
+<!-- Character Details Pop-up -->
+<div id="character-popup-overlay" class="popup-overlay">
+    <div id="character-popup" class="character-popup">
+        <div class="popup-header">
+            <h2 id="popup-character-name">CHARACTER NAME</h2>
+            <button id="popup-close" class="popup-close">&times;</button>
+        </div>
+        <div class="popup-content">
+            <div class="character-sprite">
+                <img id="popup-sprite" src="" alt="Character Sprite">
+                <div class="character-type-badge" id="popup-type">Balance</div>
+            </div>
+            <div class="character-details">
+                <div class="ease-of-use">
+                    <h3>Ease of Use</h3>
+                    <div class="star-rating" id="popup-ease">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                </div>
+                <div class="character-description">
+                    <h3>Character Overview</h3>
+                    <p id="popup-description">Character description goes here. This will include details about the character's playstyle, strengths, and a bit about their backstory.</p>
+                </div>
+                <button id="command-list-btn" class="command-list-btn">VIEW COMMAND LIST</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Command List Modal -->
+<div id="command-list-overlay" class="command-list-overlay">
+    <div id="command-list-modal" class="command-list-modal">
+        <div class="command-list-header">
+            <h2 id="command-list-title">COMMAND LIST</h2>
+            <button id="command-list-close" class="popup-close">&times;</button>
+        </div>
+        <div class="command-list-content">
+            <img id="command-list-img" src="" alt="Character Command List">
+        </div>
+        <button id="back-to-character" class="back-btn">BACK TO CHARACTER</button>
+    </div>
+</div>
 
     <footer>
         <div class="footer-content">

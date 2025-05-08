@@ -350,6 +350,322 @@ nav a.active::after {
     font-size: 14px;
 }
 
+/* Character Pop-up Styles */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.character-popup {
+    width: 90%;
+    max-width: 1000px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(230, 57, 70, 0.5);
+    transform: translateY(30px);
+    transition: transform 0.4s ease;
+    border: 1px solid #333;
+}
+
+.popup-overlay.active .character-popup {
+    transform: translateY(0);
+}
+
+.popup-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.popup-header h2 {
+    margin: 0;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.popup-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 30px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.popup-close:hover {
+    transform: scale(1.2);
+}
+
+.popup-content {
+    display: flex;
+    padding: 20px;
+    gap: 30px;
+}
+
+.character-sprite {
+    flex: 1;
+    max-width: 45%;
+    position: relative;
+}
+
+.character-sprite img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid #333;
+}
+
+.character-type-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/* Battle type colors from existing CSS */
+.character-type-badge.balance {
+    background-color: var(--balance-color);
+}
+
+.character-type-badge.power {
+    background-color: var(--power-color);
+}
+
+.character-type-badge.zoning {
+    background-color: var(--zoning-color);
+}
+
+.character-type-badge.rushdown {
+    background-color: var(--rushdown-color);
+}
+
+.character-type-badge.oneshot {
+    background-color: var(--oneshot-color);
+}
+
+.character-type-badge.shooting {
+    background-color: var(--shooting-color);
+}
+
+.character-type-badge.unique {
+    background-color: var(--unique-color);
+}
+
+.character-details {
+    flex: 1;
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ease-of-use, .character-description {
+    margin-bottom: 25px;
+}
+
+.ease-of-use h3, .character-description h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.ease-of-use h3::after, .character-description h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.star-rating {
+    display: flex;
+    gap: 5px;
+    font-size: 24px;
+}
+
+.star {
+    color: #555;
+}
+
+.star.filled {
+    color: var(--accent-color);
+}
+
+.character-description p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.command-list-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    align-self: flex-start;
+}
+
+.command-list-btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Command List Modal */
+.command-list-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.command-list-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.command-list-modal {
+    width: 90%;
+    max-width: 900px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    transform: translateY(30px);
+    transition: transform 0.4s ease;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.command-list-overlay.active .command-list-modal {
+    transform: translateY(0);
+}
+
+.command-list-header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.command-list-header h2 {
+    margin: 0;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.command-list-content {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 70vh;
+}
+
+.command-list-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.back-btn {
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 20px 20px auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+
+.back-btn:hover {
+    background-color: #e6c200;
+    transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .popup-content {
+        flex-direction: column;
+    }
+    
+    .character-sprite {
+        max-width: 100%;
+    }
+    
+    .popup-header h2 {
+        font-size: 22px;
+    }
+    
+    .command-list-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 .reset-filters-btn {
     background-color: #444;
     color: white;
