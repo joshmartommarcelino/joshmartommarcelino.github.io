@@ -1005,3 +1005,166 @@ footer {
         margin-bottom: 2rem;
     }
 }
+/* Mobile Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 100%;
+    background-color: var(--text-light);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Enhanced Mobile Styles */
+@media (max-width: 768px) {
+    /* Show hamburger menu */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Navigation styles for mobile */
+    #main-nav ul {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        background-color: var(--background-dark);
+        flex-direction: column;
+        width: 100%;
+        height: calc(100vh - 70px);
+        padding: 2rem;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        margin: 0;
+    }
+    
+    #main-nav.active ul {
+        right: 0;
+        box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    #main-nav li {
+        margin: 1rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    #main-nav a {
+        display: block;
+        padding: 1rem 0;
+        font-size: 1.2rem;
+    }
+
+    /* Character filter mobile styles */
+    .filter-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .filter-group {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .filter-buttons {
+        justify-content: center;
+    }
+    
+    .filter-actions {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .character-counter {
+        margin-bottom: 10px;
+    }
+    
+    /* Reduce character banner size on mobile */
+    .character-banner {
+        height: 200px;
+    }
+    
+    .character-banner h1 {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+    
+    /* Character popup improvements */
+    .popup-content {
+        flex-direction: column;
+        padding: 15px;
+        gap: 20px;
+    }
+    
+    .character-sprite {
+        max-width: 100%;
+    }
+    
+    .popup-header h2 {
+        font-size: 20px;
+    }
+    
+    .command-list-content {
+        max-height: 60vh;
+    }
+    
+    /* Footer mobile styles */
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-newsletter form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .footer-newsletter input,
+    .footer-newsletter button {
+        width: 100%;
+    }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+    .character-grid {
+        grid-template-columns: 1fr;
+        padding: 20px 3%;
+    }
+    
+    .character-banner h1 {
+        font-size: 2rem;
+    }
+    
+    .filter-group h3 {
+        font-size: 16px;
+    }
+    
+    .season-filter-btn, .type-filter-btn {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    
+    /* Make hamburger menu animation */
+    #main-nav.active + .hamburger span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+    
+    #main-nav.active + .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    #main-nav.active + .hamburger span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+}
