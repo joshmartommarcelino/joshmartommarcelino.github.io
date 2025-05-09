@@ -1,4 +1,21 @@
-/* Global styles and variables */
+/***************************************
+ * TABLE OF CONTENTS
+ * 1. Global Styles & Variables
+ * 2. Base Element Styling
+ * 3. Layout & Container
+ * 4. Header & Navigation
+ * 5. Hamburger Menu
+ * 6. Hero Section
+ * 7. Game Highlights Section
+ * 8. Latest Release Section
+ * 9. News Section
+ * 10. Footer
+ * 11. Responsive Design
+ ***************************************/
+
+/***************************************
+ * 1. GLOBAL STYLES & VARIABLES
+ ***************************************/
 :root {
     --primary-color: #e63946;
     --secondary-color: #1d3557;
@@ -16,6 +33,9 @@
     box-sizing: border-box;
 }
 
+/***************************************
+ * 2. BASE ELEMENT STYLING
+ ***************************************/
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -47,6 +67,9 @@ img {
     display: block;
 }
 
+/***************************************
+ * 3. LAYOUT & CONTAINER
+ ***************************************/
 .container {
     width: 90%;
     max-width: 1200px;
@@ -54,7 +77,9 @@ img {
     padding: 0 15px;
 }
 
-/* Header and Navigation */
+/***************************************
+ * 4. HEADER & NAVIGATION
+ ***************************************/
 header {
     background-color: var(--background-dark);
     color: var(--text-light);
@@ -79,16 +104,16 @@ header {
     width: auto;
 }
 
-nav ul {
+#main-nav ul {
     display: flex;
     list-style: none;
 }
 
-nav li {
+#main-nav li {
     margin-left: 1.5rem;
 }
 
-nav a {
+#main-nav a {
     color: var(--text-light);
     font-weight: 600;
     font-size: 1.1rem;
@@ -98,11 +123,11 @@ nav a {
     position: relative;
 }
 
-nav a:hover {
+#main-nav a:hover {
     color: var(--accent-color);
 }
 
-nav a::after {
+#main-nav a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -113,16 +138,52 @@ nav a::after {
     transition: width var(--transition-speed);
 }
 
-nav a:hover::after, 
-nav a.active::after {
+#main-nav a:hover::after, 
+#main-nav a.active::after {
     width: 100%;
 }
 
-/* Hero Section */
+/***************************************
+ * 5. HAMBURGER MENU
+ ***************************************/
+.hamburger {
+    display: none; /* Hidden by default, shown in mobile view */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    margin-left: auto; /* Push to right side */
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-light);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hamburger active state animations */
+.hamburger.active span:first-child {
+    transform: rotate(45deg) translate(5px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:last-child {
+    transform: rotate(-45deg) translate(5px, -8px);
+}
+
+/***************************************
+ * 6. HERO SECTION
+ ***************************************/
 .hero {
     height: 80vh;
-    /* Remove or comment out the background-image linear gradient */
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/hero-bg.jpg'); */
     position: relative;
     display: flex;
     justify-content: center;
@@ -132,7 +193,7 @@ nav a.active::after {
     overflow: hidden;  /* Ensure video doesn't spill out */
 }
 
-/* Add this new style for the video background */
+/* Video background container */
 .video-background {
     position: absolute;
     top: 0;
@@ -143,6 +204,7 @@ nav a.active::after {
     overflow: hidden;
 }
 
+/* Video element styling */
 #hero-video {
     position: absolute;
     top: 50%;
@@ -155,7 +217,7 @@ nav a.active::after {
     object-fit: cover;  /* Cover the entire container */
 }
 
-/* Add a dark overlay to ensure text remains readable */
+/* Dark overlay to ensure text readability */
 .hero::after {
     content: '';
     position: absolute;
@@ -206,7 +268,9 @@ nav a.active::after {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Game Highlights Section */
+/***************************************
+ * 7. GAME HIGHLIGHTS SECTION
+ ***************************************/
 .game-highlights {
     padding: 5rem 5%;
     text-align: center;
@@ -270,7 +334,9 @@ nav a.active::after {
     color: #666;
 }
 
-/* Latest Release Section */
+/***************************************
+ * 8. LATEST RELEASE SECTION
+ ***************************************/
 .latest-release {
     background-color: var(--secondary-color);
     color: var(--text-light);
@@ -328,6 +394,7 @@ nav a.active::after {
     height: 0;
     overflow: hidden;
 }
+
 .video-placeholder iframe {
     position: absolute;
     top: 0;
@@ -346,7 +413,9 @@ nav a.active::after {
     object-fit: cover;
 }
 
-/* News Section */
+/***************************************
+ * 9. NEWS SECTION
+ ***************************************/
 .news-section {
     padding: 5rem 5%;
     background-color: #f8f9fa;
@@ -413,7 +482,9 @@ nav a.active::after {
     color: var(--secondary-color);
 }
 
-/* Footer */
+/***************************************
+ * 10. FOOTER
+ ***************************************/
 footer {
     background-color: var(--background-dark);
     color: var(--text-light);
@@ -536,7 +607,10 @@ footer {
     color: #999;
 }
 
-/* Responsive Design */
+/***************************************
+ * 11. RESPONSIVE DESIGN
+ ***************************************/
+/* Large devices (laptops/desktops) */
 @media (max-width: 992px) {
     .hero h1 {
         font-size: 2.8rem;
@@ -551,11 +625,38 @@ footer {
     }
 }
 
+/* Medium devices (tablets) */
 @media (max-width: 768px) {
-    nav ul {
+    /* Header layout for mobile */
+    header {
+        position: relative;
+        justify-content: space-between;
+        padding: 0.5rem 5%;
+    }
+    /* Logo container adjustment */
+    .logo-container {
+        flex-grow: 1; /* Allow logo to take space but not push hamburger */
+    }
+    /* Hamburger menu becomes visible */
+    .hamburger {
+        display: flex;
+        position: relative; /* Change from static positioning */
+        margin-left: auto; /* Ensure it's pushed to the right */
+        z-index: 1001; /* Ensure it's above the navigation */
+    }
+    
+    /* Navigation menu styling for mobile */
+    #main-nav {
+        width: 100%;
+        position: absolute; /* Remove from document flow */
+        top: 100%; /* Position below header */
+        left: 0;
+    }
+
+    #main-nav ul {
         position: fixed;
-        top: 70px;
-        right: -100%;
+        top: 70px; /* Height of the header */
+        right: -100%; /* Initially off-screen */
         background-color: var(--background-dark);
         flex-direction: column;
         width: 80%;
@@ -563,32 +664,27 @@ footer {
         padding: 2rem;
         transition: right var(--transition-speed);
         z-index: 100;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     }
     
-    nav.active ul {
+    /* When nav has active class, show the menu */
+    #main-nav.active ul {
         right: 0;
     }
     
-    nav li {
+    /* Nav items styling in mobile view */
+    #main-nav li {
         margin: 1.5rem 0;
+        width: 100%;
+        text-align: left;
     }
     
-    .hamburger {
+    #main-nav a {
         display: block;
+        padding: 0.75rem 0;
     }
     
-    nav.active .hamburger span:first-child {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    nav.active .hamburger span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    nav.active .hamburger span:last-child {
-        transform: rotate(-45deg) translate(7px, -7px);
-    }
-    
+    /* Typography adjustments for mobile */
     .hero h1 {
         font-size: 2.3rem;
     }
@@ -600,6 +696,7 @@ footer {
     }
 }
 
+/* Small devices (mobile phones) */
 @media (max-width: 576px) {
     .hero {
         height: 70vh;
@@ -618,63 +715,9 @@ footer {
         font-size: 1rem;
     }
     
+    /* Footer adjustments for mobile */
     .footer-content > div {
         width: 100%;
         margin-bottom: 2rem;
-    }
-}
-/* Hamburger Menu */
-.hamburger {
-    display: none; /* Hidden by default, shown in mobile view */
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 24px;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-.hamburger span {
-    width: 100%;
-    height: 3px;
-    background-color: var(--text-light);
-    border-radius: 2px;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Initially hide the menu on mobile */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-    
-    /* Add these styles to ensure your nav links don't show initially */
-    nav ul {
-        position: fixed;
-        top: 70px;
-        right: -100%;
-        background-color: var(--background-dark);
-        flex-direction: column;
-        width: 80%;
-        height: calc(100vh - 70px);
-        padding: 2rem;
-        transition: right var(--transition-speed);
-        z-index: 100;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    }
-    
-    nav.active ul {
-        right: 0;
-    }
-    
-    nav li {
-        margin: 1.5rem 0;
-        width: 100%;
-        text-align: left;
-    }
-    
-    nav a {
-        display: block;
-        padding: 0.75rem 0;
     }
 }
