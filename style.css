@@ -537,41 +537,6 @@ footer {
 }
 
 /* Responsive Design */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    cursor: pointer;
-    width: 30px;
-    height: 25px;
-    z-index: 1001;
-}
-
-.hamburger span {
-    height: 4px;
-    background: var(--text-light);
-    margin: 4px 0;
-    border-radius: 2px;
-    transition: 0.3s ease;
-}
-
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    nav ul {
-        right: -100%;
-    }
-
-    #main-nav.active ul {
-        right: 0;
-    }
-}
-#main-nav.active ul {
-    right: 0;
-}
-
 @media (max-width: 992px) {
     .hero h1 {
         font-size: 2.8rem;
