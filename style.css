@@ -36,6 +36,11 @@
 /***************************************
  * 2. BASE ELEMENT STYLING
  ***************************************/
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -75,6 +80,7 @@ img {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 /***************************************
@@ -91,6 +97,7 @@ header {
     align-items: center;
     padding: 0.5rem 5%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 100%; /* Ensure full width */
 }
 
 .logo-container {
@@ -191,6 +198,7 @@ header {
     text-align: center;
     color: var(--text-light);
     overflow: hidden;  /* Ensure video doesn't spill out */
+    width: 100%; /* Ensure full width */
 }
 
 /* Video background container */
@@ -200,7 +208,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;  /* Place behind content */
+    z-index: -1;
     overflow: hidden;
 }
 
@@ -275,6 +283,8 @@ header {
     padding: 5rem 5%;
     text-align: center;
     background-color: var(--background-light);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .game-highlights h2 {
@@ -453,7 +463,7 @@ header {
 .news-card img {
     width: 100%;
     height: 180px;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .news-content {
@@ -577,6 +587,7 @@ footer {
 
 .footer-newsletter input {
     flex: 1;
+    max-width: 150px;
     padding: 0.75rem;
     border: none;
     border-radius: 4px;
@@ -610,53 +621,38 @@ footer {
 /***************************************
  * 11. RESPONSIVE DESIGN
  ***************************************/
-/* Large devices (laptops/desktops) */
-@media (max-width: 992px) {
-    .hero h1 {
-        font-size: 2.8rem;
-    }
-    
-    .hero p {
-        font-size: 1.2rem;
-    }
-    
-    .latest-release {
-        flex-direction: column;
-    }
-}
-
 /* Medium devices (tablets) */
 @media (max-width: 768px) {
     /* Header layout for mobile */
     header {
-        position: relative;
-        justify-content: space-between;
         padding: 0.5rem 5%;
+        width: 100%;
     }
+    
     /* Logo container adjustment */
     .logo-container {
-        flex-grow: 1; /* Allow logo to take space but not push hamburger */
+        flex-grow: 1;
     }
+    
     /* Hamburger menu becomes visible */
     .hamburger {
         display: flex;
-        position: relative; /* Change from static positioning */
-        margin-left: auto; /* Ensure it's pushed to the right */
-        z-index: 1001; /* Ensure it's above the navigation */
+        margin-left: auto;
+        z-index: 1001;
     }
     
     /* Navigation menu styling for mobile */
     #main-nav {
         width: 100%;
-        position: absolute; /* Remove from document flow */
-        top: 100%; /* Position below header */
+        position: absolute;
+        top: 100%;
         left: 0;
     }
 
     #main-nav ul {
         position: fixed;
-        top: 70px; /* Height of the header */
-        right: -100%; /* Initially off-screen */
+        top: 70px;
+        right: -100%;
         background-color: var(--background-dark);
         flex-direction: column;
         width: 80%;
@@ -667,12 +663,10 @@ footer {
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     }
     
-    /* When nav has active class, show the menu */
     #main-nav.active ul {
         right: 0;
     }
     
-    /* Nav items styling in mobile view */
     #main-nav li {
         margin: 1.5rem 0;
         width: 100%;
@@ -684,15 +678,50 @@ footer {
         padding: 0.75rem 0;
     }
     
+    /* Fix flex containers from expanding past screen width */
+    .highlights-container,
+    .news-container,
+    .footer-content {
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Ensure cards don't exceed container width */
+    .highlight-card,
+    .news-card {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
     /* Typography adjustments for mobile */
     .hero h1 {
         font-size: 2.3rem;
+        padding: 0 10px; /* Add some padding on small screens */
+    }
+    
+    .hero p {
+        padding: 0 15px; /* Add some padding on small screens */
     }
     
     .game-highlights h2,
     .latest-release h2,
     .news-section h2 {
         font-size: 2rem;
+        padding: 0 10px; /* Add some padding on small screens */
+    }
+
+    /* Ensure video stays centered */
+    #hero-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%);
     }
 }
 
@@ -719,5 +748,22 @@ footer {
     .footer-content > div {
         width: 100%;
         margin-bottom: 2rem;
+    }
+    
+    /* Fix newsletter form on smallest screens */
+    .footer-newsletter form {
+        flex-direction: column;
+    }
+    
+    .footer-newsletter button {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+    
+    /* Ensure all section padding is consistent */
+    .game-highlights, 
+    .latest-release, 
+    .news-section {
+        padding: 3rem 5%;
     }
 }
