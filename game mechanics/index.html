@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilty Gear - Game Mechanics</title>
+    <link rel="icon" type="image/x-icon" href="/images/LOGO.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo" class="logo">
+        </div>
+        
+        <div id="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="main-nav">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/characters/index.html">Characters</a></li>
+                <li><a href="/game mechanics/index.html" class="active">Game Mechanics</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="community.html">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero-banner">
+            <video autoplay muted loop id="mechanics-video" class="banner-video">
+                <source src="/videos/VIDEO_5.mp4" type="video/mp4">
+                <!-- Fallback image if video doesn't load -->
+                <img src="/images/banner.png" alt="Game Mechanics Banner">
+            </video>
+            <div class="banner-content">
+                <h1 class="page-title">GAME MECHANICS</h1>
+                <p class="page-subtitle">Master the intricate fighting systems of Guilty Gear Strive. From fundamental techniques to advanced strategies, these mechanics form the backbone of high-level play.</p>
+            </div>
+        </div>
+
+        <section class="mechanics-section">
+            <!-- Decorative splash elements -->
+            <div class="splash-element splash-1"></div>
+            <div class="splash-element splash-2"></div>
+
+            <!-- Carousel Component -->
+            <div class="mechanics-carousel">
+                <div class="carousel-container">
+                    <!-- Wall Break Slide -->
+                    <div class="carousel-slide">
+                        <div class="slide-image">
+                            <img src="/images/IMAGE_102.png" alt="Wall Break Mechanic">
+                        </div>
+                        <div class="slide-content">
+                            <h2 class="slide-title">Wall Break</h2>
+                            <p class="slide-description">Once you've got the opponent cornered, landing more attacks will break the stage wall, sending the opponent flying to the next area in a thrilling cinematic.</p>
+                            <p class="slide-description">In addition to dealing extra damage, Wall Break grants your character temporary buffs, such as added attack power.</p>
+                        </div>
+                    </div>
+
+                    <!-- Roman Cancel Slide -->
+                    <div class="carousel-slide">
+                        <div class="slide-image">
+                            <img src="/images/IMAGE_103.png" alt="Roman Cancel Mechanic">
+                        </div>
+                        <div class="slide-content">
+                            <h2 class="slide-title">Roman Cancel</h2>
+                            <p class="slide-description">Roman Cancel sends out a shockwave that slows down time for the opponent on hit. Use it while on offense to overwhelm your opponent's defenses.</p>
+                            <p class="slide-description">You can also use it to cancel and extend your combos, opening up further depth to the game's combat system.</p>
+                        </div>
+                    </div>
+
+                    <!-- Burst Slide -->
+                    <div class="carousel-slide">
+                        <div class="slide-image">
+                            <img src="/images/IMAGE_104.png" alt="Burst Mechanic">
+                        </div>
+                        <div class="slide-content">
+                            <h2 class="slide-title">Burst</h2>
+                            <p class="slide-description">Burst is your emergency escape option, activated at the cost of half of the Burst gauge. It can break you free from combos and create distance.</p>
+                            <p class="slide-description">When used strategically, Burst can completely turn the tide of battle and give you a second chance when cornered.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tension Gauge Slide -->
+                    <div class="carousel-slide">
+                        <div class="slide-image">
+                            <img src="/images/IMAGE_105.png" alt="Tension Gauge Mechanic">
+                        </div>
+                        <div class="slide-content">
+                            <h2 class="slide-title">Tension Gauge</h2>
+                            <p class="slide-description">The Tension Gauge fills as you move forward, attack, or defend against opponent's moves. Use this meter to perform Overdrives, Roman Cancels, and other powerful techniques.</p>
+                            <p class="slide-description">Managing your Tension Gauge efficiently is key to victory in high-level play.</p>
+                        </div>
+                    </div>
+
+                    <!-- Overdrive Slide -->
+                    <div class="carousel-slide">
+                        <div class="slide-image">
+                            <img src="/images/IMAGE_106.png" alt="Overdrive Mechanic">
+                        </div>
+                        <div class="slide-content">
+                            <h2 class="slide-title">Overdrive</h2>
+                            <p class="slide-description">Overdrives are character-specific super moves that consume 50% of your Tension Gauge. These flashy, powerful attacks can deal massive damage.</p>
+                            <p class="slide-description">Each character has unique Overdrives that showcase their personality and fighting style, serving as both tactical options and spectacular finishers.</p>
+                        </div>
+                    </div>
+
+                    <!-- Faultless Defense Slide -->
+                    <div class="carousel-slide">
+                        <div class="slide-image">
+                            <img src="/images/IMAGE_107.png" alt="Faultless Defense Mechanic">
+                        </div>
+                        <div class="slide-content">
+                            <h2 class="slide-title">Faultless Defense</h2>
+                            <p class="slide-description">By holding two defense buttons while blocking, you can activate Faultless Defense which creates more pushback and prevents chip damage.</p>
+                            <p class="slide-description">This defensive technique consumes Tension but can be essential for surviving pressure and creating space.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <div class="carousel-arrow carousel-arrow-left">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </div>
+                <div class="carousel-arrow carousel-arrow-right">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </div>
+
+                <!-- Pagination Dots -->
+                <div class="carousel-pagination"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo">
+                <p>Guilty Gear Strive - The most accessible yet technically deep fighting game in the series.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/characters/index.html">Characters</a></li>
+                    <li><a href="/game mechanics/index.html">Game Mechanics</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="community.html">Community</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Guilty Gear</h4>
+                <div class="social-icons">
+                    <a href="https://x.com/ArcSystemWorksU" class="social-icon" aria-label="Twitter">
+                        <img src="/images/IMAGE_6.png" alt="Twitter">
+                    </a>
+                    <a href="https://discord.com/invite/MXGC8JAGyH" class="social-icon" aria-label="Discord">
+                        <img src="/images/IMAGE_7.png" alt="Discord">
+                    </a>
+                    <a href="https://www.youtube.com/@arcsystemworksjapan" class="social-icon" aria-label="YouTube">
+                        <img src="/images/IMAGE_8.png" alt="YouTube">
+                    </a>
+                    <a href="https://www.twitch.tv/directory/category/guilty-gear-strive" class="social-icon" aria-label="Twitch">
+                        <img src="/images/IMAGE_9.png" alt="Twitch">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay Updated</h4>
+                <p>Subscribe to our newsletter for the latest Guilty Gear news, tournaments, and character updates.</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Guilty Gear Fan Site. This is a student project. All game content belongs to Arc System Works.</p>
+        </div>
+    </footer>
+</body>
+</html>
