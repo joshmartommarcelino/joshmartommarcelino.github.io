@@ -1,5 +1,6 @@
 // DOM Elements
 document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.getElementById('main-nav');
     const seasonFilterButtons = document.querySelectorAll('.season-filter-btn');
     const typeFilterButtons = document.querySelectorAll('.type-filter-btn');
@@ -8,37 +9,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const resetFilterButton = document.getElementById('reset-filters');
 
     // Mobile Menu Toggle
-    const addMobileMenuToggle = () => {
-        // Create hamburger menu button for mobile
-        const header = document.querySelector('header');
-        const menuToggle = document.createElement('div');
-        menuToggle.classList.add('hamburger');
-        menuToggle.id = 'menu-toggle';
-        menuToggle.innerHTML = `
-            <span></span>
-            <span></span>
-            <span></span>
-        `;
-        header.appendChild(menuToggle);
-
-        menuToggle.addEventListener('click', () => {
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            // Toggle active class on both the nav and the hamburger itself
             mainNav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
         });
-    };
-
-    // Check if we're on mobile and add the toggle if needed
-    if (window.innerWidth <= 768) {
-        addMobileMenuToggle();
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = mainNav.contains(event.target);
+            const isClickOnHamburger = menuToggle.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnHamburger && mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                menuToggle.classList.remove('active');
+            }
+        });
+        
+        // Close menu when clicking on a nav link (better mobile UX)
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mainNav.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
     }
-
-    // Window resize handler
-    window.addEventListener('resize', () => {
-        if (window.innerWidth <= 768 && !document.getElementById('menu-toggle')) {
-            addMobileMenuToggle();
-        } else if (window.innerWidth > 768 && document.getElementById('menu-toggle')) {
-            document.getElementById('menu-toggle').remove();
-        }
-    });
 
     // Add animation styles to character cards
     characterCards.forEach(card => {
