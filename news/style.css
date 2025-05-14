@@ -1,643 +1,670 @@
+/***************************************
+ ===  Table of Contents
+1. [Root Variables](#root-variables)
+2. [Basic Reset](#basic-reset)
+3. [Document Setup](#document-setup)
+4. [Typography](#typography)
+5. [Links & Images](#links--images)
+6. [Header & Navigation](#header--navigation)
+7. [Hamburger Menu](#hamburger-menu)
+8. [Hero Banner](#hero-banner)
+9. [News Content](#news-content)
+10. [Footer](#footer)
+11. [Responsive Styles](#responsive-styles)
+***************************************/
+
+/* === ROOT VARIABLES === */
 :root {
-    --primary-color: #e63946;
-    --secondary-color: #1d3557;
-    --accent-color: #ffd700;
-    --text-light: #f1faee;
-    --text-dark: #1d3557;
-    --background-dark: #121212;
-    --background-light: #f5f5f5;
-    --transition-speed: 0.3s;
+    /* Define colors as variables so they can be reused consistently throughout the website */
+    --primary-color: #e63946;    /* Bright red color for important elements */
+    --secondary-color: #1d3557;  /* Dark blue color for backgrounds and text */
+    --accent-color: #ffd700;     /* Gold/yellow color for highlights and accents */
+    --text-light: #f1faee;       /* Light color for text on dark backgrounds */
+    --text-dark: #1d3557;        /* Dark color for text on light backgrounds */
+    --background-dark: #121212;  /* Very dark color for backgrounds like header and footer */
+    --background-light: #f1faee;  /* Light color for section backgrounds */
+    --transition-speed: 0.3s;    /* Standard time for animations/transitions */
 }
 
+/* === BASIC RESET === */
+/* Reset removes default browser styles to ensure consistency */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;                 /* Removes all margin space around elements */
+    padding: 0;                /* Removes all padding inside elements */
+    box-sizing: border-box;    /* Makes width/height include padding and border, not just content */
 }
 
+/* === DOCUMENT SETUP === */
+/* These rules set up the basic document structure */
 html, body {
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
+    overflow-x: hidden;        /* Prevents horizontal scrolling */
+    width: 100%;               /* Makes elements take up full width */
+    position: relative;        /* Sets positioning context for absolute elements */
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text-dark);
-    background-color: #f5f5f5;
-    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Sets the main font for the entire site */
+    line-height: 1.6;          /* Sets the space between lines of text (1.6 times the font size) */
+    color: var(--text-dark);   /* Sets the default text color using the variable */
+    background-color: #f5f5f5; /* Sets the background color of the page */
+    overflow-x: hidden;        /* Prevents horizontal scrolling */
 }
 
+/* === TYPOGRAPHY === */
+/* These rules control how text appears */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1rem;
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;  /* Sets a different font for all headings */
+    font-weight: 700;          /* Makes headings bold (700 = bold) */
+    line-height: 1.2;          /* Makes line spacing tighter for headings */
+    margin-bottom: 1rem;       /* Adds space below headings (1rem = 16px typically) */
 }
 
 a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: color var(--transition-speed);
+    text-decoration: none;     /* Removes underlines from links */
+    color: var(--primary-color); /* Makes links the primary color */
+    transition: color var(--transition-speed); /* Animates color changes over time */
 }
 
 a:hover {
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Changes link color when mouse hovers over it */
 }
 
+/* === LINKS & IMAGES === */
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+    max-width: 100%;           /* Makes images responsive by limiting their width */
+    height: auto;              /* Maintains aspect ratio when width changes */
+    display: block;            /* Makes images block elements instead of inline */
 }
 
-/* HEADER & NAVIGATION */
+/* === HEADER & NAVIGATION === */
 header {
-    background-color: var(--background-dark);
-    color: var(--text-light);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 5%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    width: 100%;
+    background-color: var(--background-dark);  /* Makes header dark colored */
+    color: var(--text-light);                  /* Makes header text light colored */
+    position: sticky;                          /* Makes header stick to top when scrolling */
+    top: 0;                                    /* Positions the sticky header at the top */
+    z-index: 1000;                             /* Makes header appear above other content */
+    display: flex;                             /* Uses flexbox for layout */
+    justify-content: space-between;            /* Puts space between logo and navigation */
+    align-items: center;                       /* Centers items vertically */
+    padding: 0.5rem 5%;                        /* Adds padding inside header (top/bottom, left/right) */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Adds shadow below header */
+    width: 100%;                               /* Makes header full width */
 }
 
 .logo-container {
-    height: 60px;
-    display: flex;
-    align-items: center;
+    height: 60px;              /* Sets height for logo container */
+    display: flex;             /* Uses flexbox for layout */
+    align-items: center;       /* Centers logo vertically */
 }
 
 .logo {
-    height: 50px;
-    width: auto;
+    height: 50px;              /* Sets logo height */
+    width: auto;               /* Maintains logo aspect ratio */
 }
 
 #main-nav ul {
-    display: flex;
-    list-style: none;
+    display: flex;             /* Makes navigation menu horizontal */
+    list-style: none;          /* Removes bullet points from list */
 }
 
 #main-nav li {
-    margin-left: 1.5rem;
+    margin-left: 1.5rem;       /* Adds space between menu items */
 }
 
 #main-nav a {
-    color: var(--text-light);
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 4px;
-    transition: all var(--transition-speed);
-    position: relative;
+    color: var(--text-light);  /* Makes nav links light colored */
+    font-weight: 600;          /* Makes link text semi-bold */
+    font-size: 1.1rem;         /* Sets font size for nav links */
+    padding: 0.5rem 0.75rem;   /* Adds space inside link (top/bottom, left/right) */
+    border-radius: 4px;        /* Rounds corners slightly */
+    transition: all var(--transition-speed); /* Animates all changes */
+    position: relative;        /* Sets positioning context for pseudo-elements */
 }
 
 #main-nav a:hover {
-    color: var(--accent-color);
+    color: var(--accent-color); /* Changes link color on hover */
 }
 
 #main-nav a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--accent-color);
-    transition: width var(--transition-speed);
+    content: '';               /* Creates pseudo-element content */
+    position: absolute;        /* Positions element absolutely */
+    width: 0;                  /* Starts with zero width */
+    height: 3px;               /* Sets height of underline */
+    bottom: -5px;              /* Positions underline below text */
+    left: 0;                   /* Aligns to left */
+    background-color: var(--accent-color); /* Colors underline */
+    transition: width var(--transition-speed); /* Animates width changes */
 }
 
 #main-nav a:hover::after, 
 #main-nav a.active::after {
-    width: 100%;
+    width: 100%;               /* Expands width to full on hover or when active */
 }
 
-/* HAMBURGER MENU */
+/* === HAMBURGER MENU === */
+/* Mobile navigation button */
 .hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 24px;
-    cursor: pointer;
-    z-index: 1000;
-    margin-left: auto;
+    display: none;             /* Hides hamburger by default (shows on mobile) */
+    flex-direction: column;    /* Stacks the bars vertically */
+    justify-content: space-between; /* Puts space between bars */
+    width: 30px;               /* Sets width of hamburger */
+    height: 24px;              /* Sets height of hamburger */
+    cursor: pointer;           /* Shows pointer on hover */
+    z-index: 1000;             /* Makes sure it's above other elements */
+    margin-left: auto;         /* Pushes hamburger to right side */
 }
 
 .hamburger span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: var(--text-light);
-    border-radius: 2px;
-    transition: all 0.3s ease-in-out;
+    display: block;            /* Makes spans block elements */
+    width: 100%;               /* Makes spans full width */
+    height: 3px;               /* Sets height of each bar */
+    background-color: var(--text-light); /* Colors bars light */
+    border-radius: 2px;        /* Rounds corners of bars */
+    transition: all 0.3s ease-in-out; /* Animates changes to bars */
 }
 
 .hamburger.active span:first-child {
-    transform: rotate(45deg) translate(5px, 8px);
+    transform: rotate(45deg) translate(5px, 8px); /* Rotates top bar to form X */
 }
 
 .hamburger.active span:nth-child(2) {
-    opacity: 0;
+    opacity: 0;                /* Hides middle bar when active */
 }
 
 .hamburger.active span:last-child {
-    transform: rotate(-45deg) translate(5px, -8px);
+    transform: rotate(-45deg) translate(5px, -8px); /* Rotates bottom bar to form X */
 }
 
-/* HERO BANNER */
+/* === HERO BANNER === */
+/* Large image banner at top of page */
 .hero-banner {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
+    position: relative;        /* Sets positioning context for children */
+    width: 100%;               /* Makes banner full width */
+    height: 400px;             /* Sets banner height */
+    overflow: hidden;          /* Hides any overflowing content */
 }
 
 .banner-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
+    position: absolute;        /* Positions image absolutely within container */
+    top: 0;                    /* Aligns to top */
+    left: 0;                   /* Aligns to left */
+    width: 100%;               /* Makes image full width */
+    height: 100%;              /* Makes image full height */
+    object-fit: cover;         /* Makes image cover area without distortion */
+    z-index: 0;                /* Positions image behind content */
 }
 
 .banner-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.5);
-    color: var(--text-light);
-    padding: 0 5%;
-    text-align: center;
+    position: absolute;        /* Positions content absolutely */
+    top: 0;                    /* Aligns to top */
+    left: 0;                   /* Aligns to left */
+    width: 100%;               /* Makes content full width */
+    height: 100%;              /* Makes content full height */
+    display: flex;             /* Uses flexbox for layout */
+    flex-direction: column;    /* Stacks content vertically */
+    justify-content: center;   /* Centers content vertically */
+    align-items: center;       /* Centers content horizontally */
+    z-index: 1;                /* Positions content above image */
+    background: rgba(0, 0, 0, 0.5); /* Adds semi-transparent dark overlay */
+    color: var(--text-light);  /* Makes text light colored */
+    padding: 0 5%;             /* Adds horizontal padding */
+    text-align: center;        /* Centers text */
 }
 
 .page-title {
-    font-size: 3rem;
-    color: var(--text-light);
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    position: relative;
-    padding-bottom: 0.5rem;
+    font-size: 3rem;           /* Sets large font size */
+    color: var(--text-light);  /* Makes title light colored */
+    margin-bottom: 1rem;       /* Adds space below title */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds shadow to text */
+    position: relative;        /* Sets positioning context */
+    padding-bottom: 0.5rem;    /* Adds padding below */
 }
 
 .page-title:after {
-    content: '';
-    position: absolute;
-    width: 100px;
-    height: 4px;
-    background-color: var(--primary-color);
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    content: '';               /* Creates pseudo-element */
+    position: absolute;        /* Positions absolutely */
+    width: 100px;              /* Sets width of underline */
+    height: 4px;               /* Sets height of underline */
+    background-color: var(--primary-color); /* Colors underline */
+    bottom: 0;                 /* Aligns to bottom */
+    left: 50%;                 /* Centers horizontally */
+    transform: translateX(-50%); /* Adjusts for true centering */
 }
 
 .page-subtitle {
-    color: var(--text-light);
-    max-width: 800px;
-    margin: 0 auto;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    color: var(--text-light);  /* Makes subtitle light colored */
+    max-width: 800px;          /* Limits width */
+    margin: 0 auto;            /* Centers horizontally */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Adds shadow to text */
 }
 
-/* NEWS CONTENT */
+/* === NEWS CONTENT === */
 .news-container {
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 1rem;
+    max-width: 1200px;         /* Limits width of container */
+    margin: 3rem auto;         /* Centers horizontally with space top/bottom */
+    padding: 0 1rem;           /* Adds horizontal padding */
 }
 
 .news-filter {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    justify-content: center;
+    display: flex;             /* Uses flexbox for layout */
+    flex-wrap: wrap;           /* Allows items to wrap to next line */
+    gap: 1rem;                 /* Adds space between items */
+    margin-bottom: 2rem;       /* Adds space below filter */
+    justify-content: center;   /* Centers items horizontally */
 }
 
 .filter-btn {
-    padding: 0.5rem 1.5rem;
-    background-color: var(--background-dark);
-    color: var(--text-light);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all var(--transition-speed);
+    padding: 0.5rem 1.5rem;    /* Adds padding inside buttons */
+    background-color: var(--background-dark); /* Makes buttons dark */
+    color: var(--text-light);  /* Makes button text light */
+    border: none;              /* Removes border */
+    border-radius: 4px;        /* Rounds corners */
+    cursor: pointer;           /* Shows pointer on hover */
+    font-size: 0.9rem;         /* Sets font size */
+    font-weight: 600;          /* Makes text semi-bold */
+    transition: all var(--transition-speed); /* Animates changes */
 }
 
 .filter-btn:hover, .filter-btn.active {
-    background-color: var(--primary-color);
-    transform: translateY(-3px);
+    background-color: var(--primary-color); /* Changes color on hover/active */
+    transform: translateY(-3px); /* Moves button up slightly */
 }
 
 .news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
+    display: grid;             /* Uses CSS grid for layout */
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Creates responsive columns */
+    gap: 2rem;                 /* Adds space between grid items */
 }
 
 .news-card {
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    background-color: white;   /* Makes card background white */
+    border-radius: 8px;        /* Rounds corners */
+    overflow: hidden;          /* Hides any overflowing content */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed); /* Animates changes */
 }
 
 .news-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Moves card up on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Increases shadow on hover */
 }
 
 .news-card.hidden {
-    display: none;
+    display: none;             /* Hides cards with hidden class */
 }
 
 .news-card.visible {
-    display: block;
+    display: block;            /* Shows cards with visible class */
 }
 
 .news-image {
-    height: 200px;
-    overflow: hidden;
-    position: relative;
+    height: 200px;             /* Sets image area height */
+    overflow: hidden;          /* Hides overflowing image parts */
+    position: relative;        /* Sets positioning context */
 }
 
 .news-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
+    width: 100%;               /* Makes image full width */
+    height: 100%;              /* Makes image full height */
+    object-fit: cover;         /* Makes image cover area without distortion */
+    transition: transform 0.5s; /* Animates image scaling */
 }
 
 .news-card:hover .news-image img {
-    transform: scale(1.05);
+    transform: scale(1.05);    /* Slightly enlarges image on hover */
 }
 
 .news-category {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    z-index: 1;
+    position: absolute;        /* Positions category label absolutely */
+    top: 15px;                 /* Sets distance from top */
+    left: 15px;                /* Sets distance from left */
+    background-color: var(--primary-color); /* Colors label */
+    color: white;              /* Makes text white */
+    padding: 0.25rem 0.75rem;  /* Adds padding inside label */
+    border-radius: 20px;       /* Makes rounded pill shape */
+    font-size: 0.8rem;         /* Sets smaller font size */
+    font-weight: 600;          /* Makes text semi-bold */
+    z-index: 1;                /* Ensures it's above the image */
 }
 
 .news-content {
-    padding: 1.5rem;
+    padding: 1.5rem;           /* Adds padding inside content area */
 }
 
 .news-title {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.3;
+    font-size: 1.25rem;        /* Sets title font size */
+    margin-bottom: 0.5rem;     /* Adds space below title */
+    line-height: 1.3;          /* Sets line spacing */
 }
 
 .news-date {
-    color: #777;
-    font-size: 0.9rem;
-    margin-bottom: 0.75rem;
-    display: block;
+    color: #777;               /* Makes date gray colored */
+    font-size: 0.9rem;         /* Sets smaller font size */
+    margin-bottom: 0.75rem;    /* Adds space below date */
+    display: block;            /* Makes date a block element */
 }
 
 .news-excerpt {
-    margin-bottom: 1.5rem;
-    color: #555;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    margin-bottom: 1.5rem;     /* Adds space below excerpt */
+    color: #555;               /* Makes text dark gray */
+    font-size: 0.95rem;        /* Sets font size */
+    line-height: 1.5;          /* Sets line spacing */
 }
 
 .read-more {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: var(--background-dark);
-    color: white;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all var(--transition-speed);
+    display: inline-block;     /* Makes link a block that allows text wrapping */
+    padding: 0.5rem 1rem;      /* Adds padding inside button */
+    background-color: var(--background-dark); /* Colors button dark */
+    color: white;              /* Makes text white */
+    border-radius: 4px;        /* Rounds corners */
+    font-weight: 600;          /* Makes text semi-bold */
+    font-size: 0.9rem;         /* Sets font size */
+    transition: all var(--transition-speed); /* Animates changes */
 }
 
 .read-more:hover {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--primary-color); /* Changes color on hover */
+    color: white;              /* Keeps text white */
 }
 
 .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    gap: 0.5rem;
+    display: flex;             /* Uses flexbox for layout */
+    justify-content: center;   /* Centers items horizontally */
+    margin-top: 3rem;          /* Adds space above */
+    margin-bottom: 3rem;       /* Adds space below */
+    gap: 0.5rem;               /* Adds space between items */
 }
 
 .page-btn {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: white;
-    color: var(--text-dark);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all var(--transition-speed);
+    width: 40px;               /* Sets button width */
+    height: 40px;              /* Sets button height */
+    display: flex;             /* Uses flexbox for layout */
+    align-items: center;       /* Centers items vertically */
+    justify-content: center;   /* Centers items horizontally */
+    border-radius: 50%;        /* Makes circular buttons */
+    background-color: white;   /* Makes background white */
+    color: var(--text-dark);   /* Makes text dark */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+    cursor: pointer;           /* Shows pointer on hover */
+    transition: all var(--transition-speed); /* Animates changes */
 }
 
 .page-btn:hover, .page-btn.active {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--primary-color); /* Changes color on hover/active */
+    color: white;              /* Makes text white */
 }
 
 .page-btn.prev, .page-btn.next {
-    width: auto;
-    padding: 0 1rem;
-    border-radius: 20px;
+    width: auto;               /* Allows width to fit content */
+    padding: 0 1rem;           /* Adds horizontal padding */
+    border-radius: 20px;       /* Makes rounded pill shape */
 }
 
 .page-btn.disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
+    cursor: not-allowed;       /* Shows "not allowed" cursor */
+    opacity: 0.5;              /* Makes button semi-transparent */
 }
 
 .page-btn.disabled:hover {
-    background-color: white;
-    color: var(--text-dark);
+    background-color: white;   /* Prevents hover effect when disabled */
+    color: var(--text-dark);   /* Keeps text dark */
 }
 
-/* FOOTER */
+/* === FOOTER === */
 footer {
-    background-color: var(--background-dark);
-    color: var(--text-light);
-    padding: 4rem 5% 2rem;
+    background-color: var(--background-dark); /* Makes footer dark */
+    color: var(--text-light);  /* Makes footer text light */
+    padding: 4rem 5% 2rem;     /* Adds padding (top, sides, bottom) */
 }
 
 .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-bottom: 3rem;
+    display: flex;             /* Uses flexbox for layout */
+    flex-wrap: wrap;           /* Allows items to wrap */
+    justify-content: space-between; /* Distributes space between items */
+    gap: 2rem;                 /* Adds space between items */
+    margin-bottom: 3rem;       /* Adds space below */
 }
 
 .footer-logo {
-    flex: 1 1 250px;
-    max-width: 350px;
+    flex: 1 1 250px;           /* Sets growth, shrink, and base width */
+    max-width: 350px;          /* Limits maximum width */
 }
 
 .footer-logo img {
-    height: 60px;
-    width: auto;
-    margin-bottom: 1rem;
+    height: 60px;              /* Sets logo height */
+    width: auto;               /* Maintains aspect ratio */
+    margin-bottom: 1rem;       /* Adds space below */
 }
 
 .footer-logo p {
-    color: #ccc;
-    margin-top: 1rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    color: #ccc;               /* Makes text light gray */
+    margin-top: 1rem;          /* Adds space above */
+    font-size: 0.95rem;        /* Sets font size */
+    line-height: 1.5;          /* Sets line spacing */
 }
 
 .footer-links, .footer-social, .footer-newsletter {
-    flex: 1 1 200px;
+    flex: 1 1 200px;           /* Sets growth, shrink, and base width */
 }
 
 .footer-links h4,
 .footer-social h4,
 .footer-newsletter h4 {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-    display: inline-block;
+    font-size: 1.2rem;         /* Sets font size */
+    margin-bottom: 1.5rem;     /* Adds space below */
+    position: relative;        /* Sets positioning context */
+    padding-bottom: 0.5rem;    /* Adds padding below */
+    display: inline-block;     /* Makes heading inline-block */
 }
 
 .footer-links h4::after,
 .footer-social h4::after,
 .footer-newsletter h4::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0; 
-    bottom: 0;
-    width: 100%; 
-    height: 3px;
-    background-color: var(--primary-color);
+    content: '';               /* Creates pseudo-element */
+    position: absolute;        /* Positions absolutely */
+    left: 0;                   /* Aligns to left */
+    right: 0;                  /* Extends to right */
+    bottom: 0;                 /* Aligns to bottom */
+    width: 100%;               /* Makes full width */
+    height: 3px;               /* Sets height */
+    background-color: var(--primary-color); /* Colors underline */
 }
 
 .footer-links ul {
-    list-style: none;
+    list-style: none;          /* Removes bullet points */
 }
 
 .footer-links li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.75rem;    /* Adds space below list items */
 }
 
 .footer-links a {
-    color: #ccc;
-    transition: color var(--transition-speed);
+    color: #ccc;               /* Makes links light gray */
+    transition: color var(--transition-speed); /* Animates color changes */
 }
 
 .footer-links a:hover {
-    color: var(--accent-color);
+    color: var(--accent-color); /* Changes link color on hover */
 }
 
 .social-icons {
-    display: flex;
-    gap: 1rem;
+    display: flex;             /* Uses flexbox for layout */
+    gap: 1rem;                 /* Adds space between icons */
 }
 
 .social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    transition: all var(--transition-speed);
+    display: flex;             /* Uses flexbox for layout */
+    align-items: center;       /* Centers items vertically */
+    justify-content: center;   /* Centers items horizontally */
+    width: 40px;               /* Sets icon width */
+    height: 40px;              /* Sets icon height */
+    background-color: rgba(255, 255, 255, 0.1); /* Makes background slightly light */
+    border-radius: 50%;        /* Makes circular icons */
+    transition: all var(--transition-speed); /* Animates changes */
 }
 
 .social-icon:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-3px);
+    background-color: var(--primary-color); /* Changes color on hover */
+    transform: translateY(-3px); /* Moves icon up slightly */
 }
 
 .social-icon img {
-    width: 20px;
-    height: 20px;
+    width: 20px;               /* Sets image width */
+    height: 20px;              /* Sets image height */
 }
 
 .footer-newsletter p {
-    color: #ccc;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    color: #ccc;               /* Makes text light gray */
+    margin-bottom: 1rem;       /* Adds space below */
+    font-size: 0.95rem;        /* Sets font size */
+    line-height: 1.5;          /* Sets line spacing */
 }
 
 .footer-newsletter form {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    display: flex;             /* Uses flexbox for layout */
+    gap: 0.5rem;               /* Adds space between items */
+    flex-wrap: wrap;           /* Allows items to wrap */
 }
 
 .footer-newsletter input {
-    flex: 1;
-    min-width: 140px;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
+    flex: 1;                   /* Allows input to grow */
+    min-width: 140px;          /* Sets minimum width */
+    padding: 0.75rem;          /* Adds padding inside */
+    border: none;              /* Removes border */
+    border-radius: 4px;        /* Rounds corners */
+    font-size: 1rem;           /* Sets font size */
 }
 
 .footer-newsletter button {
-    padding: 0.75rem 1.5rem;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background-color var(--transition-speed);
+    padding: 0.75rem 1.5rem;   /* Adds padding inside */
+    background-color: var(--primary-color); /* Colors button */
+    color: white;              /* Makes text white */
+    border: none;              /* Removes border */
+    border-radius: 4px;        /* Rounds corners */
+    cursor: pointer;           /* Shows pointer on hover */
+    font-size: 1rem;           /* Sets font size */
+    font-weight: 600;          /* Makes text semi-bold */
+    transition: background-color var(--transition-speed); /* Animates color changes */
 }
 
 .footer-newsletter button:hover {
-    background-color: #c62d39;
+    background-color: #c62d39; /* Changes to darker red on hover */
 }
 
 .footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.9rem;
-    color: #999;
+    text-align: center;        /* Centers text */
+    padding-top: 2rem;         /* Adds padding above */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Adds subtle top border */
+    font-size: 0.9rem;         /* Sets smaller font size */
+    color: #999;               /* Makes text gray */
 }
 
-/* RESPONSIVE STYLES */
+/* === RESPONSIVE STYLES === */
+/* Rules that apply on smaller screens */
 @media (max-width: 768px) {
     .hero-banner {
-        height: 300px;
+        height: 300px;         /* Reduces banner height on tablet screens */
     }
     
     .page-title {
-        font-size: 2.2rem;
+        font-size: 2.2rem;     /* Reduces title size */
     }
     
     .news-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Makes news cards smaller */
     }
     
     /* Header layout for mobile */
     header {
-        padding: 0.5rem 5%;
+        padding: 0.5rem 5%;    /* Adjusts padding */
     }
     
     /* Logo container adjustment */
     .logo-container {
-        flex-grow: 1;
+        flex-grow: 1;          /* Allows logo container to grow */
     }
     
     /* Hamburger menu becomes visible */
     .hamburger {
-        display: flex;
+        display: flex;         /* Shows hamburger menu on mobile */
     }
     
     /* Navigation menu styling for mobile */
     #main-nav {
-        position: relative;
+        position: relative;    /* Sets positioning context */
     }
 
     #main-nav ul {
-        position: fixed;
-        top: 70px;
-        right: -100%;
-        background-color: var(--background-dark);
-        flex-direction: column;
-        width: 80%;
-        height: calc(100vh - 70px);
-        padding: 2rem;
-        transition: right var(--transition-speed);
-        z-index: 100;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        position: fixed;       /* Fixes position to viewport */
+        top: 70px;             /* Positions below header */
+        right: -100%;          /* Hides menu off-screen */
+        background-color: var(--background-dark); /* Makes background dark */
+        flex-direction: column; /* Stacks menu items vertically */
+        width: 80%;            /* Sets menu width */
+        height: calc(100vh - 70px); /* Sets menu height to fill viewport */
+        padding: 2rem;         /* Adds padding inside */
+        transition: right var(--transition-speed); /* Animates slide-in */
+        z-index: 100;          /* Ensures menu is above other content */
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); /* Adds shadow on left */
     }
     
     #main-nav.active ul {
-        right: 0;
+        right: 0;              /* Shows menu when active */
     }
     
     #main-nav li {
-        margin: 1.5rem 0;
-        width: 100%;
-        text-align: left;
+        margin: 1.5rem 0;      /* Adds vertical spacing between items */
+        width: 100%;           /* Makes items full width */
+        text-align: left;      /* Left-aligns text */
     }
     
     #main-nav a {
-        display: block;
-        padding: 0.75rem 0;
+        display: block;        /* Makes links block elements */
+        padding: 0.75rem 0;    /* Adds vertical padding */
     }
     
     /* Footer adjustments for mobile */
     .footer-content {
-        flex-direction: column;
-        gap: 2rem;
+        flex-direction: column; /* Stacks footer sections vertically */
+        gap: 2rem;             /* Adds space between sections */
     }
     
     .footer-logo, .footer-links, .footer-social, .footer-newsletter {
-        width: 100%;
-        max-width: 100%;
+        width: 100%;           /* Makes sections full width */
+        max-width: 100%;       /* Removes max-width limit */
     }
 }
 
 @media (max-width: 576px) {
     .hero-banner {
-        height: 250px;
+        height: 250px;         /* Further reduces banner height on phone screens */
     }
     
     .page-title {
-        font-size: 1.8rem;
+        font-size: 1.8rem;     /* Further reduces title size */
     }
     
     .filter-btn {
-        padding: 0.4rem 1rem;
-        font-size: 0.8rem;
+        padding: 0.4rem 1rem;  /* Makes filter buttons smaller */
+        font-size: 0.8rem;     /* Reduces font size */
     }
     
     .news-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Changes to single column layout */
     }
     
     /* Fix newsletter form on smallest screens */
     .footer-newsletter form {
-        flex-direction: column;
+        flex-direction: column; /* Stacks input and button vertically */
     }
     
     .footer-newsletter input {
-        width: 100%;
-        max-width: 100%;
+        width: 100%;           /* Makes input full width */
+        max-width: 100%;       /* Removes max-width limit */
     }
     
     .footer-newsletter button {
-        width: 100%;
-        margin-top: 0.5rem;
+        width: 100%;           /* Makes button full width */
+        margin-top: 0.5rem;    /* Adds space above button */
     }
 }

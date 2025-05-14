@@ -1,243 +1,243 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guilty Gear - News</title>
-    <link rel="icon" type="image/x-icon" href="/images/LOGO.png">
-    <link rel="stylesheet" href="/news/style.css">
-    <script src="/news/index.js" defer></script>
+<!DOCTYPE html> <!-- Declares that this is an HTML5 document -->
+<html lang="en"> <!-- Starts the HTML document and sets the language to English -->
+<head> <!-- The head section contains metadata about the webpage -->
+    <meta charset="UTF-8"> <!-- Sets the character encoding to UTF-8, which supports international characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the webpage responsive by adjusting to device width -->
+    <title>Guilty Gear - News</title> <!-- Sets the title that appears in the browser tab -->
+    <link rel="icon" type="image/x-icon" href="/images/LOGO.png"> <!-- Sets the favicon (small icon in browser tab) -->
+    <link rel="stylesheet" href="/news/style.css"> <!-- Links to the CSS file that styles this page -->
+    <script src="/news/index.js" defer></script> <!-- Links to a JavaScript file with the defer attribute (runs after HTML loads) -->
 </head>
-<body>
-    <header>
-        <div class="logo-container">
-            <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo" class="logo">
+<body> <!-- The body section contains all visible content of the webpage -->
+    <header> <!-- The header section typically contains the logo and navigation -->
+        <div class="logo-container"> <!-- A container div for the logo image -->
+            <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo" class="logo"> <!-- The logo image with alt text for accessibility -->
         </div>
         
-        <div id="menu-toggle" class="hamburger">
-            <span></span>
+        <div id="menu-toggle" class="hamburger"> <!-- A hamburger menu button for mobile devices -->
+            <span></span> <!-- These three spans create the hamburger icon lines -->
             <span></span>
             <span></span>
         </div>
 
-        <nav id="main-nav">
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/characters/index.html">Characters</a></li>
-                <li><a href="/game mechanics/index.html">Game Mechanics</a></li>
-                <li><a href="/history/index.html">History</a></li>
-                <li><a href="/news/index.html">News</a></li>
+        <nav id="main-nav"> <!-- The main navigation menu -->
+            <ul> <!-- An unordered list to hold navigation links -->
+                <li><a href="/index.html">Home</a></li> <!-- List item with link to home page -->
+                <li><a href="/characters/index.html">Characters</a></li> <!-- List item with link to characters page -->
+                <li><a href="/game mechanics/index.html">Game Mechanics</a></li> <!-- List item with link to game mechanics page -->
+                <li><a href="/history/index.html">History</a></li> <!-- List item with link to history page -->
+                <li><a href="/news/index.html">News</a></li> <!-- List item with link to news page (current page) -->
             </ul>
         </nav>
     </header>
 
-    <main>
-        <div class="hero-banner">
-            <img src="/images/IMAGE_115.png" alt="News Banner" class="banner-image">
-            <div class="banner-content">
-                <h1 class="page-title">NEWS</h1>
-                <p class="page-subtitle">Stay up to date with the latest Guilty Gear Strive announcements, updates, tournaments, and community events.</p>
+    <main> <!-- The main content section of the webpage -->
+        <div class="hero-banner"> <!-- A large banner section at the top of the main content -->
+            <img src="/images/IMAGE_115.png" alt="News Banner" class="banner-image"> <!-- The banner image -->
+            <div class="banner-content"> <!-- Container for text content that overlays the banner image -->
+                <h1 class="page-title">NEWS</h1> <!-- Main heading of the page -->
+                <p class="page-subtitle">Stay up to date with the latest Guilty Gear Strive announcements, updates, tournaments, and community events.</p> <!-- Subtitle text -->
             </div>
         </div>
 
-        <div class="news-container">
+        <div class="news-container"> <!-- Container for all news items and filters -->
             <!-- News Filter -->
-            <div class="news-filter">
-                <button class="filter-btn active">All News</button>
-                <button class="filter-btn">Game Updates</button>
-                <button class="filter-btn">DLC</button>
-                <button class="filter-btn">Events</button>
-                <button class="filter-btn">Tournaments</button>
-                <button class="filter-btn">Community</button>
+            <div class="news-filter"> <!-- Section for filter buttons -->
+                <button class="filter-btn active">All News</button> <!-- Button to show all news, "active" class shows it's currently selected -->
+                <button class="filter-btn">Game Updates</button> <!-- Button to filter for game updates news -->
+                <button class="filter-btn">DLC</button> <!-- Button to filter for DLC (Downloadable Content) news -->
+                <button class="filter-btn">Events</button> <!-- Button to filter for events news -->
+                <button class="filter-btn">Tournaments</button> <!-- Button to filter for tournament news -->
+                <button class="filter-btn">Community</button> <!-- Button to filter for community news -->
             </div>
 
             <!-- News Grid -->
-            <div class="news-grid">
+            <div class="news-grid"> <!-- Container that holds all news cards in a grid layout -->
                 <!-- News Item 1 -->
-                <div class="news-card">
-                    <div class="news-image">
-                        <span class="news-category">DLC</span>
-                        <img src="/images/IMAGE_116.png" alt="Unika DLC">
+                <div class="news-card"> <!-- A card container for each news item -->
+                    <div class="news-image"> <!-- Container for the news image and category label -->
+                        <span class="news-category">DLC</span> <!-- Label showing the category of this news item -->
+                        <img src="/images/IMAGE_116.png" alt="Unika DLC"> <!-- The featured image for this news item -->
                     </div>
-                    <div class="news-content">
-                        <h3 class="news-title"></h3>
-                        <span class="news-date">May 10, 2025</span>
-                        <p class="news-excerpt">With the release of the Orginal Anime "Guilty Gear Stive: Dual Rulers", Anonunced at Evo 2025; Unika will be coming to Guilty Gear -Strive- on May 27th!</p>
-                        <a href="https://x.com/GUILTYGEAR_PR/status/1921129909759476172" class="read-more">Read More</a>
+                    <div class="news-content"> <!-- Container for the text content of the news card -->
+                        <h3 class="news-title"></h3> <!-- Title of the news item (empty in this case) -->
+                        <span class="news-date">May 10, 2025</span> <!-- Publication date of the news item -->
+                        <p class="news-excerpt">With the release of the Orginal Anime "Guilty Gear Stive: Dual Rulers", Anonunced at Evo 2025; Unika will be coming to Guilty Gear -Strive- on May 27th!</p> <!-- Brief summary of the news -->
+                        <a href="https://x.com/GUILTYGEAR_PR/status/1921129909759476172" class="read-more">Read More</a> <!-- Link to read the full news article -->
                     </div>
                 </div>
 
                 <!-- News Item 2 -->
-                <div class="news-card">
-                    <div class="news-image">
-                        <span class="news-category">Tournaments</span>
-                        <img src="/images/IMAGE_117.png" alt="EVO 2025 GGST Results">
+                <div class="news-card"> <!-- Another news card container -->
+                    <div class="news-image"> <!-- Image and category container -->
+                        <span class="news-category">Tournaments</span> <!-- Category label for this news item -->
+                        <img src="/images/IMAGE_117.png" alt="EVO 2025 GGST Results"> <!-- News image -->
                     </div>
-                    <div class="news-content">
-                        <h3 class="news-title">EVO 2025 GGST Results</h3>
-                        <span class="news-date">May 10, 2025</span>
-                        <p class="news-excerpt">The Top 8 finalists for EVO 2025 was announced with Daru_I-NO shocking everyone by taking 1st place.</p>
-                        <a href="https://x.com/ASWesports/status/1921173679385297081" class="read-more">Read More</a>
+                    <div class="news-content"> <!-- Text content container -->
+                        <h3 class="news-title">EVO 2025 GGST Results</h3> <!-- News title -->
+                        <span class="news-date">May 10, 2025</span> <!-- Publication date -->
+                        <p class="news-excerpt">The Top 8 finalists for EVO 2025 was announced with Daru_I-NO shocking everyone by taking 1st place.</p> <!-- News summary -->
+                        <a href="https://x.com/ASWesports/status/1921173679385297081" class="read-more">Read More</a> <!-- Link to full article -->
                     </div>
                 </div>
 
                 <!-- News Item 3 -->
-                <div class="news-card">
-                    <div class="news-image">
-                        <span class="news-category">Community</span>
-                        <img src="/images/IMAGE_118.png" alt="GSST Data Leak">
+                <div class="news-card"> <!-- Another news card container -->
+                    <div class="news-image"> <!-- Image and category container -->
+                        <span class="news-category">Community</span> <!-- Category label -->
+                        <img src="/images/IMAGE_118.png" alt="GSST Data Leak"> <!-- News image -->
                     </div>
-                    <div class="news-content">
-                        <h3 class="news-title">GGST Data Leak</h3>
-                        <span class="news-date">March 10, 2025</span>
-                        <p class="news-excerpt">Guilty Gear Strive's source code was leaked in arguably the biggest fighting game security breach ever. In a massive data breach, the entire source code of Guilty Gear Strive leaked online. Users are able to access unreleased DLC and content at the moment and launch the game from Unreal Editor directly.</p>
-                        <a href="https://www.dexerto.com/gaming/guilty-gear-strive-source-code-leak-explained-season-5-characters-discovered-3193826/" class="read-more">Read More</a>
+                    <div class="news-content"> <!-- Text content container -->
+                        <h3 class="news-title">GGST Data Leak</h3> <!-- News title -->
+                        <span class="news-date">March 10, 2025</span> <!-- Publication date -->
+                        <p class="news-excerpt">Guilty Gear Strive's source code was leaked in arguably the biggest fighting game security breach ever. In a massive data breach, the entire source code of Guilty Gear Strive leaked online. Users are able to access unreleased DLC and content at the moment and launch the game from Unreal Editor directly.</p> <!-- Longer news summary -->
+                        <a href="https://www.dexerto.com/gaming/guilty-gear-strive-source-code-leak-explained-season-5-characters-discovered-3193826/" class="read-more">Read More</a> <!-- Link to full article -->
                     </div>
                 </div>
 
                 <!-- News Item 4 -->
-                <div class="news-card">
-                    <div class="news-image">
-                        <span class="news-category">Events</span>
-                        <img src="/images/IMAGE_119.png" alt="Dual Rulers Anime Premiere">
+                <div class="news-card"> <!-- Another news card container -->
+                    <div class="news-image"> <!-- Image and category container -->
+                        <span class="news-category">Events</span> <!-- Category label -->
+                        <img src="/images/IMAGE_119.png" alt="Dual Rulers Anime Premiere"> <!-- News image -->
                     </div>
-                    <div class="news-content">
-                        <h3 class="news-title">Guilty Gear Anime "Dual Rulers" Debuts Worldwide</h3>
-                        <span class="news-date">January 22, 2025</span>
-                        <p class="news-excerpt">The highly anticipated Guilty Gear Strive anime is set to be launched soon with its 1st episode premiering worldwide on April 5, 2025! Follow Sin, the rest of the cast ak=long with the new antagonist Unika in this post-Strive story continuation.</p>
-                        <a href="https://www.youtube.com/watch?v=LAGDrC3SDPY&ab_channel=arcsystemworks" class="read-more">Read More</a>
+                    <div class="news-content"> <!-- Text content container -->
+                        <h3 class="news-title">Guilty Gear Anime "Dual Rulers" Debuts Worldwide</h3> <!-- News title -->
+                        <span class="news-date">January 22, 2025</span> <!-- Publication date -->
+                        <p class="news-excerpt">The highly anticipated Guilty Gear Strive anime is set to be launched soon with its 1st episode premiering worldwide on April 5, 2025! Follow Sin, the rest of the cast ak=long with the new antagonist Unika in this post-Strive story continuation.</p> <!-- News summary -->
+                        <a href="https://www.youtube.com/watch?v=LAGDrC3SDPY&ab_channel=arcsystemworks" class="read-more">Read More</a> <!-- Link to full article -->
                     </div>
                 </div>
 
                 <!-- News Item 5 -->
-                <div class="news-card">
-                    <div class="news-image">
-                        <span class="news-category">DLC</span>
-                        <img src="/images/IMAGE_2.png" alt="Venom DLC Release">
+                <div class="news-card"> <!-- Another news card container -->
+                    <div class="news-image"> <!-- Image and category container -->
+                        <span class="news-category">DLC</span> <!-- Category label -->
+                        <img src="/images/IMAGE_2.png" alt="Venom DLC Release"> <!-- News image -->
                     </div>
-                    <div class="news-content">
-                        <h3 class="news-title">Venom DLC Release</h3>
-                        <span class="news-date">March 24, 2025</span>
-                        <p class="news-excerpt">The newest addition to the roster has been revealed. Check out the gameplay trailer!</p>
-                        <a href="https://youtu.be/gh0aqa-3xWs?si=Mxu8M5nsJtkIhvwA" class="read-more">Read More</a>
+                    <div class="news-content"> <!-- Text content container -->
+                        <h3 class="news-title">Venom DLC Release</h3> <!-- News title -->
+                        <span class="news-date">March 24, 2025</span> <!-- Publication date -->
+                        <p class="news-excerpt">The newest addition to the roster has been revealed. Check out the gameplay trailer!</p> <!-- News summary -->
+                        <a href="https://youtu.be/gh0aqa-3xWs?si=Mxu8M5nsJtkIhvwA" class="read-more">Read More</a> <!-- Link to full article -->
                     </div>
                 </div>
 
                 <!-- News Item 6 -->
-                <div class="news-card">
-                    <div class="news-image">
-                        <span class="news-category">DLC</span>
-                        <img src="/images/IMAGE_120.png" alt="Lucy Cyberpunk DLC">
+                <div class="news-card"> <!-- Another news card container -->
+                    <div class="news-image"> <!-- Image and category container -->
+                        <span class="news-category">DLC</span> <!-- Category label -->
+                        <img src="/images/IMAGE_120.png" alt="Lucy Cyberpunk DLC"> <!-- News image -->
                     </div>
-                    <div class="news-content">
-                        <h3 class="news-title">Lucy from Cyberpunk Joins the Fight This Summer</h3>
-                        <span class="news-date">July 22, 2024</span>
-                        <p class="news-excerpt">The first-ever guest character in Guilty Gear history is here. Lucy from Cyberpunk: Edgerunners will enter the roster this summer with a unique playstyle.</p>
-                        <a href="https://x.com/edgerunners/status/1815115859234578545" class="read-more">Read More</a>
+                    <div class="news-content"> <!-- Text content container -->
+                        <h3 class="news-title">Lucy from Cyberpunk Joins the Fight This Summer</h3> <!-- News title -->
+                        <span class="news-date">July 22, 2024</span> <!-- Publication date -->
+                        <p class="news-excerpt">The first-ever guest character in Guilty Gear history is here. Lucy from Cyberpunk: Edgerunners will enter the roster this summer with a unique playstyle.</p> <!-- News summary -->
+                        <a href="https://x.com/edgerunners/status/1815115859234578545" class="read-more">Read More</a> <!-- Link to full article -->
                     </div>
                 </div>
 
                 <!-- News Item 7 -->
-                <div class="news-card">
-                    <div class="news-image">
-                        <span class="news-category">Game Updates</span>
-                        <img src="/images/IMAGE_4.png" alt="Update Patch 1.44 Notes">
+                <div class="news-card"> <!-- Another news card container -->
+                    <div class="news-image"> <!-- Image and category container -->
+                        <span class="news-category">Game Updates</span> <!-- Category label -->
+                        <img src="/images/IMAGE_4.png" alt="Update Patch 1.44 Notes"> <!-- News image -->
                     </div>
-                    <div class="news-content">
-                        <h3 class="news-title">Update Patch 1.44 Notes</h3>
-                        <span class="news-date">March 24, 2025</span>
-                        <p class="news-excerpt">With the addition of Venom; Many changes will come to Chipp, Faust, Happy Chaos, Goldlewis, Johnny, and DIzzy in the latest balance update.</p>
-                        <a href="https://www.guiltygear.com/ggst/en/news/post-2426/" class="read-more">Read More</a>
+                    <div class="news-content"> <!-- Text content container -->
+                        <h3 class="news-title">Update Patch 1.44 Notes</h3> <!-- News title -->
+                        <span class="news-date">March 24, 2025</span> <!-- Publication date -->
+                        <p class="news-excerpt">With the addition of Venom; Many changes will come to Chipp, Faust, Happy Chaos, Goldlewis, Johnny, and DIzzy in the latest balance update.</p> <!-- News summary -->
+                        <a href="https://www.guiltygear.com/ggst/en/news/post-2426/" class="read-more">Read More</a> <!-- Link to full article -->
                     </div>
                 </div> 
 
                 <!-- News Item 8 -->
-                <div class="news-card">
-                    <div class="news-image">
-                        <span class="news-category">Events</span>
-                        <img src="/images/IMAGE_121.png" alt="Plushies Released ">
+                <div class="news-card"> <!-- Another news card container -->
+                    <div class="news-image"> <!-- Image and category container -->
+                        <span class="news-category">Events</span> <!-- Category label -->
+                        <img src="/images/IMAGE_121.png" alt="Plushies Released "> <!-- News image -->
                     </div>
-                    <div class="news-content">
-                        <h3 class="news-title">Plushies Released</h3>
-                        <span class="news-date">May 7, 2025</span>
-                        <p class="news-excerpt">This campaign ends 5/18! Make sure to get your Baiken, Faust and Millia Rage plushies on Makeship.com before they're gone for good!</p>
-                        <a href="https://x.com/ArcSystemWorksU/status/1920176714900013145" class="read-more">Read More</a>
+                    <div class="news-content"> <!-- Text content container -->
+                        <h3 class="news-title">Plushies Released</h3> <!-- News title -->
+                        <span class="news-date">May 7, 2025</span> <!-- Publication date -->
+                        <p class="news-excerpt">This campaign ends 5/18! Make sure to get your Baiken, Faust and Millia Rage plushies on Makeship.com before they're gone for good!</p> <!-- News summary -->
+                        <a href="https://x.com/ArcSystemWorksU/status/1920176714900013145" class="read-more">Read More</a> <!-- Link to full article -->
                     </div>
                 </div>
 
                 <!-- News Item 9 -->
-                <div class="news-card">
-                    <div class="news-image">
-                        <span class="news-category">Tournaments</span>
-                        <img src="/images/IMAGE_122.png" alt="ASW Finals Location Announced">
+                <div class="news-card"> <!-- Another news card container -->
+                    <div class="news-image"> <!-- Image and category container -->
+                        <span class="news-category">Tournaments</span> <!-- Category label -->
+                        <img src="/images/IMAGE_122.png" alt="ASW Finals Location Announced"> <!-- News image -->
                     </div>
-                    <div class="news-content">
-                        <h3 class="news-title">ASW Finals Location Announced</h3>
-                        <span class="news-date">May 10, 2025</span>
-                        <p class="news-excerpt">ARC WORLD TOUR 2025-2026 Finals are coming to Asia for the first time! Final Stage of this year will be South Korea! Get ready for the epic clashes that will crown the next world champion! Stay tuned for more details.</p>
-                        <a href="https://x.com/ASWesports/status/1921128817822945553" class="read-more">Read More</a>
+                    <div class="news-content"> <!-- Text content container -->
+                        <h3 class="news-title">ASW Finals Location Announced</h3> <!-- News title -->
+                        <span class="news-date">May 10, 2025</span> <!-- Publication date -->
+                        <p class="news-excerpt">ARC WORLD TOUR 2025-2026 Finals are coming to Asia for the first time! Final Stage of this year will be South Korea! Get ready for the epic clashes that will crown the next world champion! Stay tuned for more details.</p> <!-- News summary -->
+                        <a href="https://x.com/ASWesports/status/1921128817822945553" class="read-more">Read More</a> <!-- Link to full article -->
                     </div>
                 </div>
             </div>
 
             <!-- Pagination -->
-            <div class="pagination">
-                <button class="page-btn prev">Prev</button>
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <button class="page-btn">4</button>
-                <button class="page-btn">5</button>
-                <button class="page-btn">6</button>
-                <button class="page-btn next">Next</button>
+            <div class="pagination"> <!-- Container for page navigation buttons -->
+                <button class="page-btn prev">Prev</button> <!-- Button to go to previous page -->
+                <button class="page-btn active">1</button> <!-- Button for page 1 (currently active) -->
+                <button class="page-btn">2</button> <!-- Button for page 2 -->
+                <button class="page-btn">3</button> <!-- Button for page 3 -->
+                <button class="page-btn">4</button> <!-- Button for page 4 -->
+                <button class="page-btn">5</button> <!-- Button for page 5 -->
+                <button class="page-btn">6</button> <!-- Button for page 6 -->
+                <button class="page-btn next">Next</button> <!-- Button to go to next page -->
             </div>
         </div>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo">
-                <p>Guilty Gear Strive - The most accessible yet technically deep fighting game in the series.</p>
+    <footer> <!-- The footer section typically contains copyright info, links, and contact info -->
+        <div class="footer-content"> <!-- Container for the footer content -->
+            <div class="footer-logo"> <!-- Logo section in the footer -->
+                <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo"> <!-- Footer logo image -->
+                <p>Guilty Gear Strive - The most accessible yet technically deep fighting game in the series.</p> <!-- Tagline or description -->
             </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/characters/index.html">Characters</a></li>
-                    <li><a href="/game mechanics/index.html">Game Mechanics</a></li>
-                    <li><a href="/history/index.html">History</a></li>
-                    <li><a href="/news/index.html">News</a></li>
+            <div class="footer-links"> <!-- Quick links section in the footer -->
+                <h4>Quick Links</h4> <!-- Heading for this section -->
+                <ul> <!-- Unordered list for the links -->
+                    <li><a href="/index.html">Home</a></li> <!-- Link to home page -->
+                    <li><a href="/characters/index.html">Characters</a></li> <!-- Link to characters page -->
+                    <li><a href="/game mechanics/index.html">Game Mechanics</a></li> <!-- Link to game mechanics page -->
+                    <li><a href="/history/index.html">History</a></li> <!-- Link to history page -->
+                    <li><a href="/news/index.html">News</a></li> <!-- Link to news page -->
                 </ul>
             </div>
-            <div class="footer-social">
-                <h4>Follow Guilty Gear</h4>
-                <div class="social-icons">
-                    <a href="https://x.com/ArcSystemWorksU" class="social-icon" aria-label="Twitter">
-                        <img src="/images/IMAGE_6.png" alt="Twitter">
+            <div class="footer-social"> <!-- Social media links section -->
+                <h4>Follow Guilty Gear</h4> <!-- Heading for this section -->
+                <div class="social-icons"> <!-- Container for social media icons -->
+                    <a href="https://x.com/ArcSystemWorksU" class="social-icon" aria-label="Twitter"> <!-- Link to Twitter with accessibility label -->
+                        <img src="/images/IMAGE_6.png" alt="Twitter"> <!-- Twitter icon -->
                     </a>
-                    <a href="https://discord.com/invite/MXGC8JAGyH" class="social-icon" aria-label="Discord">
-                        <img src="/images/IMAGE_7.png" alt="Discord">
+                    <a href="https://discord.com/invite/MXGC8JAGyH" class="social-icon" aria-label="Discord"> <!-- Link to Discord with accessibility label -->
+                        <img src="/images/IMAGE_7.png" alt="Discord"> <!-- Discord icon -->
                     </a>
-                    <a href="https://www.youtube.com/@arcsystemworksjapan" class="social-icon" aria-label="YouTube">
-                        <img src="/images/IMAGE_8.png" alt="YouTube">
+                    <a href="https://www.youtube.com/@arcsystemworksjapan" class="social-icon" aria-label="YouTube"> <!-- Link to YouTube with accessibility label -->
+                        <img src="/images/IMAGE_8.png" alt="YouTube"> <!-- YouTube icon -->
                     </a>
-                    <a href="https://www.twitch.tv/directory/category/guilty-gear-strive" class="social-icon" aria-label="Twitch">
-                        <img src="/images/IMAGE_9.png" alt="Twitch">
+                    <a href="https://www.twitch.tv/directory/category/guilty-gear-strive" class="social-icon" aria-label="Twitch"> <!-- Link to Twitch with accessibility label -->
+                        <img src="/images/IMAGE_9.png" alt="Twitch"> <!-- Twitch icon -->
                     </a>
                 </div>
             </div>
-            <div class="footer-newsletter">
-                <h4>Stay Updated</h4>
-                <p>Subscribe to our newsletter for the latest Guilty Gear news, tournaments, and character updates.</p>
-                <form id="newsletter-form">
-                    <input type="email" placeholder="Your email address" required>
-                    <button type="submit">Subscribe</button>
+            <div class="footer-newsletter"> <!-- Newsletter subscription section -->
+                <h4>Stay Updated</h4> <!-- Heading for this section -->
+                <p>Subscribe to our newsletter for the latest Guilty Gear news, tournaments, and character updates.</p> <!-- Newsletter description -->
+                <form id="newsletter-form"> <!-- Form for newsletter subscription -->
+                    <input type="email" placeholder="Your email address" required> <!-- Email input field (required) -->
+                    <button type="submit">Subscribe</button> <!-- Subscribe button -->
                 </form>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Guilty Gear Fan Site. This is a student project. All game content belongs to Arc System Works.</p>
+        <div class="footer-bottom"> <!-- Bottom section of the footer with copyright info -->
+            <p>&copy; 2025 Guilty Gear Fan Site. This is a student project. All game content belongs to Arc System Works.</p> <!-- Copyright and disclaimer text -->
         </div>
     </footer>
 </body>

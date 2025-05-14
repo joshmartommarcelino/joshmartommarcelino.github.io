@@ -569,173 +569,165 @@ header {
  * This section contains the website footer with links, social media, and newsletter signup
  ***************************************/
 footer {
-    /* Styles for the website footer */
-    background-color: var(--background-dark); /* Dark background */
-    color: var(--text-light);  /* Light text color */
-    padding: 4rem 5% 2rem;     /* Adds padding inside (top, left/right, bottom) */
+    /* Styles for page footer */
+    background-color: var(--background-dark); /* Dark background for footer */
+    color: var(--text-light);    /* Light text color for footer */
+    padding: 4rem 5% 2rem;       /* Adds space inside footer (top, sides, bottom) */
 }
 
 .footer-content {
-    /* Container for the main footer content */
-    display: flex;             /* Uses flexible box layout */
-    flex-wrap: wrap;           /* Allows content to wrap on small screens */
-    justify-content: space-between; /* Spreads items out evenly */
-    gap: 2rem;                 /* Adds space between items */
-    margin-bottom: 3rem;       /* Adds space below footer content */
+    /* Container for footer content */
+    display: flex;               /* Uses flexbox layout */
+    flex-wrap: wrap;             /* Allows items to wrap to next line */
+    justify-content: space-between; /* Spaces items apart horizontally */
+    gap: 2rem;                   /* Adds space between footer sections */
+    margin-bottom: 3rem;         /* Adds space below footer content */
+}
+
+.footer-logo {
+    /* Styles for logo section in footer */
+    flex: 1 1 250px;             /* Flexible width with minimum 250px */
+    max-width: 350px;            /* Maximum width for logo section */
 }
 
 .footer-logo img {
-    /* Styles for the logo in the footer */
-    height: 60px;              /* Sets height of logo */
-    width: auto;               /* Allows width to adjust based on height */
+    /* Styles for logo image in footer */
+    height: 60px;                /* Sets logo height */
+    width: auto;                 /* Maintains logo aspect ratio */
+    margin-bottom: 1rem;         /* Adds space below logo */
+}
+
+.footer-links, .footer-social, .footer-newsletter {
+    /* Styles for footer sections */
+    flex: 1 1 200px;             /* Flexible width with minimum 200px */
 }
 
 .footer-links h4,
 .footer-social h4,
 .footer-newsletter h4 {
-    /* Styles for headings in each footer section */
-    font-size: 1.2rem;         /* Sets font size */
-    margin-bottom: 1.5rem;     /* Adds space below */
-    position: relative;        /* For positioning the underline */
-    padding-bottom: 0.5rem;    /* Adds space below text for underline */
-    display: inline-block;     /* Makes heading only as wide as its content */
+    /* Styles for headings in footer sections */
+    font-size: 1.2rem;           /* Sets text size */
+    margin-bottom: 1.5rem;       /* Adds space below headings */
+    position: relative;          /* Sets positioning context for pseudo-elements */
+    padding-bottom: 0.5rem;      /* Adds space below text */
+    display: inline-block;       /* Makes element only as wide as content */
 }
 
 .footer-links h4::after,
 .footer-social h4::after,
 .footer-newsletter h4::after {
-    /* Creates underline for footer headings */
-    content: '';               /* Required for ::after elements */
-    position: absolute;        /* Positions relative to heading */
-    left: 0;                   /* Aligns to left edge */
-    right: 0;                  /* Extends to right edge */
-    bottom: 0;                 /* Aligns to bottom */
-    width: 100%;               /* Full width of the heading */
-    height: 3px;               /* Height of underline */
-    background-color: var(--primary-color); /* Red color for underline */
+    /* Creates a line below each footer heading */
+    content: '';                 /* Required for pseudo-elements */
+    position: absolute;          /* Positions line relative to heading */
+    left: 0;                     /* Aligns line with left edge of heading */
+    right: 0;                    /* Extends line to right edge of heading */
+    bottom: 0;                   /* Positions line at bottom of heading */
+    width: 100%;                 /* Makes line full width */
+    height: 3px;                 /* Height of the line */
+    background-color: var(--primary-color); /* Color of the line */
 }
 
 .footer-links ul {
     /* Styles for links list in footer */
-    list-style: none;          /* Removes default bullet points */
+    list-style: none;            /* Removes bullet points from list */
 }
 
 .footer-links li {
-    /* Styles for each link item */
-    margin-bottom: 0.75rem;    /* Adds space between links */
+    /* Styles for each link item in footer */
+    margin-bottom: 0.75rem;      /* Adds space between links */
 }
 
 .footer-links a {
-    /* Styles for the footer links */
-    color: #ccc;               /* Light gray color for links */
-    transition: color var(--transition-speed); /* Animation for hover effect */
+    /* Styles for footer links */
+    color: #ccc;                 /* Light gray text color */
+    transition: color var(--transition-speed); /* Animates color changes */
 }
 
 .footer-links a:hover {
-    /* Style for links when hovered */
-    color: var(--accent-color); /* Changes to gold/yellow on hover */
+    /* Style when hovering over footer links */
+    color: var(--accent-color);  /* Changes text color on hover */
 }
 
 .social-icons {
     /* Container for social media icons */
-    display: flex;             /* Uses flexible box layout */
-    gap: 1rem;                 /* Adds space between icons */
+    display: flex;               /* Uses flexbox layout */
+    gap: 1rem;                   /* Adds space between icons */
 }
 
 .social-icon {
     /* Styles for each social media icon */
-    display: flex;             /* Uses flexible box for centering */
-    align-items: center;       /* Centers content vertically */
-    justify-content: center;   /* Centers content horizontally */
-    width: 40px;               /* Width of icon container */
-    height: 40px;              /* Height of icon container */
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-    border-radius: 50%;        /* Makes circular shape */
-    transition: all var(--transition-speed); /* Animation for hover effect */
+    display: flex;               /* Uses flexbox layout */
+    align-items: center;         /* Centers icon vertically */
+    justify-content: center;     /* Centers icon horizontally */
+    width: 40px;                 /* Width of icon container */
+    height: 40px;                /* Height of icon container */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly light background */
+    border-radius: 50%;          /* Makes container circular */
+    transition: all var(--transition-speed); /* Animates all property changes */
 }
 
 .social-icon:hover {
-    /* Style for social icons when hovered */
-    background-color: var(--primary-color); /* Changes to red on hover */
-    transform: translateY(-3px); /* Moves icon up slightly */
+    /* Style when hovering over social media icon */
+    background-color: var(--primary-color); /* Changes background color on hover */
+    transform: translateY(-3px); /* Moves icon up slightly on hover */
 }
 
 .social-icon img {
-    /* Styles for icon images */
-    width: 20px;               /* Width of the icon */
-    height: 20px;              /* Height of the icon */
+    /* Styles for social media icon image */
+    width: 20px;                 /* Width of icon */
+    height: 20px;                /* Height of icon */
+}
+
+.footer-newsletter p {
+    /* Styles for paragraph in newsletter section */
+    color: #ccc;                 /* Light gray text color */
+    margin-bottom: 1rem;         /* Adds space below paragraph */
+    font-size: 0.95rem;          /* Slightly smaller text */
+    line-height: 1.5;            /* Sets spacing between lines */
 }
 
 .footer-newsletter form {
-    /* Styles for newsletter signup form */
-    display: flex;             /* Uses flexible box layout */
-    gap: 0.5rem;               /* Adds space between input and button */
+    /* Styles for newsletter form */
+    display: flex;               /* Uses flexbox layout */
+    gap: 0.5rem;                 /* Adds space between form elements */
+    flex-wrap: wrap;             /* Allows form elements to wrap */
 }
 
 .footer-newsletter input {
-    /* Styles for the newsletter input field */
-    flex: 1;                   /* Allows input to grow */
-    max-width: 150px;          /* Maximum width for input */
-    padding: 0.75rem;          /* Adds padding inside input */
-    border: none;              /* Removes default border */
-    border-radius: 4px;        /* Rounds corners */
-    font-size: 1rem;           /* Sets font size */
+    /* Styles for newsletter input field */
+    flex: 1;                     /* Makes input take up available space */
+    min-width: 140px;            /* Minimum width for input */
+    padding: 0.75rem;            /* Adds space inside input */
+    border: none;                /* Removes border */
+    border-radius: 4px;          /* Rounds corners */
+    font-size: 1rem;             /* Sets text size */
 }
 
 .footer-newsletter button {
-    /* This sets the size of the padding inside the newsletter button */
-    /* The first value (0.75rem) is for top and bottom, the second (1.5) is for left and right */
-    padding: 0.75rem 1.5;
-    
-    /* This sets the background color of the button using a variable defined elsewhere */
-    /* Variables make it easy to change colors throughout the website by updating one value */
-    background-color: var(--primary-color);
-    
-    /* This sets the text color to white */
-    color: white;
-    
-    /* This removes any border around the button */
-    border: none;
-    
-    /* This rounds the corners of the button with a 4-pixel radius */
-    border-radius: 4px;
-    
-    /* This changes the mouse cursor to a hand pointer when hovering over the button */
-    cursor: pointer;
-    
-    /* This sets the size of the text inside the button */
-    font-size: 1rem;
-    
-    /* This makes the text bold (600 is semi-bold, 400 is normal, 700 is bold) */
-    font-weight: 600;
-    
-    /* This creates a smooth animation when the background color changes */
-    /* The speed is controlled by a variable defined elsewhere */
-    transition: background-color var(--transition-speed);
+    /* Styles for newsletter submit button */
+    padding: 0.75rem 1.5rem;     /* Adds space inside button (top/bottom, left/right) */
+    background-color: var(--primary-color); /* Button background color */
+    color: white;                /* Button text color */
+    border: none;                /* Removes border */
+    border-radius: 4px;          /* Rounds corners */
+    cursor: pointer;             /* Shows hand cursor on hover */
+    font-size: 1rem;             /* Sets text size */
+    font-weight: 600;            /* Makes text semi-bold */
+    transition: background-color var(--transition-speed); /* Animates color changes */
 }
 
 .footer-newsletter button:hover {
-    /* This changes the background color when someone hovers their mouse over the button */
-    /* The color is a darker red (#c62d39) than the original color */
-    background-color: #c62d39;
+    /* Style when hovering over newsletter button */
+    background-color: #c62d39;   /* Darker red color on hover */
 }
 
 .footer-bottom {
-    /* This centers all the text inside the footer bottom section */
-    text-align: center;
-    
-    /* This adds space (2rem) at the top of the footer bottom section */
-    padding-top: 2rem;
-    
-    /* This adds a thin light line at the top of the footer bottom section */
-    /* The rgba color format allows setting transparency (0.1 means 10% opacity) */
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    
-    /* This makes the text slightly smaller than normal */
-    font-size: 0.9rem;
-    
-    /* This sets the text color to a light gray */
-    color: #999;
+    /* Styles for copyright section in footer */
+    text-align: center;          /* Centers text */
+    padding-top: 2rem;           /* Adds space above copyright */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Adds light line above copyright */
+    font-size: 0.9rem;           /* Smaller text size */
+    color: #999;                 /* Gray text color */
 }
 
 /***************************************

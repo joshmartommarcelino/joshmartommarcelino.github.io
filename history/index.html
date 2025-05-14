@@ -1,225 +1,225 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guilty Gear - History</title>
-    <link rel="icon" type="image/x-icon" href="/images/LOGO.png">
-    <link rel="stylesheet" href="/history/style.css">
-    <script src="/history/index.js" defer></script>
+<!DOCTYPE html> <!-- This declaration tells the browser we're using HTML5 -->
+<html lang="en"> <!-- This opens the HTML document and specifies English as the language -->
+<head> <!-- The head section contains metadata about the document, not visible content -->
+    <meta charset="UTF-8"> <!-- This specifies the character encoding for the document - UTF-8 includes most characters from all languages -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- This helps with responsive design, making the page adjust to different screen sizes -->
+    <title>Guilty Gear - History</title> <!-- This sets the title that appears in the browser tab -->
+    <link rel="icon" type="image/x-icon" href="/images/LOGO.png"> <!-- This sets the favicon/icon that appears in the browser tab -->
+    <link rel="stylesheet" href="/history/style.css"> <!-- This links to the CSS file that contains all the styling for the page -->
+    <script src="/history/index.js" defer></script> <!-- This links to the JavaScript file with "defer" so it loads after the HTML -->
 </head>
-<body>
-    <header>
-        <div class="logo-container">
-            <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo" class="logo">
+<body> <!-- The body contains all the visible content of the webpage -->
+    <header> <!-- The header section typically contains the logo, navigation menu, and sometimes a banner -->
+        <div class="logo-container"> <!-- This div wraps the logo image -->
+            <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo" class="logo"> <!-- This shows the Guilty Gear logo with alt text for accessibility -->
         </div>
         
-        <div id="menu-toggle" class="hamburger">
-            <span></span>
+        <div id="menu-toggle" class="hamburger"> <!-- This creates the hamburger menu button for mobile devices -->
+            <span></span> <!-- These three span elements create the three lines of the hamburger icon -->
             <span></span>
             <span></span>
         </div>
 
-        <nav id="main-nav">
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/characters/index.html">Characters</a></li>
-                <li><a href="/game mechanics/index.html">Game Mechanics</a></li>
-                <li><a href="/history/index.html" class="active">History</a></li>
-                <li><a href="/news/index.html">News</a></li>
+        <nav id="main-nav"> <!-- The nav section contains the website's navigation menu -->
+            <ul> <!-- Unordered list for the navigation links -->
+                <li><a href="/index.html">Home</a></li> <!-- List item with link to the home page -->
+                <li><a href="/characters/index.html">Characters</a></li> <!-- List item with link to characters page -->
+                <li><a href="/game mechanics/index.html">Game Mechanics</a></li> <!-- List item with link to game mechanics page -->
+                <li><a href="/history/index.html" class="active">History</a></li> <!-- Current page is marked as active -->
+                <li><a href="/news/index.html">News</a></li> <!-- List item with link to news page -->
             </ul>
         </nav>
     </header>
 
-    <main>
-        <div class="hero-banner">
-            <video autoplay muted loop id="history-video" class="banner-video">
-                <source src="/videos/VIDEO_6.mp4" type="video/mp4">
+    <main> <!-- The main section contains the primary content of the page -->
+        <div class="hero-banner"> <!-- This div creates the large banner at the top of the page -->
+            <video autoplay muted loop id="history-video" class="banner-video"> <!-- This creates an autoplaying background video -->
+                <source src="/videos/VIDEO_6.mp4" type="video/mp4"> <!-- Source file for the video -->
                 <!-- Fallback image if video doesn't load -->
-                <img src="/images/history-banner.png" alt="History Banner">
+                <img src="/images/history-banner.png" alt="History Banner"> <!-- This shows if the video can't play -->
             </video>
-            <div class="banner-content">
-                <h1 class="page-title">SERIES HISTORY</h1>
-                <p class="page-subtitle">Explore the evolution of the legendary Guilty Gear franchise from its origins to the modern era of Strive.</p>
+            <div class="banner-content"> <!-- This div contains the text overlaid on the banner video -->
+                <h1 class="page-title">SERIES HISTORY</h1> <!-- Main heading of the page -->
+                <p class="page-subtitle">Explore the evolution of the legendary Guilty Gear franchise from its origins to the modern era of Strive.</p> <!-- Subtitle explaining the page content -->
             </div>
         </div>
 
-        <section class="history-section">
-            <!-- Decorative splash elements -->
-            <div class="splash-element splash-1"></div>
-            <div class="splash-element splash-2"></div>
+        <section class="history-section"> <!-- This section contains the timeline of the game series -->
+            <!-- Decorative splash elements for visual appeal -->
+            <div class="splash-element splash-1"></div> <!-- Decorative element, likely styled with CSS -->
+            <div class="splash-element splash-2"></div> <!-- Another decorative element -->
 
-            <div class="container">
-                <div class="timeline-container">
+            <div class="container"> <!-- Container to control the width of the content -->
+                <div class="timeline-container"> <!-- Container for the timeline component -->
                     <!-- Timeline header -->
-                    <div class="timeline-header">
-                        <h2>GUILTY GEAR FRANCHISE TIMELINE</h2>
-                        <p>Hover over or tap on each milestone to learn more about the evolution of the series.</p>
+                    <div class="timeline-header"> <!-- Header for the timeline section -->
+                        <h2>GUILTY GEAR FRANCHISE TIMELINE</h2> <!-- Heading for the timeline section -->
+                        <p>Hover over or tap on each milestone to learn more about the evolution of the series.</p> <!-- Instructions for using the timeline -->
                     </div>
                     
                     <!-- Timeline component -->
-                    <div class="timeline">
-                        <div class="timeline-track">
+                    <div class="timeline"> <!-- Main timeline element -->
+                        <div class="timeline-track"> <!-- Track that represents the timeline itself -->
                             <!-- Timeline markers for each significant year -->
-                            <div class="timeline-marker" data-year="1998">
-                                <div class="year-label">1998</div>
+                            <div class="timeline-marker" data-year="1998"> <!-- Marker for 1998 with custom data attribute -->
+                                <div class="year-label">1998</div> <!-- Label showing the year -->
                             </div>
-                            <div class="timeline-marker" data-year="2000">
-                                <div class="year-label">2000</div>
+                            <div class="timeline-marker" data-year="2000"> <!-- Marker for 2000 -->
+                                <div class="year-label">2000</div> <!-- Label showing the year -->
                             </div>
-                            <div class="timeline-marker" data-year="2002">
-                                <div class="year-label">2002</div>
+                            <div class="timeline-marker" data-year="2002"> <!-- Marker for 2002 -->
+                                <div class="year-label">2002</div> <!-- Label showing the year -->
                             </div>
-                            <div class="timeline-marker" data-year="2007">
-                                <div class="year-label">2007</div>
+                            <div class="timeline-marker" data-year="2007"> <!-- Marker for 2007 -->
+                                <div class="year-label">2007</div> <!-- Label showing the year -->
                             </div>
-                            <div class="timeline-marker" data-year="2014">
-                                <div class="year-label">2014</div>
+                            <div class="timeline-marker" data-year="2014"> <!-- Marker for 2014 -->
+                                <div class="year-label">2014</div> <!-- Label showing the year -->
                             </div>
-                            <div class="timeline-marker" data-year="2021">
-                                <div class="year-label">2021</div>
+                            <div class="timeline-marker" data-year="2021"> <!-- Marker for 2021 -->
+                                <div class="year-label">2021</div> <!-- Label showing the year -->
                             </div>
-                            <div class="timeline-marker" data-year="2023">
-                                <div class="year-label">2023</div>
+                            <div class="timeline-marker" data-year="2023"> <!-- Marker for 2023 -->
+                                <div class="year-label">2023</div> <!-- Label showing the year -->
                             </div>
                         </div>
 
-                        <!-- Timeline cards -->
-                        <div class="timeline-cards">
-                            <div class="timeline-card" data-year="1998">
-                                <div class="card-inner">
-                                    <div class="card-image">
-                                        <img src="/images/IMAGE_108.png" alt="Guilty Gear (1998)">
+                        <!-- Timeline cards containing detailed information about each game -->
+                        <div class="timeline-cards"> <!-- Container for all timeline cards -->
+                            <div class="timeline-card" data-year="1998"> <!-- Card for the 1998 game -->
+                                <div class="card-inner"> <!-- Inner container for card content -->
+                                    <div class="card-image"> <!-- Container for the game image -->
+                                        <img src="/images/IMAGE_108.png" alt="Guilty Gear (1998)"> <!-- Image of the original game -->
                                     </div>
-                                    <div class="card-content">
-                                        <h3>Guilty Gear (1998)</h3>
-                                        <p>The original Guilty Gear was released for PlayStation, introducing the world to Sol Badguy, Ky Kiske, and the post-apocalyptic world of Gears. The game stood out with its heavy metal aesthetic and unique character designs by Daisuke Ishiwatari.</p>
-                                        <div class="card-facts">
-                                            <div class="fact">
-                                                <strong>Platform:</strong> PlayStation
+                                    <div class="card-content"> <!-- Container for text content -->
+                                        <h3>Guilty Gear (1998)</h3> <!-- Game title -->
+                                        <p>The original Guilty Gear was released for PlayStation, introducing the world to Sol Badguy, Ky Kiske, and the post-apocalyptic world of Gears. The game stood out with its heavy metal aesthetic and unique character designs by Daisuke Ishiwatari.</p> <!-- Game description -->
+                                        <div class="card-facts"> <!-- Container for quick facts -->
+                                            <div class="fact"> <!-- Individual fact -->
+                                                <strong>Platform:</strong> PlayStation <!-- Platform information -->
                                             </div>
-                                            <div class="fact">
-                                                <strong>Characters:</strong> 10 fighters
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-card" data-year="2000">
-                                <div class="card-inner">
-                                    <div class="card-image">
-                                        <img src="/images/IMAGE_109.png" alt="Guilty Gear X (2000)">
-                                    </div>
-                                    <div class="card-content">
-                                        <h3>Guilty Gear X (2000)</h3>
-                                        <p>Guilty Gear X transitioned the series to gorgeous high-resolution 2D sprites that would become the series' signature style. The game expanded the roster significantly and refined the gameplay mechanics.</p>
-                                        <div class="card-facts">
-                                            <div class="fact">
-                                                <strong>Platform:</strong> Arcade, Dreamcast, PS2
-                                            </div>
-                                            <div class="fact">
-                                                <strong>Characters:</strong> 16 fighters
+                                            <div class="fact"> <!-- Individual fact -->
+                                                <strong>Characters:</strong> 10 fighters <!-- Character count -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="timeline-card" data-year="2002">
-                                <div class="card-inner">
-                                    <div class="card-image">
-                                        <img src="/images/IMAGE_110.png" alt="Guilty Gear XX (2002)">
+                            <div class="timeline-card" data-year="2000"> <!-- Card for the 2000 game -->
+                                <div class="card-inner"> <!-- Inner container for card content -->
+                                    <div class="card-image"> <!-- Container for the game image -->
+                                        <img src="/images/IMAGE_109.png" alt="Guilty Gear X (2000)"> <!-- Image of Guilty Gear X -->
                                     </div>
-                                    <div class="card-content">
-                                        <h3>Guilty Gear XX (2002)</h3>
-                                        <p>Often considered the definitive classic Guilty Gear, XX (The Midnight Carnival) refined the gameplay to near perfection. The game received numerous updated versions including #Reload, Slash, Accent Core, and Accent Core Plus R.</p>
-                                        <div class="card-facts">
-                                            <div class="fact">
-                                                <strong>Platform:</strong> Arcade, PS2, Xbox
+                                    <div class="card-content"> <!-- Container for text content -->
+                                        <h3>Guilty Gear X (2000)</h3> <!-- Game title -->
+                                        <p>Guilty Gear X transitioned the series to gorgeous high-resolution 2D sprites that would become the series' signature style. The game expanded the roster significantly and refined the gameplay mechanics.</p> <!-- Game description -->
+                                        <div class="card-facts"> <!-- Container for quick facts -->
+                                            <div class="fact"> <!-- Individual fact -->
+                                                <strong>Platform:</strong> Arcade, Dreamcast, PS2 <!-- Platform information -->
                                             </div>
-                                            <div class="fact">
-                                                <strong>Characters:</strong> 20+ fighters
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-card" data-year="2007">
-                                <div class="card-inner">
-                                    <div class="card-image">
-                                        <img src="/images/IMAGE_111.png" alt="Guilty Gear 2: Overture (2007)">
-                                    </div>
-                                    <div class="card-content">
-                                        <h3>Guilty Gear 2: Overture (2007)</h3>
-                                        <p>A significant departure from the fighting game formula, Overture was a hybrid action game with real-time strategy elements. While divisive among fans, it expanded the series' lore significantly.</p>
-                                        <div class="card-facts">
-                                            <div class="fact">
-                                                <strong>Platform:</strong> Xbox 360, PC
-                                            </div>
-                                            <div class="fact">
-                                                <strong>Genre:</strong> Action RTS hybrid
+                                            <div class="fact"> <!-- Individual fact -->
+                                                <strong>Characters:</strong> 16 fighters <!-- Character count -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="timeline-card" data-year="2014">
-                                <div class="card-inner">
-                                    <div class="card-image">
-                                        <img src="/images/IMAGE_112.png" alt="Guilty Gear Xrd (2014)">
+                            <div class="timeline-card" data-year="2002"> <!-- Card for the 2002 game -->
+                                <div class="card-inner"> <!-- Inner container for card content -->
+                                    <div class="card-image"> <!-- Container for the game image -->
+                                        <img src="/images/IMAGE_110.png" alt="Guilty Gear XX (2002)"> <!-- Image of Guilty Gear XX -->
                                     </div>
-                                    <div class="card-content">
-                                        <h3>Guilty Gear Xrd (2014)</h3>
-                                        <p>Xrd revolutionized the series with 3D models designed to look like 2D anime sprites. Using the Unreal Engine, the game maintained the series' visual flair while modernizing the presentation. Xrd received updates with -SIGN-, -REVELATOR-, and REV 2 versions.</p>
-                                        <div class="card-facts">
-                                            <div class="fact">
-                                                <strong>Platform:</strong> Arcade, PS3, PS4, PC
+                                    <div class="card-content"> <!-- Container for text content -->
+                                        <h3>Guilty Gear XX (2002)</h3> <!-- Game title -->
+                                        <p>Often considered the definitive classic Guilty Gear, XX (The Midnight Carnival) refined the gameplay to near perfection. The game received numerous updated versions including #Reload, Slash, Accent Core, and Accent Core Plus R.</p> <!-- Game description -->
+                                        <div class="card-facts"> <!-- Container for quick facts -->
+                                            <div class="fact"> <!-- Individual fact -->
+                                                <strong>Platform:</strong> Arcade, PS2, Xbox <!-- Platform information -->
                                             </div>
-                                            <div class="fact">
-                                                <strong>Visual Style:</strong> 2.5D "anime" aesthetic
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-card" data-year="2021">
-                                <div class="card-inner">
-                                    <div class="card-image">
-                                        <img src="/images/IMAGE_113.png" alt="Guilty Gear Strive (2021)">
-                                    </div>
-                                    <div class="card-content">
-                                        <h3>Guilty Gear Strive (2021)</h3>
-                                        <p>Strive represents a bold new direction for the series, with redesigned mechanics focused on accessibility while maintaining depth. The game features stunning visuals, rollback netcode for superior online play, and a continued focus on rock-solid gameplay.</p>
-                                        <div class="card-facts">
-                                            <div class="fact">
-                                                <strong>Platform:</strong> PS4, PS5, PC, Xbox
-                                            </div>
-                                            <div class="fact">
-                                                <strong>Innovation:</strong> Rollback netcode
+                                            <div class="fact"> <!-- Individual fact -->
+                                                <strong>Characters:</strong> 20+ fighters <!-- Character count -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="timeline-card" data-year="2023">
-                                <div class="card-inner">
-                                    <div class="card-image">
-                                        <img src="/images/IMAGE_114.png" alt="Guilty Gear Strive Season 2 (2023)">
+                            <div class="timeline-card" data-year="2007"> <!-- Card for the 2007 game -->
+                                <div class="card-inner"> <!-- Inner container for card content -->
+                                    <div class="card-image"> <!-- Container for the game image -->
+                                        <img src="/images/IMAGE_111.png" alt="Guilty Gear 2: Overture (2007)"> <!-- Image of Guilty Gear 2: Overture -->
                                     </div>
-                                    <div class="card-content">
-                                        <h3>Guilty Gear Strive Season 2 (2023)</h3>
-                                        <p>Season 2 expanded Strive with additional characters, balance updates, and new gameplay mechanics. The DLC added fan-favorites like Bridget and Sin Kiske alongside newcomers like Bedman? and Asuka R#.</p>
-                                        <div class="card-facts">
-                                            <div class="fact">
-                                                <strong>Additions:</strong> 4 new characters
+                                    <div class="card-content"> <!-- Container for text content -->
+                                        <h3>Guilty Gear 2: Overture (2007)</h3> <!-- Game title -->
+                                        <p>A significant departure from the fighting game formula, Overture was a hybrid action game with real-time strategy elements. While divisive among fans, it expanded the series' lore significantly.</p> <!-- Game description -->
+                                        <div class="card-facts"> <!-- Container for quick facts -->
+                                            <div class="fact"> <!-- Individual fact -->
+                                                <strong>Platform:</strong> Xbox 360, PC <!-- Platform information -->
                                             </div>
-                                            <div class="fact">
-                                                <strong>Features:</strong> Crossplay between all platforms
+                                            <div class="fact"> <!-- Individual fact -->
+                                                <strong>Genre:</strong> Action RTS hybrid <!-- Genre information -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-card" data-year="2014"> <!-- Card for the 2014 game -->
+                                <div class="card-inner"> <!-- Inner container for card content -->
+                                    <div class="card-image"> <!-- Container for the game image -->
+                                        <img src="/images/IMAGE_112.png" alt="Guilty Gear Xrd (2014)"> <!-- Image of Guilty Gear Xrd -->
+                                    </div>
+                                    <div class="card-content"> <!-- Container for text content -->
+                                        <h3>Guilty Gear Xrd (2014)</h3> <!-- Game title -->
+                                        <p>Xrd revolutionized the series with 3D models designed to look like 2D anime sprites. Using the Unreal Engine, the game maintained the series' visual flair while modernizing the presentation. Xrd received updates with -SIGN-, -REVELATOR-, and REV 2 versions.</p> <!-- Game description -->
+                                        <div class="card-facts"> <!-- Container for quick facts -->
+                                            <div class="fact"> <!-- Individual fact -->
+                                                <strong>Platform:</strong> Arcade, PS3, PS4, PC <!-- Platform information -->
+                                            </div>
+                                            <div class="fact"> <!-- Individual fact -->
+                                                <strong>Visual Style:</strong> 2.5D "anime" aesthetic <!-- Visual style information -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-card" data-year="2021"> <!-- Card for the 2021 game -->
+                                <div class="card-inner"> <!-- Inner container for card content -->
+                                    <div class="card-image"> <!-- Container for the game image -->
+                                        <img src="/images/IMAGE_113.png" alt="Guilty Gear Strive (2021)"> <!-- Image of Guilty Gear Strive -->
+                                    </div>
+                                    <div class="card-content"> <!-- Container for text content -->
+                                        <h3>Guilty Gear Strive (2021)</h3> <!-- Game title -->
+                                        <p>Strive represents a bold new direction for the series, with redesigned mechanics focused on accessibility while maintaining depth. The game features stunning visuals, rollback netcode for superior online play, and a continued focus on rock-solid gameplay.</p> <!-- Game description -->
+                                        <div class="card-facts"> <!-- Container for quick facts -->
+                                            <div class="fact"> <!-- Individual fact -->
+                                                <strong>Platform:</strong> PS4, PS5, PC, Xbox <!-- Platform information -->
+                                            </div>
+                                            <div class="fact"> <!-- Individual fact -->
+                                                <strong>Innovation:</strong> Rollback netcode <!-- Key innovation information -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-card" data-year="2023"> <!-- Card for the 2023 update -->
+                                <div class="card-inner"> <!-- Inner container for card content -->
+                                    <div class="card-image"> <!-- Container for the game image -->
+                                        <img src="/images/IMAGE_114.png" alt="Guilty Gear Strive Season 2 (2023)"> <!-- Image of Guilty Gear Strive Season 2 -->
+                                    </div>
+                                    <div class="card-content"> <!-- Container for text content -->
+                                        <h3>Guilty Gear Strive Season 2 (2023)</h3> <!-- Game title -->
+                                        <p>Season 2 expanded Strive with additional characters, balance updates, and new gameplay mechanics. The DLC added fan-favorites like Bridget and Sin Kiske alongside newcomers like Bedman? and Asuka R#.</p> <!-- Game description -->
+                                        <div class="card-facts"> <!-- Container for quick facts -->
+                                            <div class="fact"> <!-- Individual fact -->
+                                                <strong>Additions:</strong> 4 new characters <!-- Character additions -->
+                                            </div>
+                                            <div class="fact"> <!-- Individual fact -->
+                                                <strong>Features:</strong> Crossplay between all platforms <!-- Feature information -->
                                             </div>
                                         </div>
                                     </div>
@@ -231,19 +231,19 @@
             </div>
         </section>
 
-        <section class="legacy-section">
-            <div class="container">
-                <h2 class="section-title">THE LEGACY CONTINUES</h2>
-                <div class="legacy-content">
-                    <div class="legacy-text">
-                        <p>For over two decades, Guilty Gear has defined what fighting games can be—combining technical depth with visual flair and unforgettable characters. From its humble beginnings on the original PlayStation to becoming a mainstay of the fighting game community, the series has never compromised its unique vision.</p>
-                        <p>Creator Daisuke Ishiwatari's passion for heavy metal, intricate storytelling, and innovative gameplay mechanics has created a franchise unlike any other in the genre. As Guilty Gear Strive continues to evolve with new fighters and features, the future of this legendary series burns brighter than ever.</p>
+        <section class="legacy-section"> <!-- This section covers the legacy and importance of the series -->
+            <div class="container"> <!-- Container to control the width of the content -->
+                <h2 class="section-title">THE LEGACY CONTINUES</h2> <!-- Heading for the legacy section -->
+                <div class="legacy-content"> <!-- Container for the legacy content -->
+                    <div class="legacy-text"> <!-- Container for the text content -->
+                        <p>For over two decades, Guilty Gear has defined what fighting games can be—combining technical depth with visual flair and unforgettable characters. From its humble beginnings on the original PlayStation to becoming a mainstay of the fighting game community, the series has never compromised its unique vision.</p> <!-- First paragraph about the series' legacy -->
+                        <p>Creator Daisuke Ishiwatari's passion for heavy metal, intricate storytelling, and innovative gameplay mechanics has created a franchise unlike any other in the genre. As Guilty Gear Strive continues to evolve with new fighters and features, the future of this legendary series burns brighter than ever.</p> <!-- Second paragraph about the creator and future -->
                     </div>
-                        <div class="legacy-image">
-                            <video autoplay muted loop id="legacy-video">
-                                <source src="/videos/VIDEO_4.mp4" type="video/mp4">
+                        <div class="legacy-image"> <!-- Container for the legacy video -->
+                            <video autoplay muted loop id="legacy-video"> <!-- Autoplaying video element -->
+                                <source src="/videos/VIDEO_4.mp4" type="video/mp4"> <!-- Source file for the video -->
                                 <!-- Fallback image if video doesn't load -->
-                                <img src="/images/IMAGE_114.png" alt="Guilty Gear Legacy">
+                                <img src="/images/IMAGE_114.png" alt="Guilty Gear Legacy"> <!-- This shows if the video can't play -->
                             </video>
                         </div>
                     </div>
@@ -251,50 +251,50 @@
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo">
-                <p>Guilty Gear Strive - The most accessible yet technically deep fighting game in the series.</p>
+    <footer> <!-- The footer contains links, contact info, and copyright information -->
+        <div class="footer-content"> <!-- Container for all footer content -->
+            <div class="footer-logo"> <!-- Container for the logo in the footer -->
+                <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo"> <!-- Footer logo image -->
+                <p>Guilty Gear Strive - The most accessible yet technically deep fighting game in the series.</p> <!-- Tagline for the game -->
             </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/characters/index.html">Characters</a></li>
-                    <li><a href="/game mechanics/index.html">Game Mechanics</a></li>
-                    <li><a href="/history/index.html">History</a></li>
-                    <li><a href="/news/index.html">News</a></li>
+            <div class="footer-links"> <!-- Container for quick links in the footer -->
+                <h4>Quick Links</h4> <!-- Heading for quick links section -->
+                <ul> <!-- Unordered list for footer links -->
+                    <li><a href="/index.html">Home</a></li> <!-- Link to home page -->
+                    <li><a href="/characters/index.html">Characters</a></li> <!-- Link to characters page -->
+                    <li><a href="/game mechanics/index.html">Game Mechanics</a></li> <!-- Link to game mechanics page -->
+                    <li><a href="/history/index.html">History</a></li> <!-- Link to history page -->
+                    <li><a href="/news/index.html">News</a></li> <!-- Link to news page -->
                 </ul>
             </div>
-            <div class="footer-social">
-                <h4>Follow Guilty Gear</h4>
-                <div class="social-icons">
-                    <a href="https://x.com/ArcSystemWorksU" class="social-icon" aria-label="Twitter">
-                        <img src="/images/IMAGE_6.png" alt="Twitter">
+            <div class="footer-social"> <!-- Container for social media links -->
+                <h4>Follow Guilty Gear</h4> <!-- Heading for social media links -->
+                <div class="social-icons"> <!-- Container for social media icons -->
+                    <a href="https://x.com/ArcSystemWorksU" class="social-icon" aria-label="Twitter"> <!-- Link to Twitter with accessibility label -->
+                        <img src="/images/IMAGE_6.png" alt="Twitter"> <!-- Twitter icon -->
                     </a>
-                    <a href="https://discord.com/invite/MXGC8JAGyH" class="social-icon" aria-label="Discord">
-                        <img src="/images/IMAGE_7.png" alt="Discord">
+                    <a href="https://discord.com/invite/MXGC8JAGyH" class="social-icon" aria-label="Discord"> <!-- Link to Discord with accessibility label -->
+                        <img src="/images/IMAGE_7.png" alt="Discord"> <!-- Discord icon -->
                     </a>
-                    <a href="https://www.youtube.com/@arcsystemworksjapan" class="social-icon" aria-label="YouTube">
-                        <img src="/images/IMAGE_8.png" alt="YouTube">
+                    <a href="https://www.youtube.com/@arcsystemworksjapan" class="social-icon" aria-label="YouTube"> <!-- Link to YouTube with accessibility label -->
+                        <img src="/images/IMAGE_8.png" alt="YouTube"> <!-- YouTube icon -->
                     </a>
-                    <a href="https://www.twitch.tv/directory/category/guilty-gear-strive" class="social-icon" aria-label="Twitch">
-                        <img src="/images/IMAGE_9.png" alt="Twitch">
+                    <a href="https://www.twitch.tv/directory/category/guilty-gear-strive" class="social-icon" aria-label="Twitch"> <!-- Link to Twitch with accessibility label -->
+                        <img src="/images/IMAGE_9.png" alt="Twitch"> <!-- Twitch icon -->
                     </a>
                 </div>
             </div>
-            <div class="footer-newsletter">
-                <h4>Stay Updated</h4>
-                <p>Subscribe to our newsletter for the latest Guilty Gear news, tournaments, and character updates.</p>
-                <form id="newsletter-form">
-                    <input type="email" placeholder="Your email address" required>
-                    <button type="submit">Subscribe</button>
+            <div class="footer-newsletter"> <!-- Container for newsletter signup -->
+                <h4>Stay Updated</h4> <!-- Heading for newsletter section -->
+                <p>Subscribe to our newsletter for the latest Guilty Gear news, tournaments, and character updates.</p> <!-- Newsletter description -->
+                <form id="newsletter-form"> <!-- Form for newsletter signup -->
+                    <input type="email" placeholder="Your email address" required> <!-- Email input field, marked as required -->
+                    <button type="submit">Subscribe</button> <!-- Submit button -->
                 </form>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Guilty Gear Fan Site. This is a student project. All game content belongs to Arc System Works.</p>
+        <div class="footer-bottom"> <!-- Container for copyright information -->
+            <p>&copy; 2025 Guilty Gear Fan Site. This is a student project. All game content belongs to Arc System Works.</p> <!-- Copyright notice and disclaimer -->
         </div>
     </footer>
 </body>

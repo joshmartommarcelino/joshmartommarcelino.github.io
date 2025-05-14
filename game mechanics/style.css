@@ -1,679 +1,1313 @@
 /***************************************
+* TABLE OF CONTENTS
+***************************************/
+/* 
+1. GLOBAL STYLES & VARIABLES
+   - CSS Variables (colors, transitions)
+   - Base HTML Element Styling
+   - Typography Settings
+   - Link Styling
+   - Image Styling
+
+2. HEADER & NAVIGATION
+   - Header Container
+   - Logo Container
+   - Main Navigation
+   - Navigation Links & Effects
+
+3. HAMBURGER MENU
+   - Mobile Menu Button
+   - Hamburger Animation
+
+4. FOOTER
+   - Footer Container
+   - Footer Sections (Logo, Links, Social, Newsletter)
+   - Footer Headings
+   - Social Icons
+   - Newsletter Form
+   - Footer Copyright
+
+5. HERO BANNER WITH VIDEO
+   - Banner Container
+   - Video Background
+   - Banner Content
+   - Page Title & Subtitle
+
+6. MECHANICS SECTION
+   - Section Container
+   - Carousel Structure
+   - Slides Layout
+   - Navigation Arrows
+   - Pagination Dots
+   - Decorative Elements
+   - Mobile Responsive Design
+*/
+
+/***************************************
 * 1. GLOBAL STYLES & VARIABLES
 ***************************************/
 :root {
-    --primary-color: #e63946;
-    --secondary-color: #1d3557;
-    --accent-color: #ffd700;
-    --text-light: #f1faee;
-    --text-dark: #1d3557;
-    --background-dark: #121212;
-    --background-light: #f1faee;
-    --transition-speed: 0.3s;
+    /* This defines custom properties (variables) to use throughout the stylesheet */
+    --primary-color: #e63946;    /* Red color used for important elements */
+    --secondary-color: #1d3557;  /* Dark blue color used for secondary elements */
+    --accent-color: #ffd700;     /* Gold color used for highlights and accents */
+    --text-light: #f1faee;       /* Light color for text on dark backgrounds */
+    --text-dark: #1d3557;        /* Dark color for text on light backgrounds */
+    --background-dark: #121212;  /* Dark color for backgrounds */
+    --background-light: #f1faee;  /* Light color for backgrounds */
+    --transition-speed: 0.3s;    /* Standard speed for animations/transitions */
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    /* This applies to ALL elements on the page */
+    margin: 0;                  /* Removes default spacing around elements */
+    padding: 0;                 /* Removes default internal spacing in elements */
+    box-sizing: border-box;     /* Makes width/height include padding and borders */
 }
 
 html, body {
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
+    /* These styles apply to the entire webpage */
+    overflow-x: hidden;         /* Prevents horizontal scrolling */
+    width: 100%;                /* Makes elements take up the full width */
+    position: relative;         /* Sets positioning context for child elements */
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text-dark);
-    background-color: #f5f5f5;
-    overflow-x: hidden;
+    /* Styles for the body element */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Sets the text font */
+    line-height: 1.6;           /* Sets the spacing between lines of text */
+    color: var(--text-dark);    /* Sets the text color using the variable */
+    background-color: #f5f5f5;  /* Sets a light gray background */
+    overflow-x: hidden;         /* Prevents horizontal scrolling */
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1rem;
+    /* Styles for all heading elements */
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;  /* Sets a different font for headings */
+    font-weight: 700;           /* Makes headings bold (700 is bold) */
+    line-height: 1.2;           /* Makes lines closer together in headings */
+    margin-bottom: 1rem;        /* Adds space below headings (1rem = 16px typically) */
 }
 
 a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: color var(--transition-speed);
+    /* Styles for all links */
+    text-decoration: none;      /* Removes the underline from links */
+    color: var(--primary-color); /* Sets link color to the primary color */
+    transition: color var(--transition-speed); /* Animates color changes */
 }
 
 a:hover {
-    color: var(--secondary-color);
+    /* Style when hovering over links */
+    color: var(--secondary-color); /* Changes link color on hover */
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+    /* Styles for all images */
+    max-width: 100%;            /* Makes images responsive (never wider than container) */
+    height: auto;               /* Maintains image aspect ratio */
+    display: block;             /* Removes extra space below images */
 }
 
 /***************************************
 * 2. HEADER & NAVIGATION
 ***************************************/
 header {
-    background-color: var(--background-dark);
-    color: var(--text-light);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 5%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    width: 100%;
+    /* Styles for the page header */
+    background-color: var(--background-dark); /* Dark background for header */
+    color: var(--text-light);    /* Light text color for header */
+    position: sticky;            /* Makes header stick to top when scrolling */
+    top: 0;                      /* Positions header at the top of viewport */
+    z-index: 1000;               /* Ensures header appears above other content */
+    display: flex;               /* Uses flexbox layout */
+    justify-content: space-between; /* Spaces items apart horizontally */
+    align-items: center;         /* Centers items vertically */
+    padding: 0.5rem 5%;          /* Adds space inside header (top/bottom, left/right) */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Adds shadow below header */
+    width: 100%;                 /* Makes header full width */
 }
 
 .logo-container {
-    height: 60px;
-    display: flex;
-    align-items: center;
+    /* Container for the logo */
+    height: 60px;                /* Sets height for logo container */
+    display: flex;               /* Uses flexbox layout */
+    align-items: center;         /* Centers logo vertically */
 }
 
 .logo {
-    height: 50px;
-    width: auto;
+    /* Styles for the logo image */
+    height: 50px;                /* Sets logo height */
+    width: auto;                 /* Maintains logo aspect ratio */
 }
 
 #main-nav ul {
-    display: flex;
-    list-style: none;
+    /* Styles for the navigation menu list */
+    display: flex;               /* Makes menu items appear in a row */
+    list-style: none;            /* Removes bullet points from list */
 }
 
 #main-nav li {
-    margin-left: 1.5rem;
+    /* Styles for each navigation menu item */
+    margin-left: 1.5rem;         /* Adds space between menu items */
 }
 
 #main-nav a {
-    color: var(--text-light);
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 4px;
-    transition: all var(--transition-speed);
-    position: relative;
+    /* Styles for navigation links */
+    color: var(--text-light);    /* Sets link color to light text */
+    font-weight: 600;            /* Makes text semi-bold (600 is semi-bold) */
+    font-size: 1.1rem;           /* Sets text size (1.1rem is 10% larger than normal) */
+    padding: 0.5rem 0.75rem;     /* Adds space inside links (top/bottom, left/right) */
+    border-radius: 4px;          /* Rounds corners of links */
+    transition: all var(--transition-speed); /* Animates all property changes */
+    position: relative;          /* Sets positioning context for pseudo-elements */
 }
 
 #main-nav a:hover {
-    color: var(--accent-color);
+    /* Style when hovering over navigation links */
+    color: var(--accent-color);  /* Changes text color on hover */
 }
 
 #main-nav a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--accent-color);
-    transition: width var(--transition-speed);
+    /* Creates a line below each navigation link */
+    content: '';                 /* Required for pseudo-elements */
+    position: absolute;          /* Positions line relative to link */
+    width: 0;                    /* Initially no width (invisible) */
+    height: 3px;                 /* Height of the line */
+    bottom: -5px;                /* Positions line below the link */
+    left: 0;                     /* Aligns line with left edge of link */
+    background-color: var(--accent-color); /* Color of the line */
+    transition: width var(--transition-speed); /* Animates width change */
 }
 
 #main-nav a:hover::after, 
 #main-nav a.active::after {
-    width: 100%;
+    /* Style for line when hovering or active link */
+    width: 100%;                 /* Makes line full width when hovering/active */
 }
 
 /***************************************
 * 3. HAMBURGER MENU
 ***************************************/
 .hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 24px;
-    cursor: pointer;
-    z-index: 1000;
-    margin-left: auto;
+    /* Styles for mobile menu button */
+    display: none;               /* Initially hidden (shows only on mobile) */
+    flex-direction: column;      /* Stacks the hamburger lines vertically */
+    justify-content: space-between; /* Spaces the lines evenly */
+    width: 30px;                 /* Width of hamburger button */
+    height: 24px;                /* Height of hamburger button */
+    cursor: pointer;             /* Shows hand cursor on hover */
+    z-index: 1000;               /* Ensures button appears above other content */
+    margin-left: auto;           /* Pushes button to right side */
 }
 
 .hamburger span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: var(--text-light);
-    border-radius: 2px;
-    transition: all 0.3s ease-in-out;
+    /* Styles for each line in hamburger icon */
+    display: block;              /* Makes each span a block element */
+    width: 100%;                 /* Full width of container */
+    height: 3px;                 /* Height of each line */
+    background-color: var(--text-light); /* Color of the lines */
+    border-radius: 2px;          /* Rounds corners of lines */
+    transition: all 0.3s ease-in-out; /* Animates all property changes */
 }
 
 .hamburger.active span:first-child {
-    transform: rotate(45deg) translate(5px, 8px);
+    /* Rotates top line when menu is active */
+    transform: rotate(45deg) translate(5px, 8px); /* Rotates and moves line */
 }
 
 .hamburger.active span:nth-child(2) {
-    opacity: 0;
+    /* Hides middle line when menu is active */
+    opacity: 0;                  /* Makes line transparent */
 }
 
 .hamburger.active span:last-child {
-    transform: rotate(-45deg) translate(5px, -8px);
+    /* Rotates bottom line when menu is active */
+    transform: rotate(-45deg) translate(5px, -8px); /* Rotates and moves line */
 }
 
 /***************************************
 * 4. FOOTER
 ***************************************/
 footer {
-    background-color: var(--background-dark);
-    color: var(--text-light);
-    padding: 4rem 5% 2rem;
+    /* Styles for page footer */
+    background-color: var(--background-dark); /* Dark background for footer */
+    color: var(--text-light);    /* Light text color for footer */
+    padding: 4rem 5% 2rem;       /* Adds space inside footer (top, sides, bottom) */
 }
 
 .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-bottom: 3rem;
+    /* Container for footer content */
+    display: flex;               /* Uses flexbox layout */
+    flex-wrap: wrap;             /* Allows items to wrap to next line */
+    justify-content: space-between; /* Spaces items apart horizontally */
+    gap: 2rem;                   /* Adds space between footer sections */
+    margin-bottom: 3rem;         /* Adds space below footer content */
 }
 
 .footer-logo {
-    flex: 1 1 250px;
-    max-width: 350px;
+    /* Styles for logo section in footer */
+    flex: 1 1 250px;             /* Flexible width with minimum 250px */
+    max-width: 350px;            /* Maximum width for logo section */
 }
 
 .footer-logo img {
-    height: 60px;
-    width: auto;
-    margin-bottom: 1rem;
-}
-
-.footer-logo p {
-    color: #ccc;
-    margin-top: 1rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    /* Styles for logo image in footer */
+    height: 60px;                /* Sets logo height */
+    width: auto;                 /* Maintains logo aspect ratio */
+    margin-bottom: 1rem;         /* Adds space below logo */
 }
 
 .footer-links, .footer-social, .footer-newsletter {
-    flex: 1 1 200px;
+    /* Styles for footer sections */
+    flex: 1 1 200px;             /* Flexible width with minimum 200px */
 }
 
 .footer-links h4,
 .footer-social h4,
 .footer-newsletter h4 {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-    display: inline-block;
+    /* Styles for headings in footer sections */
+    font-size: 1.2rem;           /* Sets text size */
+    margin-bottom: 1.5rem;       /* Adds space below headings */
+    position: relative;          /* Sets positioning context for pseudo-elements */
+    padding-bottom: 0.5rem;      /* Adds space below text */
+    display: inline-block;       /* Makes element only as wide as content */
 }
 
 .footer-links h4::after,
 .footer-social h4::after,
 .footer-newsletter h4::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0; 
-    bottom: 0;
-    width: 100%; 
-    height: 3px;
-    background-color: var(--primary-color);
+    /* Creates a line below each footer heading */
+    content: '';                 /* Required for pseudo-elements */
+    position: absolute;          /* Positions line relative to heading */
+    left: 0;                     /* Aligns line with left edge of heading */
+    right: 0;                    /* Extends line to right edge of heading */
+    bottom: 0;                   /* Positions line at bottom of heading */
+    width: 100%;                 /* Makes line full width */
+    height: 3px;                 /* Height of the line */
+    background-color: var(--primary-color); /* Color of the line */
 }
 
 .footer-links ul {
-    list-style: none;
+    /* Styles for links list in footer */
+    list-style: none;            /* Removes bullet points from list */
 }
 
 .footer-links li {
-    margin-bottom: 0.75rem;
+    /* Styles for each link item in footer */
+    margin-bottom: 0.75rem;      /* Adds space between links */
 }
 
 .footer-links a {
-    color: #ccc;
-    transition: color var(--transition-speed);
+    /* Styles for footer links */
+    color: #ccc;                 /* Light gray text color */
+    transition: color var(--transition-speed); /* Animates color changes */
 }
 
 .footer-links a:hover {
-    color: var(--accent-color);
+    /* Style when hovering over footer links */
+    color: var(--accent-color);  /* Changes text color on hover */
 }
 
 .social-icons {
-    display: flex;
-    gap: 1rem;
+    /* Container for social media icons */
+    display: flex;               /* Uses flexbox layout */
+    gap: 1rem;                   /* Adds space between icons */
 }
 
 .social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    transition: all var(--transition-speed);
+    /* Styles for each social media icon */
+    display: flex;               /* Uses flexbox layout */
+    align-items: center;         /* Centers icon vertically */
+    justify-content: center;     /* Centers icon horizontally */
+    width: 40px;                 /* Width of icon container */
+    height: 40px;                /* Height of icon container */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly light background */
+    border-radius: 50%;          /* Makes container circular */
+    transition: all var(--transition-speed); /* Animates all property changes */
 }
 
 .social-icon:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-3px);
+    /* Style when hovering over social media icon */
+    background-color: var(--primary-color); /* Changes background color on hover */
+    transform: translateY(-3px); /* Moves icon up slightly on hover */
 }
 
 .social-icon img {
-    width: 20px;
-    height: 20px;
+    /* Styles for social media icon image */
+    width: 20px;                 /* Width of icon */
+    height: 20px;                /* Height of icon */
 }
 
 .footer-newsletter p {
-    color: #ccc;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    /* Styles for paragraph in newsletter section */
+    color: #ccc;                 /* Light gray text color */
+    margin-bottom: 1rem;         /* Adds space below paragraph */
+    font-size: 0.95rem;          /* Slightly smaller text */
+    line-height: 1.5;            /* Sets spacing between lines */
 }
 
 .footer-newsletter form {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    /* Styles for newsletter form */
+    display: flex;               /* Uses flexbox layout */
+    gap: 0.5rem;                 /* Adds space between form elements */
+    flex-wrap: wrap;             /* Allows form elements to wrap */
 }
 
 .footer-newsletter input {
-    flex: 1;
-    min-width: 140px;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
+    /* Styles for newsletter input field */
+    flex: 1;                     /* Makes input take up available space */
+    min-width: 140px;            /* Minimum width for input */
+    padding: 0.75rem;            /* Adds space inside input */
+    border: none;                /* Removes border */
+    border-radius: 4px;          /* Rounds corners */
+    font-size: 1rem;             /* Sets text size */
 }
 
 .footer-newsletter button {
-    padding: 0.75rem 1.5rem;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background-color var(--transition-speed);
+    /* Styles for newsletter submit button */
+    padding: 0.75rem 1.5rem;     /* Adds space inside button (top/bottom, left/right) */
+    background-color: var(--primary-color); /* Button background color */
+    color: white;                /* Button text color */
+    border: none;                /* Removes border */
+    border-radius: 4px;          /* Rounds corners */
+    cursor: pointer;             /* Shows hand cursor on hover */
+    font-size: 1rem;             /* Sets text size */
+    font-weight: 600;            /* Makes text semi-bold */
+    transition: background-color var(--transition-speed); /* Animates color changes */
 }
 
 .footer-newsletter button:hover {
-    background-color: #c62d39;
+    /* Style when hovering over newsletter button */
+    background-color: #c62d39;   /* Darker red color on hover */
 }
 
 .footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.9rem;
-    color: #999;
+    /* Styles for copyright section in footer */
+    text-align: center;          /* Centers text */
+    padding-top: 2rem;           /* Adds space above copyright */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Adds light line above copyright */
+    font-size: 0.9rem;           /* Smaller text size */
+    color: #999;                 /* Gray text color */
 }
 
 /***************************************
 * 5. HERO BANNER WITH VIDEO
 ***************************************/
 .hero-banner {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
+    /* Styles for hero banner section */
+    position: relative;          /* Sets positioning context for child elements */
+    width: 100%;                 /* Makes banner full width */
+    height: 400px;               /* Sets banner height */
+    overflow: hidden;            /* Hides any content that exceeds banner size */
 }
 
 .banner-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
+    /* Styles for background video */
+    position: absolute;          /* Positions video relative to banner */
+    top: 0;                      /* Aligns video with top edge of banner */
+    left: 0;                     /* Aligns video with left edge of banner */
+    width: 100%;                 /* Makes video full width */
+    height: 100%;                /* Makes video full height */
+    object-fit: cover;           /* Makes video cover entire banner area */
+    z-index: 0;                  /* Places video behind other content */
 }
 
 .banner-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.5);
-    color: var(--text-light);
-    padding: 0 5%;
-    text-align: center;
+    /* Styles for content overlay on banner */
+    position: absolute;          /* Positions content relative to banner */
+    top: 0;                      /* Aligns content with top edge of banner */
+    left: 0;                     /* Aligns content with left edge of banner */
+    width: 100%;                 /* Makes content area full width */
+    height: 100%;                /* Makes content area full height */
+    display: flex;               /* Uses flexbox layout */
+    flex-direction: column;      /* Stacks content vertically */
+    justify-content: center;     /* Centers content vertically */
+    align-items: center;         /* Centers content horizontally */
+    z-index: 1;                  /* Places content above video */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+    color: var(--text-light);    /* Light text color */
+    padding: 0 5%;               /* Adds space inside content area (top/bottom, left/right) */
+    text-align: center;          /* Centers text */
 }
 
 .page-title {
-    font-size: 3rem;
-    color: var(--text-light);
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    position: relative;
-    padding-bottom: 0.5rem;
+    /* Styles for main page title */
+    font-size: 3rem;             /* Large text size */
+    color: var(--text-light);    /* Light text color */
+    margin-bottom: 1rem;         /* Adds space below title */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds shadow for readability */
+    position: relative;          /* Sets positioning context for pseudo-elements */
+    padding-bottom: 0.5rem;      /* Adds space below text */
 }
 
 .page-title:after {
-    content: '';
-    position: absolute;
-    width: 100px;
-    height: 4px;
-    background-color: var(--primary-color);
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    /* Creates a line below page title */
+    content: '';                 /* Required for pseudo-elements */
+    position: absolute;          /* Positions line relative to title */
+    width: 100px;                /* Width of the line */
+    height: 4px;                 /* Height of the line */
+    background-color: var(--primary-color); /* Color of the line */
+    bottom: 0;                   /* Positions line at bottom of title */
+    left: 50%;                   /* Positions line at horizontal center */
+    transform: translateX(-50%); /* Centers line exactly */
 }
 
 .page-subtitle {
-    color: var(--text-light);
-    max-width: 800px;
-    margin: 0 auto;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    /* Styles for subtitle below main title */
+    color: var(--text-light);    /* Light text color */
+    max-width: 800px;            /* Maximum width for subtitle */
+    margin: 0 auto;              /* Centers subtitle horizontally */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Adds shadow for readability */
 }
 
 /***************************************
 * 6. MECHANICS SECTION
 ***************************************/
 .mechanics-section {
-    position: relative;
-    width: 100%;
-    background-color: var(--background-dark);
-    padding: 3rem 0;
-    overflow: hidden;
+    /* Styles for mechanics section */
+    position: relative;          /* Sets positioning context for child elements */
+    width: 100%;                 /* Makes section full width */
+    background-color: var(--background-dark); /* Dark background */
+    padding: 3rem 0;             /* Adds space inside section (top/bottom, left/right) */
+    overflow: hidden;            /* Hides any content that exceeds section size */
 }
 
 .mechanics-carousel {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
+    /* Styles for carousel container */
+    width: 100%;                 /* Makes carousel full width */
+    position: relative;          /* Sets positioning context for child elements */
+    overflow: hidden;            /* Hides slides that are outside view */
 }
 
 .carousel-container {
-    display: flex;
-    width: 100%;
-    transition: transform 0.5s ease-in-out;
+    /* Styles for slides container */
+    display: flex;               /* Uses flexbox layout */
+    width: 100%;                 /* Makes container full width */
+    transition: transform 0.5s ease-in-out; /* Animates slide transitions */
 }
 
 .carousel-slide {
-    min-width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding: 0 1rem;
+    /* Styles for each carousel slide */
+    min-width: 100%;             /* Makes slide take up full width */
+    position: relative;          /* Sets positioning context for child elements */
+    display: flex;               /* Uses flexbox layout */
+    flex-direction: column;      /* Stacks content vertically (on mobile) */
+    padding: 0 1rem;             /* Adds space inside slide */
 }
 
 @media (min-width: 768px) {
+    /* Styles for slides on larger screens */
     .carousel-slide {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 5%;
+        flex-direction: row;     /* Arranges content horizontally */
+        align-items: center;     /* Centers content vertically */
+        justify-content: space-between; /* Spaces content apart horizontally */
+        padding: 0 5%;           /* Adds more horizontal padding */
     }
 }
 
 .slide-image {
-    width: 100%;
-    max-width: 650px;
-    margin: 0 auto 2rem;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    /* Styles for slide image container */
+    width: 100%;                 /* Makes image container full width */
+    max-width: 650px;            /* Maximum width for image container */
+    margin: 0 auto 2rem;         /* Centers image and adds space below */
+    border-radius: 8px;          /* Rounds corners */
+    overflow: hidden;            /* Hides parts of image outside container */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adds shadow for depth */
 }
 
 @media (min-width: 768px) {
+    /* Styles for slide image on larger screens */
     .slide-image {
-        width: 55%;
-        margin: 0;
+        width: 55%;              /* Image takes 55% of slide width */
+        margin: 0;               /* Removes margin */
     }
 }
 
 .slide-image img {
-    width: 100%;
-    height: auto;
-    display: block;
+    /* Styles for slide image */
+    width: 100%;                 /* Makes image full width of container */
+    height: auto;                /* Maintains image aspect ratio */
+    display: block;              /* Removes extra space below image */
 }
 
 .slide-content {
-    width: 100%;
-    color: var(--text-light);
-    padding: 0 1rem;
+    /* Styles for slide text content */
+    width: 100%;                 /* Makes content full width */
+    color: var(--text-light);    /* Light text color */
+    padding: 0 1rem;             /* Adds space inside content area */
 }
 
 @media (min-width: 768px) {
+    /* Styles for slide content on larger screens */
     .slide-content {
-        width: 40%;
-        padding: 0;
+        width: 40%;              /* Content takes 40% of slide width */
+        padding: 0;              /* Removes padding */
     }
 }
 
 .slide-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-    border-left: 4px solid var(--accent-color);
-    padding-left: 1rem;
+    /* Styles for slide title */
+    font-size: 2rem;             /* Large text size */
+    margin-bottom: 1rem;         /* Adds space below title */
+    color: var(--primary-color); /* Title color */
+    border-left: 4px solid var(--accent-color); /* Adds vertical line on left */
+    padding-left: 1rem;          /* Adds space between line and text */
 }
 
 .slide-description {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
+    /* Styles for slide description */
+    margin-bottom: 1.5rem;       /* Adds space below description */
+    font-size: 1.1rem;           /* Slightly larger text */
+    line-height: 1.6;            /* Sets spacing between lines */
 }
 
 /* Navigation Arrows */
 .carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s;
+    /* Styles for carousel navigation arrows */
+    position: absolute;          /* Positions arrows relative to carousel */
+    top: 50%;                    /* Positions arrows at vertical center */
+    transform: translateY(-50%); /* Centers arrows exactly */
+    width: 50px;                 /* Width of arrow button */
+    height: 50px;                /* Height of arrow button */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+    border-radius: 50%;          /* Makes button circular */
+    display: flex;               /* Uses flexbox layout */
+    align-items: center;         /* Centers arrow vertically */
+    justify-content: center;     /* Centers arrow horizontally */
+    cursor: pointer;             /* Shows hand cursor on hover */
+    z-index: 10;                 /* Places arrows above slides */
+    transition: all 0.3s;        /* Animates all property changes */
 }
 
 .carousel-arrow:hover {
-    background-color: var(--primary-color);
+    /* Style when hovering over navigation arrows */
+    background-color: var(--primary-color); /* Changes background color on hover */
 }
 
 .carousel-arrow-left {
-    left: 20px;
+    /* Positions left arrow */
+    left: 20px;                  /* Positions arrow from left edge */
 }
 
 .carousel-arrow-right {
-    right: 20px;
+    /* Positions right arrow */
+    right: 20px;                 /* Positions arrow from right edge */
 }
 
 .carousel-arrow svg {
-    width: 24px;
-    height: 24px;
-    fill: white;
+    /* Styles for arrow icon */
+    width: 24px;                 /* Width of arrow icon */
+    height: 24px;                /* Height of arrow icon */
+    fill: white;                 /* White color for arrow icon */
 }
 
 /* Pagination Dots */
 .carousel-pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-    gap: 10px;
+    /* Styles for pagination dots container */
+    display: flex;               /* Uses flexbox layout */
+    justify-content: center;     /* Centers dots horizontally */
+    margin-top: 2rem;            /* Adds space above dots */
+    gap: 10px;                   /* Adds space between dots */
 }
 
 .carousel-dot {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s;
+    /* Styles for each pagination dot */
+    width: 12px;                 /* Width of dot */
+    height: 12px;                /* Height of dot */
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent light color */
+    border-radius: 50%;          /* Makes dot circular */
+    cursor: pointer;             /* Shows hand cursor on hover */
+    transition: all 0.3s;        /* Animates all property changes */
 }
 
 .carousel-dot.active {
-    background-color: var(--accent-color);
-    width: 30px;
-    border-radius: 10px;
+    /* Style for active pagination dot */
+    background-color: var(--accent-color); /* Changes color for active dot */
+    width: 30px;                 /* Makes active dot wider */
+    border-radius: 10px;         /* Rounds corners of active dot */
 }
 
 /* Splash Design Elements */
 .splash-element {
-    position: absolute;
-    z-index: 0;
-    opacity: 0.2;
+    /* Styles for decorative splash elements */
+    position: absolute;          /* Positions splash relative to section */
+    z-index: 0;                  /* Places splash behind other content */
+    opacity: 0.2;                /* Makes splash semi-transparent */
 }
 
 .splash-1 {
-    top: 10%;
-    left: 5%;
-    width: 300px;
-    height: 300px;
-    background-image: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
-    border-radius: 50%;
+    /* Styles for first splash element */
+    top: 10%;                    /* Positions splash from top edge */
+    left: 5%;                    /* Positions splash from left edge */
+    width: 300px;                /* Width of splash */
+    height: 300px;               /* Height of splash */
+    background-image: radial-gradient(circle, var(--primary-color) 0%, transparent 70%); /* Creates circular gradient */
+    border-radius: 50%;          /* Makes splash circular */
 }
 
 .splash-2 {
-    bottom: 10%;
-    right: 5%;
-    width: 400px;
-    height: 400px;
-    background-image: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
-    border-radius: 50%;
+    /* Styles for second splash element */
+    bottom: 10%;                 /* Positions splash from bottom edge */
+    right: 5%;                   /* Positions splash from right edge */
+    width: 400px;                /* Width of splash */
+    height: 400px;               /* Height of splash */
+    background-image: radial-gradient(circle, var(--accent-color) 0%, transparent 70%); /* Creates circular gradient */
+    border-radius: 50%;          /* Makes splash circular */
 }
-
+/* 
+=================================================
+7. RESPONSIVE DESIGN
+=================================================
+*/
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
+    /* Styles for medium-sized screens and smaller */
     .hero-banner {
-        height: 300px;
+        height: 300px;           /* Reduces banner height */
     }
     
     .page-title {
-        font-size: 2.2rem;
+        font-size: 2.2rem;       /* Reduces title size */
     }
     
     .slide-title {
-        font-size: 1.7rem;
+        font-size: 1.7rem;       /* Reduces slide title size */
     }
 
     .slide-description {
-        font-size: 1rem;
+        font-size: 1rem;         /* Reduces slide description size */
     }
 
     .carousel-arrow {
-        width: 40px;
-        height: 40px;
+        width: 40px;             /* Reduces arrow button size */
+        height: 40px;            /* Reduces arrow button size */
     }
 
     .carousel-arrow-left {
-        left: 10px;
+        left: 10px;              /* Adjusts left arrow position */
     }
 
     .carousel-arrow-right {
-        right: 10px;
+        right: 10px;             /* Adjusts right arrow position */
     }
     
     /* Header layout for mobile */
     header {
-        padding: 0.5rem 5%;
+        padding: 0.5rem 5%;      /* Adjusts header padding */
     }
     
     /* Logo container adjustment */
     .logo-container {
-        flex-grow: 1;
+        flex-grow: 1;            /* Makes logo container take up available space */
     }
     
     /* Hamburger menu becomes visible */
     .hamburger {
-        display: flex;
+        display: flex;           /* Shows hamburger menu */
     }
     
     /* Navigation menu styling for mobile */
     #main-nav {
-        position: relative;
+        position: relative;      /* Sets positioning context for menu */
     }
 
     #main-nav ul {
-        position: fixed;
-        top: 70px;
-        right: -100%;
-        background-color: var(--background-dark);
-        flex-direction: column;
-        width: 80%;
-        height: calc(100vh - 70px);
-        padding: 2rem;
-        transition: right var(--transition-speed);
-        z-index: 100;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        position: fixed;         /* Fixes menu to viewport */
+        top: 70px;               /* Positions menu below header */
+        right: -100%;            /* Initially hides menu off-screen */
+        background-color: var(--background-dark); /* Dark background for menu */
+        flex-direction: column;  /* Stacks menu items vertically */
+        width: 80%;              /* Width of menu */
+        height: calc(100vh - 70px); /* Height of menu (full viewport minus header) */
+        padding: 2rem;           /* Adds space inside menu */
+        transition: right var(--transition-speed); /* Animates menu sliding */
+        z-index: 100;            /* Places menu above other content */
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
     }
     
     #main-nav.active ul {
-        right: 0;
+        right: 0;                /* Shows menu when active */
     }
     
     #main-nav li {
-        margin: 1.5rem 0;
-        width: 100%;
-        text-align: left;
+        margin: 1.5rem 0;        /* Adds space between menu items */
+        width: 100%;             /* Makes menu items full width */
+        text-align: left;        /* Aligns text to left */
     }
     
     #main-nav a {
-        display: block;
-        padding: 0.75rem 0;
+        display: block;          /* Makes links block elements */
+        padding: 0.75rem 0;      /* Adds space inside links */
     }
     
     /* Footer adjustments for mobile */
     .footer-content {
-        flex-direction: column;
-        gap: 2rem;
+        flex-direction: column;  /* Stacks footer sections vertically */
+        gap: 2rem;               /* Adds space between footer sections */
     }
-    
-    .footer-logo, .footer-links, .footer-social, .footer-newsletter {
-        width: 100%;
-        max-width: 100%;
+    /* This section controls the footer layout */
+.footer-content {
+    display: flex;            /* Makes elements align in a row instead of stacked */
+    flex-wrap: wrap;          /* Allows elements to wrap to next line when there's not enough space */
+    justify-content: space-between;  /* Spreads out elements evenly with space between them */
+    gap: 2rem;                /* Creates 2rem of space between each footer section */
+    margin-bottom: 3rem;      /* Adds space at the bottom of the footer content */
+}
+
+/* Controls the area with the website logo in the footer */
+.footer-logo {
+    flex: 1 1 250px;          /* Makes this element flexible, with minimum width of 250px */
+    max-width: 350px;         /* Ensures the logo area doesn't get too wide */
+}
+
+/* Styles the actual logo image */
+.footer-logo img {
+    height: 60px;             /* Sets the logo height to 60 pixels */
+    width: auto;              /* Makes width adjust automatically to maintain proportion */
+    margin-bottom: 1rem;      /* Adds space below the logo */
+}
+
+/* Styles the text below the logo */
+.footer-logo p {
+    color: #ccc;              /* Light gray text color */
+    margin-top: 1rem;         /* Adds space above the paragraph */
+    font-size: 0.95rem;       /* Makes text slightly smaller than default */
+    line-height: 1.5;         /* Sets the spacing between lines of text */
+}
+
+/* These three elements share the same basic sizing in the footer */
+.footer-links, .footer-social, .footer-newsletter {
+    flex: 1 1 200px;          /* Makes these elements flexible, with minimum width of 200px */
+}
+
+/* Styles the headings in the footer sections */
+.footer-links h4,
+.footer-social h4,
+.footer-newsletter h4 {
+    font-size: 1.2rem;        /* Makes the heading text slightly larger */
+    margin-bottom: 1.5rem;    /* Adds space below the heading */
+    position: relative;       /* Needed for the underline effect below */
+    padding-bottom: 0.5rem;   /* Adds space inside the element at the bottom */
+    display: inline-block;    /* Makes element only as wide as its content */
+}
+
+/* Creates a colored underline effect for the headings */
+.footer-links h4::after,
+.footer-social h4::after,
+.footer-newsletter h4::after {
+    content: '';              /* Needed for the pseudo-element to appear */
+    position: absolute;       /* Takes this element out of normal document flow */
+    left: 0;                  /* Aligns to the left edge of the parent */
+    right: 0;                 /* Extends to the right edge of the parent */
+    bottom: 0;                /* Places at the bottom of the parent */
+    width: 100%;              /* Makes it full width of the parent element */
+    height: 3px;              /* Makes the line 3 pixels thick */
+    background-color: var(--primary-color);  /* Uses the site's main color from variables */
+}
+
+/* Removes bullet points from the links list */
+.footer-links ul {
+    list-style: none;         /* Removes the default bullets from the list */
+}
+
+/* Controls spacing between footer links */
+.footer-links li {
+    margin-bottom: 0.75rem;   /* Adds space between each list item */
+}
+
+/* Styles the footer links text */
+.footer-links a {
+    color: #ccc;              /* Light gray text color */
+    transition: color var(--transition-speed);  /* Smooth color change on hover */
+}
+
+/* Changes link color when mouse hovers over it */
+.footer-links a:hover {
+    color: var(--accent-color);  /* Changes to the accent color on hover */
+}
+
+/* Layout for social media icons */
+.social-icons {
+    display: flex;            /* Arranges icons in a row */
+    gap: 1rem;                /* Adds space between each icon */
+}
+
+/* Styles each individual social media icon */
+.social-icon {
+    display: flex;            /* Centers the icon inside its circle */
+    align-items: center;      /* Centers vertically */
+    justify-content: center;  /* Centers horizontally */
+    width: 40px;              /* Sets width of the icon container */
+    height: 40px;             /* Sets height of the icon container */
+    background-color: rgba(255, 255, 255, 0.1);  /* Semi-transparent white background */
+    border-radius: 50%;       /* Makes the container a perfect circle */
+    transition: all var(--transition-speed);  /* Smooth transition for hover effects */
+}
+
+/* Changes icon appearance when hovered */
+.social-icon:hover {
+    background-color: var(--primary-color);  /* Changes background to primary color */
+    transform: translateY(-3px);  /* Makes icon move up slightly */
+}
+
+/* Controls the actual image inside the social icon */
+.social-icon img {
+    width: 20px;              /* Sets width of the icon image */
+    height: 20px;             /* Sets height of the icon image */
+}
+
+/* Styles the text in the newsletter section */
+.footer-newsletter p {
+    color: #ccc;              /* Light gray text color */
+    margin-bottom: 1rem;      /* Adds space below the paragraph */
+    font-size: 0.95rem;       /* Makes text slightly smaller than default */
+    line-height: 1.5;         /* Sets the spacing between lines of text */
+}
+
+/* Controls the newsletter signup form layout */
+.footer-newsletter form {
+    display: flex;            /* Places input and button side by side */
+    gap: 0.5rem;              /* Adds space between form elements */
+    flex-wrap: wrap;          /* Allows elements to wrap to next line on small screens */
+}
+
+/* Styles the email input field */
+.footer-newsletter input {
+    flex: 1;                  /* Allows input to expand and fill available space */
+    min-width: 140px;         /* Sets minimum width for the input field */
+    padding: 0.75rem;         /* Adds space inside the input field */
+    border: none;             /* Removes the default border */
+    border-radius: 4px;       /* Rounds the corners */
+    font-size: 1rem;          /* Sets the text size */
+}
+
+/* Styles the submit button */
+.footer-newsletter button {
+    padding: 0.75rem 1.5rem;  /* Adds space inside the button (top/bottom, left/right) */
+    background-color: var(--primary-color);  /* Uses the main site color */
+    color: white;             /* White text */
+    border: none;             /* Removes the default border */
+    border-radius: 4px;       /* Rounds the corners */
+    cursor: pointer;          /* Changes cursor to hand when hovering */
+    font-size: 1rem;          /* Sets the text size */
+    font-weight: 600;         /* Makes text semi-bold */
+    transition: background-color var(--transition-speed);  /* Smooth color change on hover */
+}
+
+/* Changes button color when hovered */
+.footer-newsletter button:hover {
+    background-color: #c62d39;  /* Darkens the button slightly when hovered */
+}
+
+/* Styles the copyright area at the bottom of the footer */
+.footer-bottom {
+    text-align: center;       /* Centers the text */
+    padding-top: 2rem;        /* Adds space above the copyright text */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);  /* Adds a subtle separator line */
+    font-size: 0.9rem;        /* Makes text smaller */
+    color: #999;              /* Medium gray text color */
+}
+
+/***************************************
+* 5. HERO BANNER WITH VIDEO
+***************************************/
+/* Controls the main banner at the top of the page */
+.hero-banner {
+    position: relative;       /* Needed for absolutely positioned elements inside */
+    width: 100%;              /* Makes the banner full width */
+    height: 400px;            /* Sets the banner height */
+    overflow: hidden;         /* Hides anything that goes beyond the boundaries */
+}
+
+/* Styles the video background in the banner */
+.banner-video {
+    position: absolute;       /* Takes the video out of normal document flow */
+    top: 0;                   /* Aligns to the top edge */
+    left: 0;                  /* Aligns to the left edge */
+    width: 100%;              /* Makes the video full width */
+    height: 100%;             /* Makes the video full height */
+    object-fit: cover;        /* Makes video cover the entire area without distortion */
+    z-index: 0;               /* Places video behind other content */
+}
+
+/* Styles the text content area of the banner */
+.banner-content {
+    position: absolute;       /* Takes this content out of normal document flow */
+    top: 0;                   /* Aligns to the top edge */
+    left: 0;                  /* Aligns to the left edge */
+    width: 100%;              /* Makes content area full width */
+    height: 100%;             /* Makes content area full height */
+    display: flex;            /* Uses flexbox for centering */
+    flex-direction: column;   /* Stacks elements vertically */
+    justify-content: center;  /* Centers content vertically */
+    align-items: center;      /* Centers content horizontally */
+    z-index: 1;               /* Places content above the video */
+    background: rgba(0, 0, 0, 0.5);  /* Semi-transparent black overlay */
+    color: var(--text-light); /* Light text color from variables */
+    padding: 0 5%;            /* Adds space on left and right */
+    text-align: center;       /* Centers the text */
+}
+
+/* Styles the main title in the banner */
+.page-title {
+    font-size: 3rem;          /* Makes the title very large */
+    color: var(--text-light); /* Light text color from variables */
+    margin-bottom: 1rem;      /* Adds space below the title */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Adds shadow for better readability */
+    position: relative;       /* Needed for the underline effect below */
+    padding-bottom: 0.5rem;   /* Adds space inside the element at the bottom */
+}
+
+/* Creates the underline effect for the page title */
+.page-title:after {
+    content: '';              /* Needed for the pseudo-element to appear */
+    position: absolute;       /* Takes this element out of normal document flow */
+    width: 100px;             /* Sets width of the underline */
+    height: 4px;              /* Sets height of the underline (thickness) */
+    background-color: var(--primary-color);  /* Uses the main site color */
+    bottom: 0;                /* Places at the bottom of the parent */
+    left: 50%;                /* Centers horizontally */
+    transform: translateX(-50%);  /* Offsets by half its width for perfect centering */
+}
+
+/* Styles the subtitle text in the banner */
+.page-subtitle {
+    color: var(--text-light); /* Light text color from variables */
+    max-width: 800px;         /* Limits how wide the subtitle can get */
+    margin: 0 auto;           /* Centers the subtitle */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);  /* Adds shadow for better readability */
+}
+
+/***************************************
+* 6. MECHANICS SECTION
+***************************************/
+/* Controls the section with the carousel/slider */
+.mechanics-section {
+    position: relative;       /* Needed for absolute positioning inside */
+    width: 100%;              /* Makes section full width */
+    background-color: var(--background-dark);  /* Dark background color from variables */
+    padding: 3rem 0;          /* Adds space above and below the section */
+    overflow: hidden;         /* Hides anything that goes beyond the boundaries */
+}
+
+/* Controls the carousel component */
+.mechanics-carousel {
+    width: 100%;              /* Makes carousel full width */
+    position: relative;       /* Needed for absolute positioning inside */
+    overflow: hidden;         /* Hides slides that are out of view */
+}
+
+/* Styles the container holding all slides */
+.carousel-container {
+    display: flex;            /* Places slides in a row */
+    width: 100%;              /* Makes container full width */
+    transition: transform 0.5s ease-in-out;  /* Smooth sliding animation */
+}
+
+/* Styles each individual slide */
+.carousel-slide {
+    min-width: 100%;          /* Each slide takes up full width of container */
+    position: relative;       /* Allows for positioning elements inside */
+    display: flex;            /* Uses flexbox for layout */
+    flex-direction: column;   /* Stacks content vertically on mobile */
+    padding: 0 1rem;          /* Adds space on left and right */
+}
+
+/* Changes slide layout on larger screens */
+@media (min-width: 768px) {
+    .carousel-slide {
+        flex-direction: row;  /* Places content side by side instead of stacked */
+        align-items: center;  /* Centers items vertically */
+        justify-content: space-between;  /* Spreads out elements with space between */
+        padding: 0 5%;        /* Adds more space on left and right */
     }
 }
 
-@media (max-width: 576px) {
+/* Styles the image container in each slide */
+.slide-image {
+    width: 100%;              /* Makes image container full width on mobile */
+    max-width: 650px;         /* Limits maximum width */
+    margin: 0 auto 2rem;      /* Centers image and adds space below */
+    border-radius: 8px;       /* Rounds the corners */
+    overflow: hidden;         /* Ensures image doesn't spill out of rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);  /* Adds shadow for depth */
+}
+
+/* Changes image layout on larger screens */
+@media (min-width: 768px) {
+    .slide-image {
+        width: 55%;           /* Makes image take up 55% of slide width */
+        margin: 0;            /* Removes the automatic centering */
+    }
+}
+
+/* Styles the actual image inside the container */
+.slide-image img {
+    width: 100%;              /* Makes image fill its container */
+    height: auto;             /* Maintains proper image proportions */
+    display: block;           /* Removes extra space below inline images */
+}
+
+/* Styles the text content area in each slide */
+.slide-content {
+    width: 100%;              /* Makes content area full width on mobile */
+    color: var(--text-light); /* Light text color from variables */
+    padding: 0 1rem;          /* Adds space on left and right */
+}
+
+/* Changes content layout on larger screens */
+@media (min-width: 768px) {
+    .slide-content {
+        width: 40%;           /* Makes content take up 40% of slide width */
+        padding: 0;           /* Removes the extra padding */
+    }
+}
+
+/* Styles the title in each slide */
+.slide-title {
+    font-size: 2rem;          /* Makes the title large */
+    margin-bottom: 1rem;      /* Adds space below the title */
+    color: var(--primary-color);  /* Uses the main site color */
+    border-left: 4px solid var(--accent-color);  /* Adds a colored line on the left */
+    padding-left: 1rem;       /* Adds space between line and text */
+}
+
+/* Styles the description text in each slide */
+.slide-description {
+    margin-bottom: 1.5rem;    /* Adds space below the description */
+    font-size: 1.1rem;        /* Makes text slightly larger than default */
+    line-height: 1.6;         /* Sets the spacing between lines of text */
+}
+
+/* Styles the navigation arrows for the carousel */
+.carousel-arrow {
+    position: absolute;       /* Takes arrows out of normal document flow */
+    top: 50%;                 /* Places arrows halfway down */
+    transform: translateY(-50%);  /* Adjusts for perfect vertical centering */
+    width: 50px;              /* Sets width of the arrow button */
+    height: 50px;             /* Sets height of the arrow button */
+    background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent black background */
+    border-radius: 50%;       /* Makes the button a perfect circle */
+    display: flex;            /* Centers the arrow icon */
+    align-items: center;      /* Centers vertically */
+    justify-content: center;  /* Centers horizontally */
+    cursor: pointer;          /* Changes cursor to hand when hovering */
+    z-index: 10;              /* Places arrows above other content */
+    transition: all 0.3s;     /* Smooth transition for hover effects */
+}
+
+/* Changes arrow appearance when hovered */
+.carousel-arrow:hover {
+    background-color: var(--primary-color);  /* Changes to primary color on hover */
+}
+
+/* Positions the left arrow */
+.carousel-arrow-left {
+    left: 20px;               /* Places the left arrow 20px from the left edge */
+}
+
+/* Positions the right arrow */
+.carousel-arrow-right {
+    right: 20px;              /* Places the right arrow 20px from the right edge */
+}
+
+/* Styles the arrow icon */
+.carousel-arrow svg {
+    width: 24px;              /* Sets width of the arrow icon */
+    height: 24px;             /* Sets height of the arrow icon */
+    fill: white;              /* Makes the icon white */
+}
+
+/* Styles the pagination dots below the carousel */
+.carousel-pagination {
+    display: flex;            /* Places dots in a row */
+    justify-content: center;  /* Centers dots horizontally */
+    margin-top: 2rem;         /* Adds space above the dots */
+    gap: 10px;                /* Adds space between dots */
+}
+
+/* Styles each individual dot */
+.carousel-dot {
+    width: 12px;              /* Sets dot width */
+    height: 12px;             /* Sets dot height */
+    background-color: rgba(255, 255, 255, 0.3);  /* Semi-transparent white */
+    border-radius: 50%;       /* Makes the dot a perfect circle */
+    cursor: pointer;          /* Changes cursor to hand when hovering */
+    transition: all 0.3s;     /* Smooth transition for hover effects */
+}
+
+/* Styles the active dot (current slide) */
+.carousel-dot.active {
+    background-color: var(--accent-color);  /* Changes to accent color */
+    width: 30px;              /* Makes the active dot wider */
+    border-radius: 10px;      /* Adjusts roundness for the wider shape */
+}
+
+/* Decorative background elements */
+.splash-element {
+    position: absolute;       /* Takes elements out of normal document flow */
+    z-index: 0;               /* Places behind other content */
+    opacity: 0.2;             /* Makes very transparent */
+}
+
+/* First decorative splash element */
+.splash-1 {
+    top: 10%;                 /* Places 10% from the top */
+    left: 5%;                 /* Places 5% from the left */
+    width: 300px;             /* Sets width */
+    height: 300px;            /* Sets height */
+    background-image: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);  /* Creates fading circle */
+    border-radius: 50%;       /* Makes it a circle */
+}
+
+/* Second decorative splash element */
+.splash-2 {
+    bottom: 10%;              /* Places 10% from the bottom */
+    right: 5%;                /* Places 5% from the right */
+    width: 400px;             /* Sets width */
+    height: 400px;            /* Sets height */
+    background-image: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);  /* Creates fading circle */
+    border-radius: 50%;       /* Makes it a circle */
+}
+
+/* Mobile Responsive Design */
+/* Adjustments for screens smaller than 768px */
+@media (max-width: 768px) {
     .hero-banner {
-        height: 250px;
+        height: 300px;        /* Reduces banner height on smaller screens */
     }
     
     .page-title {
-        font-size: 1.8rem;
+        font-size: 2.2rem;    /* Reduces title size */
     }
     
     .slide-title {
-        font-size: 1.5rem;
+        font-size: 1.7rem;    /* Reduces slide title size */
+    }
+
+    .slide-description {
+        font-size: 1rem;      /* Reduces description text size */
+    }
+
+    .carousel-arrow {
+        width: 40px;          /* Makes arrows smaller */
+        height: 40px;         /* Makes arrows smaller */
+    }
+
+    .carousel-arrow-left {
+        left: 10px;           /* Moves left arrow closer to edge */
+    }
+
+    .carousel-arrow-right {
+        right: 10px;          /* Moves right arrow closer to edge */
+    }
+    
+    /* Header layout for mobile */
+    header {
+        padding: 0.5rem 5%;   /* Adjusts padding in the header */
+    }
+    
+    /* Logo container adjustment */
+    .logo-container {
+        flex-grow: 1;         /* Allows logo to take up available space */
+    }
+    
+    /* Makes hamburger menu visible on mobile */
+    .hamburger {
+        display: flex;        /* Shows the hamburger menu icon */
+    }
+    
+    /* Navigation menu styling for mobile */
+    #main-nav {
+        position: relative;   /* Sets positioning context for the menu */
+    }
+
+    /* Styles the mobile menu dropdown */
+    #main-nav ul {
+        position: fixed;      /* Fixes the menu in place when open */
+        top: 70px;            /* Places menu below the header */
+        right: -100%;         /* Hides menu off-screen to the right */
+        background-color: var(--background-dark);  /* Dark background */
+        flex-direction: column;  /* Stacks menu items vertically */
+        width: 80%;           /* Makes menu take up 80% of screen width */
+        height: calc(100vh - 70px);  /* Makes menu fill the viewport height minus header */
+        padding: 2rem;        /* Adds space inside the menu */
+        transition: right var(--transition-speed);  /* Smooth animation when opening/closing */
+        z-index: 100;         /* Places menu above other content */
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);  /* Adds shadow for depth */
+    }
+    
+    /* Shows the menu when active class is applied */
+    #main-nav.active ul {
+        right: 0;             /* Slides menu in from the right */
+    }
+    
+    /* Styles each menu item */
+    #main-nav li {
+        margin: 1.5rem 0;     /* Adds space above and below each menu item */
+        width: 100%;          /* Makes menu items full width */
+        text-align: left;     /* Aligns text to the left */
+    }
+    
+    /* Styles menu links */
+    #main-nav a {
+        display: block;       /* Makes link fill its container */
+        padding: 0.75rem 0;   /* Adds space above and below the link text */
+    }
+    
+    /* Footer adjustments for mobile */
+    .footer-content {
+        flex-direction: column;  /* Stacks footer sections vertically */
+        gap: 2rem;            /* Adds space between footer sections */
+    }
+    
+    /* Makes footer sections full width on mobile */
+    .footer-logo, .footer-links, .footer-social, .footer-newsletter {
+        width: 100%;          /* Full width */
+        max-width: 100%;      /* No maximum width */
+    }
+}
+
+/* Adjustments for very small screens (smaller than 576px) */
+@media (max-width: 576px) {
+    .hero-banner {
+        height: 250px;        /* Further reduces banner height */
+    }
+    
+    .page-title {
+        font-size: 1.8rem;    /* Further reduces title size */
+    }
+    
+    .slide-title {
+        font-size: 1.5rem;    /* Further reduces slide title size */
     }
 
     .carousel-pagination {
-        margin-top: 1.5rem;
+        margin-top: 1.5rem;   /* Reduces space above pagination dots */
     }
 
     .carousel-dot {
-        width: 10px;
-        height: 10px;
+        width: 10px;          /* Makes dots smaller */
+        height: 10px;         /* Makes dots smaller */
     }
 
     .carousel-dot.active {
-        width: 25px;
+        width: 25px;          /* Makes active dot smaller */
     }
     
-    /* Fix newsletter form on smallest screens */
+    /* Adjusts newsletter form layout on smallest screens */
     .footer-newsletter form {
-        flex-direction: column;
+        flex-direction: column;  /* Stacks input and button vertically */
     }
     
+    /* Makes input fill width */
     .footer-newsletter input {
-        width: 100%;
-        max-width: 100%;
+        width: 100%;          /* Full width */
+        max-width: 100%;      /* No maximum width */
     }
     
+    /* Makes button fill width */
     .footer-newsletter button {
-        width: 100%;
-        margin-top: 0.5rem;
+        width: 100%;          /* Full width */
+        margin-top: 0.5rem;   /* Adds space above the button */
     }
-}
+}}
