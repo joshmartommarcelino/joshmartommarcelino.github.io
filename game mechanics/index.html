@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Sets the character encoding and viewport settings for responsiveness -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title shown in the browser tab -->
     <title>Guilty Gear - Game Mechanics</title>
+
+    <!-- Website icon (favicon) -->
     <link rel="icon" type="image/x-icon" href="/images/LOGO.png">
+
+    <!-- Link to external CSS file for styling -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Link to JavaScript file, loaded after HTML parsing -->
     <script src="index.js" defer></script>
 </head>
 <body>
+    <!-- Top section of the page with logo and navigation menu -->
     <header>
         <div class="logo-container">
+            <!-- Game logo image -->
             <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo" class="logo">
         </div>
         
+        <!-- Hamburger menu icon for mobile navigation -->
         <div id="menu-toggle" class="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
 
+        <!-- Main navigation links -->
         <nav id="main-nav">
             <ul>
                 <li><a href="/index.html">Home</a></li>
@@ -31,11 +44,13 @@
         </nav>
     </header>
 
+    <!-- Main content of the page -->
     <main>
+        <!-- Hero banner with video and intro text -->
         <div class="hero-banner">
             <video autoplay muted loop id="mechanics-video" class="banner-video">
                 <source src="/videos/VIDEO_5.mp4" type="video/mp4">
-                <!-- Fallback image if video doesn't load -->
+                <!-- Fallback image in case video doesn’t play -->
                 <img src="/images/banner.png" alt="Game Mechanics Banner">
             </video>
             <div class="banner-content">
@@ -44,88 +59,90 @@
             </div>
         </div>
 
+        <!-- Section for listing and explaining game mechanics -->
         <section class="mechanics-section">
-            <!-- Decorative splash elements -->
+            <!-- Decorative elements -->
             <div class="splash-element splash-1"></div>
             <div class="splash-element splash-2"></div>
 
-            <!-- Carousel Component -->
+            <!-- Carousel that displays each mechanic -->
             <div class="mechanics-carousel">
                 <div class="carousel-container">
-                    <!-- Wall Break Slide -->
+
+                    <!-- Individual slide for Wall Break mechanic -->
                     <div class="carousel-slide">
                         <div class="slide-image">
                             <img src="/images/IMAGE_102.png" alt="Wall Break Mechanic">
                         </div>
                         <div class="slide-content">
                             <h2 class="slide-title">Wall Break</h2>
-                            <p class="slide-description">Once you've got the opponent cornered, landing more attacks will break the stage wall, sending the opponent flying to the next area in a thrilling cinematic.</p>
-                            <p class="slide-description">In addition to dealing extra damage, Wall Break grants your character temporary buffs, such as added attack power.</p>
+                            <p class="slide-description">Break the stage wall by cornering your opponent and landing attacks. This causes a cinematic transition and extra damage.</p>
+                            <p class="slide-description">It also gives your character temporary buffs like more attack power.</p>
                         </div>
                     </div>
 
-                    <!-- Roman Cancel Slide -->
+                    <!-- Slide for Roman Cancel mechanic -->
                     <div class="carousel-slide">
                         <div class="slide-image">
                             <img src="/images/IMAGE_103.png" alt="Roman Cancel Mechanic">
                         </div>
                         <div class="slide-content">
                             <h2 class="slide-title">Roman Cancel</h2>
-                            <p class="slide-description">Roman Cancel sends out a shockwave that slows down time for the opponent on hit. Use it while on offense to overwhelm your opponent's defenses.</p>
-                            <p class="slide-description">You can also use it to cancel and extend your combos, opening up further depth to the game's combat system.</p>
+                            <p class="slide-description">Slows down the opponent or cancels your move, letting you continue your combo or confuse your enemy.</p>
+                            <p class="slide-description">Useful for both attack and defense strategies.</p>
                         </div>
                     </div>
 
-                    <!-- Burst Slide -->
+                    <!-- Slide for Burst mechanic -->
                     <div class="carousel-slide">
                         <div class="slide-image">
                             <img src="/images/IMAGE_104.png" alt="Burst Mechanic">
                         </div>
                         <div class="slide-content">
                             <h2 class="slide-title">Burst</h2>
-                            <p class="slide-description">Burst is your emergency escape option, activated at the cost of half of the Burst gauge. It can break you free from combos and create distance.</p>
-                            <p class="slide-description">When used strategically, Burst can completely turn the tide of battle and give you a second chance when cornered.</p>
+                            <p class="slide-description">A special escape move that uses part of your Burst gauge. It can stop combos and push your enemy away.</p>
+                            <p class="slide-description">Use it wisely to get out of tough situations.</p>
                         </div>
                     </div>
 
-                    <!-- Tension Gauge Slide -->
+                    <!-- Slide for Tension Gauge mechanic -->
                     <div class="carousel-slide">
                         <div class="slide-image">
                             <img src="/images/IMAGE_105.png" alt="Tension Gauge Mechanic">
                         </div>
                         <div class="slide-content">
                             <h2 class="slide-title">Tension Gauge</h2>
-                            <p class="slide-description">The Tension Gauge fills as you move forward, attack, or defend against opponent's moves. Use this meter to perform Overdrives, Roman Cancels, and other powerful techniques.</p>
-                            <p class="slide-description">Managing your Tension Gauge efficiently is key to victory in high-level play.</p>
+                            <p class="slide-description">This meter fills up as you move and fight. Use it for powerful moves like Roman Cancels and Overdrives.</p>
+                            <p class="slide-description">Managing it well is key to winning tough matches.</p>
                         </div>
                     </div>
 
-                    <!-- Overdrive Slide -->
+                    <!-- Slide for Overdrive mechanic -->
                     <div class="carousel-slide">
                         <div class="slide-image">
                             <img src="/images/IMAGE_106.png" alt="Overdrive Mechanic">
                         </div>
                         <div class="slide-content">
                             <h2 class="slide-title">Overdrive</h2>
-                            <p class="slide-description">Overdrives are character-specific super moves that consume 50% of your Tension Gauge. These flashy, powerful attacks can deal massive damage.</p>
-                            <p class="slide-description">Each character has unique Overdrives that showcase their personality and fighting style, serving as both tactical options and spectacular finishers.</p>
+                            <p class="slide-description">Super moves that take half your Tension Gauge. Each character has their own unique Overdrive.</p>
+                            <p class="slide-description">These attacks are flashy and powerful, perfect for finishing off an opponent.</p>
                         </div>
                     </div>
 
-                    <!-- Faultless Defense Slide -->
+                    <!-- Slide for Faultless Defense mechanic -->
                     <div class="carousel-slide">
                         <div class="slide-image">
                             <img src="/images/IMAGE_107.png" alt="Faultless Defense Mechanic">
                         </div>
                         <div class="slide-content">
                             <h2 class="slide-title">Faultless Defense</h2>
-                            <p class="slide-description">By holding two defense buttons while blocking, you can activate Faultless Defense which creates more pushback and prevents chip damage.</p>
-                            <p class="slide-description">This defensive technique consumes Tension but can be essential for surviving pressure and creating space.</p>
+                            <p class="slide-description">Hold two defense buttons to activate. This pushes the opponent away and blocks chip damage.</p>
+                            <p class="slide-description">It costs Tension but can help you stay safe during pressure.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Navigation Arrows -->
+                <!-- Buttons to scroll left or right in the carousel -->
                 <div class="carousel-arrow carousel-arrow-left">
                     <svg viewBox="0 0 24 24">
                         <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
@@ -137,18 +154,22 @@
                     </svg>
                 </div>
 
-                <!-- Pagination Dots -->
+                <!-- Dots to show which slide is active -->
                 <div class="carousel-pagination"></div>
             </div>
         </section>
     </main>
 
+    <!-- Bottom part of the website with links and extra info -->
     <footer>
         <div class="footer-content">
+            <!-- Logo and description -->
             <div class="footer-logo">
                 <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo">
                 <p>Guilty Gear Strive - The most accessible yet technically deep fighting game in the series.</p>
             </div>
+
+            <!-- Quick links to other pages -->
             <div class="footer-links">
                 <h4>Quick Links</h4>
                 <ul>
@@ -159,6 +180,8 @@
                     <li><a href="/news/index.html">News</a></li>
                 </ul>
             </div>
+
+            <!-- Social media links -->
             <div class="footer-social">
                 <h4>Follow Guilty Gear</h4>
                 <div class="social-icons">
@@ -176,6 +199,8 @@
                     </a>
                 </div>
             </div>
+
+            <!-- Newsletter subscription form -->
             <div class="footer-newsletter">
                 <h4>Stay Updated</h4>
                 <p>Subscribe to our newsletter for the latest Guilty Gear news, tournaments, and character updates.</p>
@@ -185,6 +210,8 @@
                 </form>
             </div>
         </div>
+
+        <!-- Bottom note -->
         <div class="footer-bottom">
             <p>&copy; 2025 Guilty Gear Fan Site. This is a student project. All game content belongs to Arc System Works.</p>
         </div>

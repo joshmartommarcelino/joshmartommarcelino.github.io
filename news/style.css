@@ -158,7 +158,7 @@ header {
     overflow: hidden;
 }
 
-.banner-video {
+.banner-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -263,6 +263,14 @@ header {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
+.news-card.hidden {
+    display: none;
+}
+
+.news-card.visible {
+    display: block;
+}
+
 .news-image {
     height: 200px;
     overflow: hidden;
@@ -337,6 +345,7 @@ header {
     display: flex;
     justify-content: center;
     margin-top: 3rem;
+    margin-bottom: 3rem;
     gap: 0.5rem;
 }
 
@@ -363,6 +372,16 @@ header {
     width: auto;
     padding: 0 1rem;
     border-radius: 20px;
+}
+
+.page-btn.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.page-btn.disabled:hover {
+    background-color: white;
+    color: var(--text-dark);
 }
 
 /* FOOTER */

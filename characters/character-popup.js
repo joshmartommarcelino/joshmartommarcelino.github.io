@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
             commandList: '/images/IMAGE_101.png'
         },
     };
-
+    // Get elements from the HTML
     // DOM Elements
     const characterCards = document.querySelectorAll('.character-card');
     const popupOverlay = document.getElementById('character-popup-overlay');
@@ -264,12 +264,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const commandListClose = document.getElementById('command-list-close');
     const backToCharacterBtn = document.getElementById('back-to-character');
 
-    // Current character data
+    // This will hold the current character being viewed
     let currentCharacter = null;
 
-    // Function to open character popup
+    // Show the character pop-up with the character's info
     function openCharacterPopup(characterName) {
-        // Get character data
+        // Get the character info, or use a default if not found
         const character = characterData[characterName] || {
             name: characterName,
             sprite: '/images/placeholder.png',
@@ -281,92 +281,95 @@ document.addEventListener('DOMContentLoaded', () => {
 
         currentCharacter = character;
 
-        // Populate popup with character data
+        // Fill in all the pop-up content with the character's data
         popupCharacterName.textContent = character.name;
         popupSprite.src = character.sprite;
         popupSprite.alt = character.name;
-        
-        // Set the battle type
+
+        // Format and show the battle type
         popupType.textContent = character.type.charAt(0).toUpperCase() + character.type.slice(1);
         popupType.className = 'character-type-badge ' + character.type;
-        
-        // Set ease of use stars
+
+        // Fill in stars based on ease of use
         const stars = popupEase.querySelectorAll('.star');
         stars.forEach((star, index) => {
             if (index < character.ease) {
-                star.classList.add('filled');
+                star.classList.add('filled'); // show filled star
             } else {
-                star.classList.remove('filled');
+                star.classList.remove('filled'); // show empty star
             }
         });
-        
+
+        // Show description text
         popupDescription.textContent = character.description;
-        
-        // Show popup with animation
+
+        // Show the pop-up on screen
         popupOverlay.classList.add('active');
-        
-        // Prevent body scrolling
+
+        // Stop the background from scrolling
         document.body.style.overflow = 'hidden';
     }
 
-    // Function to close character popup
+    // Close the character pop-up and reset scroll
     function closeCharacterPopup() {
         popupOverlay.classList.remove('active');
         document.body.style.overflow = '';
     }
 
-    // Function to open command list
+    // Open the character's command list
     function openCommandList() {
         if (!currentCharacter) return;
-        
+
+        // Fill in the modal with the right content
         commandListTitle.textContent = `${currentCharacter.name} - COMMAND LIST`;
         commandListImg.src = currentCharacter.commandList;
         commandListImg.alt = `${currentCharacter.name} Command List`;
-        
+
+        // Show the modal
         commandListOverlay.classList.add('active');
     }
 
-    // Function to close command list
+    // Close the command list modal
     function closeCommandList() {
         commandListOverlay.classList.remove('active');
     }
 
-    // Add click event to all character cards
+    // When a character card is clicked, open the pop-up
     characterCards.forEach(card => {
         card.addEventListener('click', (e) => {
             const characterName = card.querySelector('.character-name').textContent;
             openCharacterPopup(characterName);
-            e.stopPropagation(); // Prevent event bubbling
+            e.stopPropagation(); // stop the click from triggering other events
         });
     });
 
-    // Close popup when clicking the close button
+    // Click on (X) to close pop-up
     popupClose.addEventListener('click', closeCharacterPopup);
 
-    // Close popup when clicking outside
+    // Click outside the pop-up to close it
     popupOverlay.addEventListener('click', (e) => {
         if (e.target === popupOverlay) {
             closeCharacterPopup();
         }
     });
 
-    // Open command list when clicking the button
+    // Open command list when button is clicked
     commandListBtn.addEventListener('click', openCommandList);
 
-    // Close command list when clicking the close button
+    // Click on (X) in command list to close it
     commandListClose.addEventListener('click', closeCommandList);
 
-    // Back to character view from command list
+    // Click "back" to return to character info
     backToCharacterBtn.addEventListener('click', closeCommandList);
 
-    // Close command list when clicking outside
+    // Click outside the command list box to close it
     commandListOverlay.addEventListener('click', (e) => {
         if (e.target === commandListOverlay) {
             closeCommandList();
         }
     });
 
-    // Close popups with Escape key
+    // Pressing Escape closes either pop-up if it's open
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             if (commandListOverlay.classList.contains('active')) {

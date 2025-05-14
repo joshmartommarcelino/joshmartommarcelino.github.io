@@ -1,134 +1,142 @@
- // DOM Elements
-        const menuToggle = document.getElementById('menu-toggle');
-        const mainNav = document.getElementById('main-nav');
-        const newsletterForm = document.getElementById('newsletter-form');
-        const carouselContainer = document.querySelector('.carousel-container');
-        const carouselSlides = document.querySelectorAll('.carousel-slide');
-        const prevButton = document.querySelector('.carousel-arrow-left');
-        const nextButton = document.querySelector('.carousel-arrow-right');
-        const pagination = document.querySelector('.carousel-pagination');
+// Get references to important HTML elements
+const menuToggle = document.getElementById('menu-toggle'); // Hamburger menu button
+const mainNav = document.getElementById('main-nav'); // Navigation menu
+const newsletterForm = document.getElementById('newsletter-form'); // Newsletter form
+const carouselContainer = document.querySelector('.carousel-container'); // Carousel slides wrapper
+const carouselSlides = document.querySelectorAll('.carousel-slide'); // All individual slides
+const prevButton = document.querySelector('.carousel-arrow-left'); // Left arrow button
+const nextButton = document.querySelector('.carousel-arrow-right'); // Right arrow button
+const pagination = document.querySelector('.carousel-pagination'); // Dot indicators
 
-        // Carousel Variables
-        let currentSlide = 0;
-        const slideCount = carouselSlides.length;
+// Keep track of which slide is showing
+let currentSlide = 0;
+const slideCount = carouselSlides.length;
 
-        // Initialize Carousel
-        function initCarousel() {
-            // Create pagination dots
-            for (let i = 0; i < slideCount; i++) {
-                const dot = document.createElement('div');
-                dot.classList.add('carousel-dot');
-                if (i === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => goToSlide(i));
-                pagination.appendChild(dot);
-            }
+// Set up the carousel when the page loads
+function initCarousel() {
+    // Create a dot for each slide and make the first one active
+    for (let i = 0; i < slideCount; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('carousel-dot');
+        if (i === 0) dot.classList.add('active'); // First dot starts active
+        dot.addEventListener('click', () => goToSlide(i)); // Go to slide when dot is clicked
+        pagination.appendChild(dot); // Add dot to the page
+    }
 
-            // Add event listeners to buttons
-            prevButton.addEventListener('click', prevSlide);
-            nextButton.addEventListener('click', nextSlide);
+    // Add click events to arrow buttons
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
 
-            // Auto-advance carousel every 5 seconds
-            const autoAdvance = setInterval(nextSlide, 5000);
+    // Automatically change slides every 5 seconds
+    const autoAdvance = setInterval(nextSlide, 5000);
 
-            // Pause auto-advance when interacting with carousel
-            const carouselElements = [carouselContainer, prevButton, nextButton, pagination];
-            carouselElements.forEach(element => {
-                element.addEventListener('mouseenter', () => clearInterval(autoAdvance));
-                element.addEventListener('mouseleave', () => setInterval(nextSlide, 5000));
-            });
+    // Stop auto-advance when the user hovers over the carousel
+    const carouselElements = [carouselContainer, prevButton, nextButton, pagination];
+    carouselElements.forEach(element => {
+        element.addEventListener('mouseenter', () => clearInterval(autoAdvance));
+        element.addEventListener('mouseleave', () => setInterval(nextSlide, 5000));
+    });
 
-            // Add touch swipe support
-            let touchStartX = 0;
-            let touchEndX = 0;
+    // Enable swipe on touch screens (mobile)
+    let touchStartX = 0;
+    let touchEndX = 0;
 
-            carouselContainer.addEventListener('touchstart', e => {
-                touchStartX = e.changedTouches[0].screenX;
-            });
+    // Store where the user starts touching
+    carouselContainer.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
 
-            carouselContainer.addEventListener('touchend', e => {
-                touchEndX = e.changedTouches[0].screenX;
-                if (touchStartX - touchEndX > 50) {
-                    nextSlide();
-                } else if (touchEndX - touchStartX > 50) {
-                    prevSlide();
-                }
-            });
+    // Detect where the user ends the swipe
+    carouselContainer.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+
+        // Swipe left to go to the next slide
+        if (touchStartX - touchEndX > 50) {
+            nextSlide();
         }
-
-        // Go to specific slide
-        function goToSlide(slideIndex) {
-            currentSlide = slideIndex;
-            updateCarousel();
+        // Swipe right to go to the previous slide
+        else if (touchEndX - touchStartX > 50) {
+            prevSlide();
         }
+    });
+}
 
-        // Move to previous slide
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slideCount) % slideCount;
-            updateCarousel();
-        }
+// Change to a specific slide
+function goToSlide(slideIndex) {
+    currentSlide = slideIndex;
+    updateCarousel();
+}
 
-        // Move to next slide
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slideCount;
-            updateCarousel();
-        }
+// Show the previous slide
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+    updateCarousel();
+}
 
-        // Update carousel position and active indicators
-        function updateCarousel() {
-            // Update slider position
-            carouselContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
-            // Update active dot
-            const dots = document.querySelectorAll('.carousel-dot');
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
-            });
-        }
+// Show the next slide
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slideCount;
+    updateCarousel();
+}
 
-        // Document ready function
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize carousel
-            initCarousel();
+// Update the position of the carousel and which dot is active
+function updateCarousel() {
+    // Move the slide container to show the current slide
+    carouselContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-            // Mobile Menu Toggle
-            if (menuToggle) {
-                menuToggle.addEventListener('click', function() {
-                    // Toggle active class on both the nav and the hamburger itself
-                    mainNav.classList.toggle('active');
-                    menuToggle.classList.toggle('active');
-                });
-                
-                // Close menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    const isClickInsideNav = mainNav.contains(event.target);
-                    const isClickOnHamburger = menuToggle.contains(event.target);
-                    
-                    if (!isClickInsideNav && !isClickOnHamburger && mainNav.classList.contains('active')) {
-                        mainNav.classList.remove('active');
-                        menuToggle.classList.remove('active');
-                    }
-                });
-                
-                // Close menu when clicking on a nav link (better mobile UX)
-                const navLinks = document.querySelectorAll('nav a');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        mainNav.classList.remove('active');
-                        menuToggle.classList.remove('active');
-                    });
-                });
-            }
+    // Update the dots to show which slide is active
+    const dots = document.querySelectorAll('.carousel-dot');
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+    });
+}
 
-            // Newsletter Form Submission
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const email = newsletterForm.querySelector('input[type="email"]').value;
-                    
-                    // In a real implementation, this would send the email to a server
-                    // For now, we'll just show an alert
-                    alert(`Thank you for subscribing with ${email}! You'll receive Guilty Gear updates soon.`);
-                    newsletterForm.reset();
-                });
+// Run this code when the web page has finished loading
+document.addEventListener('DOMContentLoaded', function() {
+    // Set up the carousel
+    initCarousel();
+
+    // Handle mobile menu button clicks
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            // Toggle the menu open or closed
+            mainNav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Close the menu if the user clicks outside of it
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = mainNav.contains(event.target);
+            const isClickOnHamburger = menuToggle.contains(event.target);
+
+            if (!isClickInsideNav && !isClickOnHamburger && mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                menuToggle.classList.remove('active');
             }
         });
+
+        // Close the menu when a link is clicked (for better experience on phones)
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mainNav.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+    }
+
+    // Handle newsletter form submission
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Stop the page from refreshing
+            const email = newsletterForm.querySelector('input[type="email"]').value;
+
+            // In a real website, this email would be sent to a server
+            // For now, just show a thank-you message
+            alert(`Thank you for subscribing with ${email}! You'll receive Guilty Gear updates soon.`);
+
+            // Clear the form after submission
+            newsletterForm.reset();
+        });
+    }
+});
