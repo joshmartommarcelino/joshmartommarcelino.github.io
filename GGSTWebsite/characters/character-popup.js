@@ -242,6 +242,14 @@ document.addEventListener('DOMContentLoaded', () => {
             description: " Unrelenting Pursuer in the Dark of Night Deep Purple Billiard Phantom He is a gentle and honest man who can barely bring himself to lie. There is a rigidity to his speech that suggests he favors reason above all else, but in fact, he places high importance on emotion, empathy, and humility. During the battle with Bedman, the leader of the Assassin’s Guild Venom dies–to the outside world, at least. After Robo-Ky saves his life, he attempts to fund his repairs by taking any work he can get, until Zato gifts him ownership of the store where he opens his bakery. Through his new life as a baker, Venom learns of a new and unfamiliar “battle.” He grows fond of the townspeople who fight not to take the lives of others but for their own pride, and swears to protect their “battlefield.” And so begins his new battle: baker by day, mysterious punisher “Phantom” by night.",
             commandList: '/images/IMAGE_101.png'
         },
+        'UNIKA': {
+            name: 'UNIKA',
+            sprite: '/images/IMAGE_124.png',
+            type: 'balance',
+            ease: 5,
+            description: " Untarnished resounding thunderclap Trick weapon wielding super rookie A girl from the future after the destruction of the Second Crusades. Daughter of Ky and Dizzy, she inherits Gear blood like her brother Sin. In the ruined future, Nerville discovers her while still inside her egg and raises her to faithfully follow his orders. She travels to the past from the future where mankind is on the brink of extinction, convinced by Nerville that this is how to save the world, and engages Sol and the others in combat. Her feelings begin to waver after meeting Sin and Bridget, leading to her parting ways with Nerville. She teams up with Sin and the others to thwart Nerville’s attempted invasion. Aware that her origins left her unfamiliar with the world and humanity, Unika sets off on a journey under supervision of the United States. Through her many encounters with others during her travels, she learns of peace and herself. She decides to use her power to ensure people like her future self do not come to be. After a long journey, she refuses the offer to stay with her family in Vialattea and instead ends up working as Presidential Bodyguard Trainee. She is allowed to handle missions on her own, although the United States constantly tracks her using magic",
+            commandList: '/images/IMAGE_125.png'
+        },
     };
     // Get elements from the HTML
     // DOM Elements
