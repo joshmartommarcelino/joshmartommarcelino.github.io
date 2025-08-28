@@ -1,966 +1,378 @@
-/***************************************
- * TABLE OF CONTENTS
- * 1. Global Styles & Variables
- * 2. Base Element Styling
- * 3. Layout & Container
- * 4. Header & Navigation
- * 5. Hamburger Menu
- * 6. Hero Section
- * 7. Game Highlights Section
- * 8. Latest Release Section
- * 9. News Section
- * 10. Footer
- * 11. Responsive Design
- ***************************************/
-
-/***************************************
- * 1. GLOBAL STYLES & VARIABLES
- * This section contains color and general styling variables that are used throughout the site
- ***************************************/
 :root {
-    /* Define colors as variables so they can be reused consistently throughout the website */
-    --primary-color: #e63946;    /* Bright red color for important elements */
-    --secondary-color: #1d3557;  /* Dark blue color for backgrounds and text */
-    --accent-color: #ffd700;     /* Gold/yellow color for highlights and accents */
-    --text-light: #f1faee;       /* Light color for text on dark backgrounds */
-    --text-dark: #1d3557;        /* Dark color for text on light backgrounds */
-    --background-dark: #121212;  /* Very dark color for backgrounds like header and footer */
-    --background-light: #f1faee;  /* Light color for section backgrounds */
-    --transition-speed: 0.3s;    /* Standard time for animations/transitions */
+    --primary-blue: #1e3a8a;
+    --secondary-blue: #3b82f6;
+    --accent-blue: #60a5fa;
+    --light-blue: #dbeafe;
+    --dark-blue: #1e40af;
+    --minecraft-font: 'Orbitron', monospace;
+    --body-font: 'Rajdhani', sans-serif;
 }
 
 * {
-    /* Reset default browser styles to ensure consistency across browsers */
-    margin: 0;                  /* Remove default margin from all elements */
-    padding: 0;                 /* Remove default padding from all elements */
-    box-sizing: border-box;     /* Include padding and borders in element width calculations */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/***************************************
- * 2. BASE ELEMENT STYLING
- * This section styles the basic HTML elements like body, headings, links, and images
- ***************************************/
-html, body {
-    /* Prevent horizontal scrolling and ensure the website takes up full width */
-    overflow-x: hidden;         /* Hide horizontal scroll bar */
-    width: 100%;                /* Make sure the body takes up 100% of the viewport width */
-    position: relative;         /* Set positioning context for absolute positioned children */
-}
 body {
-    /* Basic styling for the entire website */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Define the main font for text */
-    line-height: 1.6;          /* Sets the space between lines of text (1.6 times the font size) */
-    color: var(--text-dark);   /* Sets the default text color using the variable we defined above */
-    background-color: #f5f5f5; /* Sets a light gray background color for the page */
-    overflow-x: hidden;        /* Prevents horizontal scrolling */
+    font-family: var(--body-font);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    /* Styling for all heading elements */
-    font-family: 'Rajdhani', 'Segoe UI', sans-serif;  /* Special font for headings */
-    font-weight: 700;          /* Makes the text bold (700 is bold, 400 is normal) */
-    line-height: 1.2;          /* Slightly tighter line spacing for headings */
-    margin-bottom: 1rem;       /* Space below each heading (1rem = 16px by default) */
+/* Animated Background */
+.bg-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(96, 165, 250, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(30, 58, 138, 0.1) 0%, transparent 50%);
+    animation: float 20s ease-in-out infinite;
 }
 
-a {
-    /* Styling for all hyperlinks */
-    text-decoration: none;     /* Removes the default underline from links */
-    color: var(--primary-color); /* Uses the red color for links */
-    transition: color var(--transition-speed); /* Smooth color change when hovering */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
 }
 
-a:hover {
-    /* Style for links when the mouse hovers over them */
-    color: var(--secondary-color); /* Changes link color on hover to dark blue */
+/* Navigation */
+.navbar {
+    background: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--secondary-blue);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
 }
 
-img {
-    /* Default styling for all images */
-    max-width: 100%;          /* Makes sure images don't overflow their containers */
-    height: auto;             /* Maintains the image's aspect ratio when resizing */
-    display: block;           /* Makes images behave as block elements (takes up full width) */
+.navbar-brand {
+    font-family: var(--minecraft-font);
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--accent-blue) !important;
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
 }
 
-/***************************************
- * 3. LAYOUT & CONTAINER
- * This section defines the main container that helps center content on the page
- ***************************************/
-.container {
-    /* Main container to center content and set maximum width */
-    width: 90%;               /* Container takes up 90% of its parent's width */
-    max-width: 1200px;        /* Container never gets wider than 1200px */
-    margin: 0 auto;           /* Centers the container horizontally (0 margin top/bottom, auto left/right) */
-    padding: 0 15px;          /* Adds 15px padding on the left and right sides */
-    box-sizing: border-box;   /* Ensures padding is included in width calculation */
+.nav-link {
+    color: white !important;
+    font-weight: 600;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-/***************************************
- * 4. HEADER & NAVIGATION
- * This section styles the top navigation bar and logo area
- ***************************************/
-header {
-    /* Styles for the website header/navigation bar */
-    background-color: var(--background-dark);  /* Dark background for the header */
-    color: var(--text-light);                  /* Light text color for the header */
-    position: sticky;                          /* Makes the header stick to the top when scrolling */
-    top: 0;                                    /* Positions the sticky header at the top of the viewport */
-    z-index: 1000;                             /* Makes sure the header appears above other content */
-    display: flex;                             /* Uses flexible box layout */
-    justify-content: space-between;            /* Spreads items out (logo on left, nav on right) */
-    align-items: center;                       /* Centers items vertically */
-    padding: 0.5rem 5%;                        /* Adds padding inside the header (top/bottom, left/right) */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow below the header */
-    width: 100%;                               /* Ensures the header spans the full width */
+.nav-link:hover {
+    color: var(--accent-blue) !important;
+    transform: translateY(-2px);
 }
 
-.logo-container {
-    /* Container for the website logo */
-    height: 60px;             /* Sets the height of the logo container */
-    display: flex;            /* Uses flexible box layout */
-    align-items: center;      /* Centers the logo vertically */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-blue);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
-.logo {
-    /* Styles for the actual logo image */
-    height: 50px;             /* Sets the height of the logo */
-    width: auto;              /* Allows width to adjust based on height (maintains aspect ratio) */
+.nav-link:hover::after {
+    width: 100%;
 }
 
-#main-nav ul {
-    /* Styles for the navigation menu list */
-    display: flex;            /* Makes menu items display horizontally */
-    list-style: none;         /* Removes the default bullet points from the list */
-}
-
-#main-nav li {
-    /* Styles for each menu item in the navigation */
-    margin-left: 1.5rem;      /* Adds space between menu items */
-}
-
-#main-nav a {
-    /* Styles for the navigation links */
-    color: var(--text-light);   /* Sets text color to light for visibility on dark background */
-    font-weight: 600;           /* Makes the text semi-bold */
-    font-size: 1.1rem;          /* Sets the font size (1.1rem = 17.6px by default) */
-    padding: 0.5rem 0.75rem;    /* Adds padding around the text (top/bottom, left/right) */
-    border-radius: 4px;         /* Rounds the corners slightly */
-    transition: all var(--transition-speed); /* Adds smooth animation for hover effects */
-    position: relative;         /* Used for the underline animation (positions ::after element) */
-}
-
-#main-nav a:hover {
-    /* Styles for navigation links when hovered */
-    color: var(--accent-color); /* Changes text color to gold/yellow when hovered */
-}
-
-#main-nav a::after {
-    /* Creates an underline element that will animate on hover */
-    content: '';                /* Required for ::after elements - creates the content */
-    position: absolute;         /* Positions the underline relative to the link */
-    width: 0;                   /* Starts with 0 width (invisible) */
-    height: 3px;                /* Height of the underline */
-    bottom: -5px;               /* Positions the line below the text */
-    left: 0;                    /* Aligns the line with the left edge of the text */
-    background-color: var(--accent-color); /* Gold/yellow color for the underline */
-    transition: width var(--transition-speed); /* Animates the width change */
-}
-
-#main-nav a:hover::after, 
-#main-nav a.active::after {
-    /* Styles for the underline when link is hovered or active */
-    width: 100%;               /* Expands the underline to full width */
-}
-
-/***************************************
- * 5. HAMBURGER MENU
- * This section defines the mobile menu button that appears on small screens
- ***************************************/
-.hamburger {
-    /* Styles for the hamburger menu button (for mobile) */
-    display: none;             /* Hidden by default (shown only on mobile) */
-    flex-direction: column;    /* Stacks the hamburger lines vertically */
-    justify-content: space-between; /* Spreads out the three lines */
-    width: 30px;               /* Width of the hamburger button */
-    height: 24px;              /* Height of the hamburger button */
-    cursor: pointer;           /* Shows hand cursor on hover */
-    z-index: 1000;             /* Ensures it appears above other elements */
-    margin-left: auto;         /* Pushes the button to the right side */
-}
-
-.hamburger span {
-    /* Styles for each line in the hamburger icon */
-    display: block;            /* Makes each line a block element */
-    width: 100%;               /* Each line takes full width of the container */
-    height: 3px;               /* Thickness of each line */
-    background-color: var(--text-light); /* Color of the lines (white) */
-    border-radius: 2px;        /* Slightly rounds the corners of each line */
-    transition: all 0.3s ease-in-out; /* Smooth animation for the menu transformation */
-}
-
-/* Hamburger active state animations */
-.hamburger.active span:first-child {
-    /* Rotates the top line to form an X when menu is open */
-    transform: rotate(45deg) translate(5px, 8px); /* Rotates and moves the line */
-}
-
-.hamburger.active span:nth-child(2) {
-    /* Hides the middle line when menu is open */
-    opacity: 0;                /* Makes the middle line transparent */
-}
-
-.hamburger.active span:last-child {
-    /* Rotates the bottom line to form an X when menu is open */
-    transform: rotate(-45deg) translate(5px, -8px); /* Rotates and moves the line */
-}
-
-/***************************************
- * 6. HERO SECTION
- * This is the main banner section at the top of the page with video background
- ***************************************/
-.hero {
-    /* Styles for the main banner/hero section */
-    height: 80vh;              /* Sets height to 80% of the viewport height */
-    position: relative;        /* Creates positioning context for absolute elements inside */
-    display: flex;             /* Uses flexible box layout */
-    justify-content: center;   /* Centers content horizontally */
-    align-items: center;       /* Centers content vertically */
-    text-align: center;        /* Centers the text */
-    color: var(--text-light);  /* Sets text color to light for visibility on dark background */
-    overflow: hidden;          /* Hides any content that overflows this section */
-    width: 100%;               /* Ensures section spans full width */
-}
-
-/* Video background container */
-.video-background {
-    /* Container for the background video */
-    position: absolute;        /* Takes this out of the normal flow and positions it absolutely */
-    top: 0;                    /* Aligns to the top of the hero section */
-    left: 0;                   /* Aligns to the left of the hero section */
-    width: 100%;               /* Takes full width of the hero section */
-    height: 100%;              /* Takes full height of the hero section */
-    z-index: -1;               /* Places it behind other content */
-    overflow: hidden;          /* Hides any video overflow */
-}
-
-/* Video element styling */
-#hero-video {
-    /* Styles for the actual video element */
-    position: absolute;        /* Takes it out of the normal flow */
-    top: 50%;                  /* Positions at the vertical center */
-    left: 50%;                 /* Positions at the horizontal center */
-    min-width: 100%;           /* Ensures video is at least as wide as the container */
-    min-height: 100%;          /* Ensures video is at least as tall as the container */
-    width: auto;               /* Allows width to adjust automatically */
-    height: auto;              /* Allows height to adjust automatically */
-    transform: translate(-50%, -50%); /* Centers the video precisely */
-    object-fit: cover;         /* Makes video cover the entire area (may crop sides) */
-}
-
-/* Dark overlay to ensure text readability */
-.hero::after {
-    /* Creates a dark overlay on top of the video for better text readability */
-    content: '';               /* Required for ::after elements */
-    position: absolute;        /* Positions overlay relative to hero section */
-    top: 0;                    /* Aligns to the top */
-    left: 0;                   /* Aligns to the left */
-    width: 100%;               /* Takes full width */
-    height: 100%;              /* Takes full height */
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-    z-index: -1;               /* Places behind text but above video */
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: 
+        linear-gradient(rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.8)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="10" height="10" fill="%23ffffff" opacity="0.03"/><rect x="10" y="10" width="10" height="10" fill="%23ffffff" opacity="0.03"/><rect x="20" y="0" width="10" height="10" fill="%23ffffff" opacity="0.03"/></svg>');
 }
 
 .hero-content {
-    /* Container for the text content in the hero section */
-    max-width: 800px;          /* Limits the width of the content */
-    padding: 2rem;             /* Adds padding around the content */
+    z-index: 2;
 }
 
-.hero h1 {
-    /* Styles for the main heading in the hero section */
-    font-size: 3.5rem;         /* Very large font size for main heading */
-    text-transform: uppercase; /* Makes text ALL CAPS */
-    letter-spacing: 2px;       /* Adds space between letters */
-    margin-bottom: 1.5rem;     /* Adds space below the heading */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Adds shadow for better readability */
+.hero-title {
+    font-family: var(--minecraft-font);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    background: linear-gradient(45deg, var(--secondary-blue), var(--accent-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    animation: glow 2s ease-in-out infinite alternate;
 }
 
-.hero p {
-    /* Styles for paragraph text in the hero section */
-    font-size: 1.5rem;         /* Larger font size for hero paragraph */
-    margin-bottom: 2rem;       /* Adds space below the paragraph */
+@keyframes glow {
+    from { filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.5)); }
+    to { filter: drop-shadow(0 0 30px rgba(96, 165, 250, 0.8)); }
 }
 
-.cta-button {
-    /* Styles for the Call-To-Action button */
-    display: inline-block;     /* Makes button inline but allows height/width settings */
-    background-color: var(--primary-color); /* Red background color */
-    color: var(--text-light);  /* White text color */
-    padding: 1rem 2rem;        /* Adds padding inside button (top/bottom, left/right) */
-    font-size: 1.2rem;         /* Increases font size */
-    font-weight: 600;          /* Makes text semi-bold */
-    border-radius: 50px;       /* Makes fully rounded corners (pill shape) */
-    text-transform: uppercase; /* Makes text ALL CAPS */
-    letter-spacing: 1px;       /* Adds space between letters */
-    transition: all var(--transition-speed); /* Smooth animation for hover effects */
-    border: 2px solid var(--primary-color); /* Adds border same color as background */
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--light-blue);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: slideUp 1s ease 0.5s forwards;
 }
 
-.cta-button:hover {
-    /* Styles for the button when hovered */
-    background-color: transparent; /* Makes button transparent on hover */
-    color: var(--text-light);      /* Keeps text white */
-    transform: translateY(-3px);   /* Moves button up slightly for hover effect */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds shadow for "lifted" effect */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/***************************************
- * 7. GAME HIGHLIGHTS SECTION
- * This section displays game feature cards with videos
- ***************************************/
-.game-highlights {
-    /* Styles for the game highlights section */
-    padding: 5rem 5%;          /* Adds padding inside section (top/bottom, left/right) */
-    text-align: center;        /* Centers the text */
-    background-color: var(--background-light); /* Sets light background color */
-    width: 100%;               /* Ensures section spans full width */
-    box-sizing: border-box;    /* Includes padding in width calculation */
+.hero-description {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: slideUp 1s ease 1s forwards;
 }
 
-.game-highlights h2 {
-    /* Styles for the section heading */
-    font-size: 2.5rem;         /* Large font size for heading */
-    margin-bottom: 3rem;       /* Adds space below heading */
-    color: var(--secondary-color); /* Sets dark blue color for heading */
-    position: relative;        /* Required for the underline element */
-    display: inline-block;     /* Makes the heading only as wide as its content */
+/* Minecraft-style Buttons */
+.minecraft-btn {
+    background: linear-gradient(145deg, var(--secondary-blue), var(--primary-blue));
+    border: 3px solid var(--accent-blue);
+    color: white;
+    padding: 15px 30px;
+    font-family: var(--minecraft-font);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 8px 0 var(--dark-blue),
+        0 12px 20px rgba(0, 0, 0, 0.3);
+    margin: 0 1rem 1rem 0;
+    text-decoration: none;
+    display: inline-block;
 }
 
-.game-highlights h2::after {
-    /* Creates decorative underline below section heading */
-    content: '';               /* Required for ::after elements */
-    position: absolute;        /* Positions relative to heading */
-    width: 50%;                /* Makes underline half the width of heading */
-    height: 4px;               /* Height of underline */
-    background-color: var(--primary-color); /* Red color for underline */
-    bottom: -10px;             /* Positions 10px below the heading */
-    left: 25%;                 /* Centers the underline */
+.minecraft-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 13px 0 var(--dark-blue),
+        0 17px 25px rgba(0, 0, 0, 0.4);
+    color: white;
 }
 
-.highlights-container {
-    /* Container for the highlight cards */
-    display: flex;             /* Uses flexible box layout */
-    justify-content: center;   /* Centers cards horizontally */
-    flex-wrap: wrap;           /* Allows cards to wrap to next line on small screens */
-    gap: 2rem;                 /* Adds space between cards */
+.minecraft-btn:active {
+    transform: translateY(3px);
+    box-shadow: 
+        0 5px 0 var(--dark-blue),
+        0 9px 15px rgba(0, 0, 0, 0.2);
 }
 
-.highlight-card {
-    /* Styles for each highlight card */
-    flex: 1;                   /* Makes cards grow and share available space equally */
-    min-width: 250px;          /* Minimum width for each card */
-    max-width: 350px;          /* Maximum width for each card */
-    background-color: white;   /* White background for cards */
-    border-radius: 10px;       /* Rounds corners */
-    overflow: hidden;          /* Hides any content that overflows */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
-    transition: transform var(--transition-speed); /* Animation for hover effect */
+/* Stats Section */
+.stats-section {
+    background: rgba(30, 41, 59, 0.5);
+    padding: 5rem 0;
+    margin: 5rem 0;
+    border-top: 3px solid var(--secondary-blue);
+    border-bottom: 3px solid var(--secondary-blue);
 }
 
-.highlight-card:hover {
-    /* Style for cards when hovered */
-    transform: translateY(-10px); /* Moves card up for hover effect */
+.stats-container {
+   display: center;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 2rem;
+   max-width: 1200px;
+   width: 100%;
 }
 
-.highlight-card video {
-    /* Styles for videos inside highlight cards */
-    width: 100%;               /* Takes full width of card */
-    height: 200px;             /* Fixed height for video */
-    object-fit: cover;         /* Makes video cover the area (may crop sides) */
+.stat-card {
+    background: rgba(15, 23, 42, 0.8);
+    border: 2px solid var(--secondary-blue);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    height: 100%; /* Add this to make all cards same height */
+    display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 
-.highlight-card h3 {
-    /* Styles for card headings */
-    margin-top: 1.5rem;        /* Adds space above heading */
-    font-size: 1.5rem;         /* Sets font size */
-    color: var(--secondary-color); /* Dark blue color for heading */
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+    border-color: var(--accent-blue);
 }
 
-.highlight-card p {
-    /* Styles for text inside cards */
-    padding: 0 1.5rem 1.5rem;  /* Adds padding inside card (top, left/right, bottom) */
-    color: #666;               /* Dark gray color for text */
+.stat-number {
+    font-family: var(--minecraft-font);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--accent-blue);
+    display: block;
 }
 
-/***************************************
- * 8. LATEST RELEASE SECTION
- * This section shows information about the latest game release with features list
- ***************************************/
-.latest-release {
-    /* Styles for the latest release section */
-    background-color: var(--secondary-color); /* Dark blue background */
-    color: var(--text-light);  /* Light text color */
-    padding: 5rem 5%;          /* Adds padding inside section */
-    display: flex;             /* Uses flexible box layout */
-    flex-wrap: wrap;           /* Allows content to wrap on small screens */
-    align-items: center;       /* Centers content vertically */
-    gap: 3rem;                 /* Adds space between content and media */
+.stat-label {
+    font-size: 1.2rem;
+    color: var(--light-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
 }
 
-.release-content {
-    /* Container for text content in this section */
-    flex: 1;                   /* Allows content to grow and share space */
-    min-width: 300px;          /* Minimum width for content area */
+/* Skills Section */
+.skills-section {
+    padding: 5rem 0;
 }
 
-.release-content h2 {
-    /* Styles for section heading */
-    font-size: 2.5rem;         /* Large font size for heading */
-    margin-bottom: 1.5rem;     /* Adds space below heading */
+.section-title {
+    font-family: var(--minecraft-font);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--accent-blue);
+    text-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
 }
 
-.feature-list {
-    /* Styles for the features list */
-    list-style-type: none;     /* Removes default bullet points */
-    margin-top: 2rem;          /* Adds space above list */
+.skill-card {
+    background: linear-gradient(145deg, rgba(30, 58, 138, 0.2), rgba(59, 130, 246, 0.1));
+    border: 2px solid var(--secondary-blue);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    height: 100%;
 }
 
-.feature-list li {
-    /* Styles for each feature list item */
-    margin-bottom: 1rem;       /* Adds space between items */
-    padding-left: 2rem;        /* Adds space for checkmark */
-    position: relative;        /* For positioning the checkmark */
+.skill-card:hover {
+    transform: rotateY(5deg) rotateX(5deg);
+    box-shadow: 0 25px 50px rgba(59, 130, 246, 0.3);
+    border-color: var(--accent-blue);
 }
 
-.feature-list li::before {
-    /* Creates custom checkmark bullet points */
-    content: '✓';              /* Checkmark character */
-    position: absolute;        /* Positions relative to list item */
-    left: 0;                   /* Aligns to left edge */
-    color: var(--accent-color); /* Gold/yellow color for checkmark */
-    font-weight: bold;         /* Makes checkmark bold */
+.skill-icon {
+    font-size: 3rem;
+    color: var(--accent-blue);
+    margin-bottom: 1rem;
 }
 
-.release-media {
-    /* Container for video/media in this section */
-    flex: 1;                   /* Allows media to grow and share space */
-    min-width: 300px;          /* Minimum width for media area */
+.skill-title {
+    font-family: var(--minecraft-font);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
 }
 
-.video-container {
-    /* Container for the video */
-    width: 100%;               /* Takes full width of parent */
-    border-radius: 10px;       /* Rounds corners */
-    overflow: hidden;          /* Hides any overflow */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adds shadow for depth */
+.skill-description {
+    color: #cbd5e1;
+    line-height: 1.6;
 }
 
-.video-placeholder {
-    /* Container for placeholder video/image */
-    position: relative;        /* For positioning items inside */
-    padding-bottom: 56.25%;    /* Sets 16:9 aspect ratio (height = 56.25% of width) */
-    height: 0;                 /* Height is controlled by padding-bottom */
-    overflow: hidden;          /* Hides any overflow */
+/* Social Links */
+.social-section {
+    background: rgba(15, 23, 42, 0.8);
+    padding: 4rem 0;
+    text-align: center;
 }
 
-.video-placeholder iframe {
-    /* Styles for iframe video if used */
-    position: absolute;        /* Positions relative to placeholder */
-    top: 0;                    /* Aligns to top */
-    left: 0;                   /* Aligns to left */
-    width: 100%;               /* Takes full width */
-    height: 100%;              /* Takes full height */
-    border: 0;                 /* Removes border */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
 }
 
-.video-placeholder img {
-    /* Styles for placeholder image */
-    position: absolute;        /* Positions relative to placeholder */
-    top: 0;                    /* Aligns to top */
-    left: 0;                   /* Aligns to left */
-    width: 100%;               /* Takes full width */
-    height: 100%;              /* Takes full height */
-    object-fit: cover;         /* Makes image cover the area (may crop) */
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(145deg, var(--secondary-blue), var(--primary-blue));
+    border: 3px solid var(--accent-blue);
+    border-radius: 15px;
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/***************************************
- * 9. NEWS SECTION
- * This section displays news articles in card format
- ***************************************/
-.news-section {
-    /* Styles for the news section */
-    padding: 5rem 5%;          /* Adds padding inside section */
-    background-color: #f8f9fa; /* Very light gray background */
+.social-link:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
+    color: white;
 }
 
-.news-section h2 {
-    /* Styles for section heading */
-    text-align: center;        /* Centers the heading */
-    font-size: 2.5rem;         /* Large font size */
-    margin-bottom: 3rem;       /* Space below heading */
-    color: var(--secondary-color); /* Dark blue color */
+/* Footer */
+.footer {
+    background: rgba(15, 23, 42, 0.95);
+    border-top: 3px solid var(--secondary-blue);
+    padding: 3rem 0;
+    text-align: center;
 }
 
-.news-container {
-    /* Container for news cards */
-    display: flex;             /* Uses flexible box layout */
-    flex-wrap: wrap;           /* Allows cards to wrap to next line */
-    gap: 2rem;                 /* Space between cards */
-    justify-content: center;   /* Centers cards horizontally */
-}
-
-.news-card {
-    /* Styles for each news card */
-    flex: 1;                   /* Allows cards to grow and share space */
-    min-width: 280px;          /* Minimum width for each card */
-    max-width: 350px;          /* Maximum width for each card */
-    background-color: white;   /* White background */
-    border-radius: 10px;       /* Rounds the corners */
-    overflow: hidden;          /* Hides any overflow */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
-    transition: transform var(--transition-speed); /* Animation for hover effect */
-}
-
-.news-card:hover {
-    /* Style for cards when hovered */
-    transform: translateY(-5px); /* Slight upward movement on hover */
-}
-
-.news-card img {
-    /* Styles for images in news cards */
-    width: 100%;               /* Takes full width of card */
-    height: 180px;             /* Fixed height for image */
-    object-fit: cover;         /* Makes image cover the area (may crop) */
-}
-
-.news-content {
-    /* Container for text content in cards */
-    padding: 1.5rem;           /* Adds padding inside */
-}
-
-.news-content h3 {
-    /* Styles for card headings */
-    font-size: 1.3rem;         /* Sets font size */
-    margin-bottom: 0.5rem;     /* Adds space below */
-}
-
-.date {
-    /* Styles for date text in news cards */
-    color: #666;               /* Dark gray color */
-    font-size: 0.9rem;         /* Smaller font size */
-    margin-bottom: 1rem;       /* Adds space below */
-}
-
-.read-more {
-    /* Styles for "read more" links */
-    display: inline-block;     /* Makes link a block but only as wide as needed */
-    margin-top: 1rem;          /* Adds space above */
-    font-weight: 600;          /* Makes text semi-bold */
-    color: var(--primary-color); /* Red color for link */
-}
-
-.read-more:hover {
-    /* Style for read more link when hovered */
-    color: var(--secondary-color); /* Changes to dark blue on hover */
-}
-
-/***************************************
- * 10. FOOTER
- * This section contains the website footer with links, social media, and newsletter signup
- ***************************************/
-footer {
-    /* Styles for page footer */
-    background-color: var(--background-dark); /* Dark background for footer */
-    color: var(--text-light);    /* Light text color for footer */
-    padding: 4rem 5% 2rem;       /* Adds space inside footer (top, sides, bottom) */
-}
-
-.footer-content {
-    /* Container for footer content */
-    display: flex;               /* Uses flexbox layout */
-    flex-wrap: wrap;             /* Allows items to wrap to next line */
-    justify-content: space-between; /* Spaces items apart horizontally */
-    gap: 2rem;                   /* Adds space between footer sections */
-    margin-bottom: 3rem;         /* Adds space below footer content */
-}
-
-.footer-logo {
-    /* Styles for logo section in footer */
-    flex: 1 1 250px;             /* Flexible width with minimum 250px */
-    max-width: 350px;            /* Maximum width for logo section */
-}
-
-.footer-logo img {
-    /* Styles for logo image in footer */
-    height: 60px;                /* Sets logo height */
-    width: auto;                 /* Maintains logo aspect ratio */
-    margin-bottom: 1rem;         /* Adds space below logo */
-}
-
-.footer-links, .footer-social, .footer-newsletter {
-    /* Styles for footer sections */
-    flex: 1 1 200px;             /* Flexible width with minimum 200px */
-}
-
-.footer-links h4,
-.footer-social h4,
-.footer-newsletter h4 {
-    /* Styles for headings in footer sections */
-    font-size: 1.2rem;           /* Sets text size */
-    margin-bottom: 1.5rem;       /* Adds space below headings */
-    position: relative;          /* Sets positioning context for pseudo-elements */
-    padding-bottom: 0.5rem;      /* Adds space below text */
-    display: inline-block;       /* Makes element only as wide as content */
-}
-
-.footer-links h4::after,
-.footer-social h4::after,
-.footer-newsletter h4::after {
-    /* Creates a line below each footer heading */
-    content: '';                 /* Required for pseudo-elements */
-    position: absolute;          /* Positions line relative to heading */
-    left: 0;                     /* Aligns line with left edge of heading */
-    right: 0;                    /* Extends line to right edge of heading */
-    bottom: 0;                   /* Positions line at bottom of heading */
-    width: 100%;                 /* Makes line full width */
-    height: 3px;                 /* Height of the line */
-    background-color: var(--primary-color); /* Color of the line */
-}
-
-.footer-links ul {
-    /* Styles for links list in footer */
-    list-style: none;            /* Removes bullet points from list */
-}
-
-.footer-links li {
-    /* Styles for each link item in footer */
-    margin-bottom: 0.75rem;      /* Adds space between links */
-}
-
-.footer-links a {
-    /* Styles for footer links */
-    color: #ccc;                 /* Light gray text color */
-    transition: color var(--transition-speed); /* Animates color changes */
-}
-
-.footer-links a:hover {
-    /* Style when hovering over footer links */
-    color: var(--accent-color);  /* Changes text color on hover */
-}
-
-.social-icons {
-    /* Container for social media icons */
-    display: flex;               /* Uses flexbox layout */
-    gap: 1rem;                   /* Adds space between icons */
-}
-
-.social-icon {
-    /* Styles for each social media icon */
-    display: flex;               /* Uses flexbox layout */
-    align-items: center;         /* Centers icon vertically */
-    justify-content: center;     /* Centers icon horizontally */
-    width: 40px;                 /* Width of icon container */
-    height: 40px;                /* Height of icon container */
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly light background */
-    border-radius: 50%;          /* Makes container circular */
-    transition: all var(--transition-speed); /* Animates all property changes */
-}
-
-.social-icon:hover {
-    /* Style when hovering over social media icon */
-    background-color: var(--primary-color); /* Changes background color on hover */
-    transform: translateY(-3px); /* Moves icon up slightly on hover */
-}
-
-.social-icon img {
-    /* Styles for social media icon image */
-    width: 20px;                 /* Width of icon */
-    height: 20px;                /* Height of icon */
-}
-
-.footer-newsletter p {
-    /* Styles for paragraph in newsletter section */
-    color: #ccc;                 /* Light gray text color */
-    margin-bottom: 1rem;         /* Adds space below paragraph */
-    font-size: 0.95rem;          /* Slightly smaller text */
-    line-height: 1.5;            /* Sets spacing between lines */
-}
-
-.footer-newsletter form {
-    /* Styles for newsletter form */
-    display: flex;               /* Uses flexbox layout */
-    gap: 0.5rem;                 /* Adds space between form elements */
-    flex-wrap: wrap;             /* Allows form elements to wrap */
-}
-
-.footer-newsletter input {
-    /* Styles for newsletter input field */
-    flex: 1;                     /* Makes input take up available space */
-    min-width: 140px;            /* Minimum width for input */
-    padding: 0.75rem;            /* Adds space inside input */
-    border: none;                /* Removes border */
-    border-radius: 4px;          /* Rounds corners */
-    font-size: 1rem;             /* Sets text size */
-}
-
-.footer-newsletter button {
-    /* Styles for newsletter submit button */
-    padding: 0.75rem 1.5rem;     /* Adds space inside button (top/bottom, left/right) */
-    background-color: var(--primary-color); /* Button background color */
-    color: white;                /* Button text color */
-    border: none;                /* Removes border */
-    border-radius: 4px;          /* Rounds corners */
-    cursor: pointer;             /* Shows hand cursor on hover */
-    font-size: 1rem;             /* Sets text size */
-    font-weight: 600;            /* Makes text semi-bold */
-    transition: background-color var(--transition-speed); /* Animates color changes */
-}
-
-.footer-newsletter button:hover {
-    /* Style when hovering over newsletter button */
-    background-color: #c62d39;   /* Darker red color on hover */
-}
-
-.footer-bottom {
-    /* Styles for copyright section in footer */
-    text-align: center;          /* Centers text */
-    padding-top: 2rem;           /* Adds space above copyright */
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Adds light line above copyright */
-    font-size: 0.9rem;           /* Smaller text size */
-    color: #999;                 /* Gray text color */
-}
-
-/***************************************
- * 11. RESPONSIVE DESIGN
- ***************************************/
-/* Medium devices (tablets) */
-
-/* This section contains styles that only apply when the screen width is 768 pixels or less */
+/* Responsive Design */
 @media (max-width: 768px) {
-    /* Header layout adjustments for mobile devices */
-    header {
-        /* This reduces padding and sets it to 0.5rem top/bottom and 5% left/right */
-        padding: 0.5rem 5%;
-        
-        /* This makes the header take up the full width of the screen */
-        width: 100%;
-    }
-   
-    /* Logo container adjustment for mobile */
-    .logo-container {
-        /* This allows the logo container to take up available space */
-        flex-grow: 1;
-    }
-   
-    /* This makes the hamburger menu visible on mobile devices */
-    /* (On desktop, it's probably hidden with display: none) */
-    .hamburger {
-        /* This displays the hamburger menu as a flex container */
-        display: flex;
-        
-        /* This pushes the hamburger menu to the right side */
-        margin-left: auto;
-        
-        /* This ensures the hamburger stays on top of other elements */
-        z-index: 1001;
-    }
-   
-    /* Navigation menu styling for mobile devices */
-    #main-nav {
-        /* This makes the navigation menu take the full width of the screen */
-        width: 100%;
-        
-        /* This positions the menu absolutely relative to its parent */
-        position: absolute;
-        
-        /* This places the menu right below the header */
-        top: 100%;
-        
-        /* This aligns the menu with the left edge of the screen */
-        left: 0;
+    .hero-title {
+        font-size: 3rem;
     }
     
-    #main-nav ul {
-        /* This fixes the position of the navigation list to stay in place when scrolling */
-        position: fixed;
-        
-        /* This positions the list 70px from the top of the screen */
-        top: 70px;
-        
-        /* This positions the list off-screen to the right (hidden initially) */
-        right: -100%;
-        
-        /* This sets the background color using a variable defined elsewhere */
-        background-color: var(--background-dark);
-        
-        /* This changes the layout from horizontal (default) to vertical */
-        flex-direction: column;
-        
-        /* This sets the width to 80% of the screen */
-        width: 80%;
-        
-        /* This makes the height fill the remaining screen space below the header */
-        height: calc(100vh - 70px);
-        
-        /* This adds space inside the navigation menu */
-        padding: 2rem;
-        
-        /* This creates a smooth animation when the menu slides in from the right */
-        transition: right var(--transition-speed);
-        
-        /* This ensures the menu appears above other content */
-        z-index: 100;
-        
-        /* This adds a shadow on the left side of the menu to create depth */
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    }
-   
-    /* This shows the menu when it has the "active" class */
-    #main-nav.active ul {
-        /* This moves the menu on-screen (from right: -100% to right: 0) */
-        right: 0;
-    }
-   
-    /* Styling for each navigation menu item */
-    #main-nav li {
-        /* This adds space above and below each menu item */
-        margin: 1.5rem 0;
-        
-        /* This makes each menu item take the full width */
-        width: 100%;
-        
-        /* This aligns the text to the left */
-        text-align: left;
-    }
-   
-    /* Styling for each navigation link */
-    #main-nav a {
-        /* This makes each link a block element so it's easier to tap on mobile */
-        display: block;
-        
-        /* This adds padding above and below each link */
-        padding: 0.75rem 0;
-    }
-   
-    /* This prevents content from extending beyond the screen width */
-    .highlights-container,
-    .news-container,
-    .footer-content {
-        /* These ensure the containers don't exceed screen width */
-        width: 100%;
-        padding: 0;
-        
-        /* This includes padding and border in the element's total width and height */
-        box-sizing: border-box;
-    }
-   
-    /* This ensures cards fit properly within their containers on mobile */
-    .highlight-card,
-    .news-card {
-        /* These make the cards fill the full width of their container */
-        width: 100%;
-        max-width: 100%;
-        
-        /* This includes padding and border in the total width/height calculation */
-        box-sizing: border-box;
-    }
-   
-    /* Typography adjustments for mobile screens */
-    .hero h1 {
-        /* This reduces the main heading size on mobile devices */
-        font-size: 2.3rem;
-        
-        /* This adds space on the left and right of the heading */
-        padding: 0 10px;
-    }
-   
-    .hero p {
-        /* This adds space on the left and right of the paragraph */
-        padding: 0 15px;
-    }
-   
-    /* These reduce heading sizes for various sections on mobile */
-    .game-highlights h2,
-    .latest-release h2,
-    .news-section h2 {
-        font-size: 2rem;
-        padding: 0 10px;
+    .minecraft-btn {
+        margin: 0.5rem;
+        padding: 12px 20px;
     }
     
-    /* This ensures the hero video stays centered on mobile */
-    #hero-video {
-        /* This positions the video absolutely within its container */
-        position: absolute;
-        
-        /* These position the video centered horizontally and vertically */
-        top: 50%;
-        left: 50%;
-        
-        /* These ensure the video covers the minimum dimensions */
-        min-width: 100%;
-        min-height: 100%;
-        
-        /* These let the video maintain its aspect ratio */
-        width: auto;
-        height: auto;
-        
-        /* This centers the video by offsetting it by 50% of its dimensions */
-        transform: translate(-50%, -50%);
+    .social-links {
+        gap: 1rem;
+    }
+    
+    .social-link {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
     }
 }
 
-/* Small devices (mobile phones) */
-/* This section applies to screens that are 576 pixels wide or smaller */
-@media (max-width: 576px) {
-    /* This reduces the hero section height for very small screens */
-    .hero {
-        height: 70vh;
-    }
-   
-    /* This further reduces the main heading size for small phones */
-    .hero h1 {
-        font-size: 2rem;
-    }
-   
-    /* This reduces the paragraph text size for small phones */
-    .hero p {
-        font-size: 1rem;
-    }
-   
-    /* This makes the call-to-action button smaller for small phones */
-    .cta-button {
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-    }
-   
-    /* Footer adjustments for the smallest screens */
-    .footer-content > div {
-        /* This makes footer sections stack vertically */
-        width: 100%;
-        
-        /* This adds space between stacked footer sections */
-        margin-bottom: 2rem;
-    }
-   
-    /* This adjusts the newsletter form layout for small screens */
-    .footer-newsletter form {
-        /* This stacks the input and button vertically instead of side by side */
-        flex-direction: column;
-    }
-   
-    /* This makes the newsletter button fit the full width */
-    .footer-newsletter button {
-        width: 100%;
-        
-        /* This adds space above the button */
-        margin-top: 0.5rem;
-    }
-   
-    /* This ensures consistent padding in all main sections */
-    .game-highlights,
-    .latest-release,
-    .news-section {
-        /* This sets vertical padding to 3rem and horizontal padding to 5% */
-        padding: 3rem 5%;
-    }
+/* Scroll animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-blue);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-blue);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-blue);
 }
