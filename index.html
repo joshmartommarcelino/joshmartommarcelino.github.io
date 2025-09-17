@@ -1,226 +1,198 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Josh Martom Marcelino - Porfolio</title>
-    <link rel="icon" type="image/x-icon" href="/images/logo.jpg"> 
-    <link rel="stylesheet" href="style.css"> 
-    <script src="index.js" defer></script> 
-    
-    <!-- Bootstrap 5 -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- FontAwesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Owl Carousel -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    
+<!DOCTYPE html> <!-- Declares that this is an HTML5 document -->
+<html lang="en"> <!-- Sets the language of the webpage to English -->
+<head> <!-- The head contains info about the page, not the content users see -->
+    <meta charset="UTF-8"> <!-- Sets character encoding so text is displayed correctly -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive on mobile devices -->
+    <title>Guilty Gear - Home</title> <!-- The title that shows up in the browser tab -->
+    <link rel="icon" type="image/x-icon" href="/images/LOGO.png"> <!-- Adds a small icon to the browser tab -->
+    <link rel="stylesheet" href="style.css"> <!-- Links the CSS file that styles the page -->
+    <script src="index.js" defer></script> <!-- Links the JavaScript file and waits until HTML is loaded to run it -->
 </head>
-<body>
-<!-- Animated Background -->
-    <div class="bg-particles"></div>
+<body> <!-- The visible content of the webpage starts here -->
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">
-                <i class="fas fa-gamepad me-2"></i>JOSH.COM
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#achievements">Achievements</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<!-- Header section with navigation and logo -->
+<header>
+    <div class="logo-container"> <!-- Container for the logo image -->
+        <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo" class="logo"> <!-- Displays the Guilty Gear logo -->
+    </div>
+    
+    <div id="menu-toggle" class="hamburger"> <!-- Mobile menu button with three bars -->
+        <span></span> <!-- First bar -->
+        <span></span> <!-- Second bar -->
+        <span></span> <!-- Third bar -->
+    </div>
+
+    <nav id="main-nav"> <!-- Navigation bar -->
+        <ul> <!-- List of navigation links -->
+            <li><a href="/index.html" class="active">Home</a></li> <!-- Link to Home -->
+            <li><a href="/characters/index.html">Characters</a></li> <!-- Link to Characters page -->
+            <li><a href="/game mechanics/index.html">Game Mechanics</a></li> <!-- Link to Game Mechanics -->
+            <li><a href="/history/index.html">History</a></li> <!-- Link to History page -->
+            <li><a href="/news/index.html">News</a></li> <!-- Link to News page -->
+        </ul>
     </nav>
+</header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8 hero-content text-center text-lg-start">
-                    <!-- Profile Picture -->
-                    <img src="/images/logo.jpg" alt="Josh Martom Marcelino" class="profile-picture">
-                    
-                    <h1 class="hero-title">JOSH MARTOM MARCELINO</h1>
-                    <h2 class="hero-subtitle">Developer • Student • Unemployed</h2>
-                    <p class="hero-description">
-                        A BSU Rak BSc graduate in Cyber Security (A.Y 2024 - 2027) doing his best to land a job and support himself and his loved ones.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="minecraft-btn">
-                            <i class="fas fa-code me-2"></i>View Projects
-                        </a>
-                        <a href="#achievements" class="minecraft-btn">
-                            <i class="fas fa-trophy me-2"></i>Achievements
-                        </a>
-                    </div>
+<main> <!-- Main content of the website -->
+    
+    <!-- Hero Section with video background -->
+    <section class="hero">
+        <div class="video-background"> <!-- Background video container -->
+            <video autoplay muted loop id="hero-video"> <!-- Video plays automatically, without sound, and loops -->
+                <source src="/videos/Guilty Gear - Strive - Opening Movie.mp4" type="video/mp4"> <!-- Video source file -->
+            </video>
+        </div>
+        <div class="hero-content"> <!-- Text content over the video -->
+            <h1>WELCOME TO THE GUILTY GEAR STRIVE</h1> <!-- Main headline -->
+            <p>Rock & Roll meets high-octane fighting action</p> <!-- Subtitle -->
+            <a href="/characters/index.html" class="cta-button">Explore Characters</a> <!-- Button to Characters page -->
+        </div>
+    </section>
+
+    <!-- Game Highlights Section -->
+    <section class="game-highlights">
+        <h2>THE LATEST RELEASE OF THE FRANCHISE</h2> <!-- Section title -->
+        <div class="highlights-container"> <!-- Container for 3 highlight cards -->
+            <div class="highlight-card"> <!-- First highlight card -->
+                <video autoplay muted loop playsinline> <!-- Inline video for visuals -->
+                    <source src="/videos/VIDEO_1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Stunning Visuals</h3> <!-- Subheading -->
+                <p>Experience the revolutionary 2.5D art style that brings characters to life</p>
+            </div>
+            <div class="highlight-card"> <!-- Second highlight card -->
+                <video autoplay muted loop playsinline>
+                    <source src="/videos/VIDEO_2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Deep Combat Systems</h3>
+                <p>Master unique fighting mechanics like Roman Cancels, Burst, and Tension</p>
+            </div>
+            <div class="highlight-card"> <!-- Third highlight card -->
+                <video autoplay muted loop playsinline>
+                    <source src="/videos/VIDEO_3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Diverse Characters</h3>
+                <p>Choose from an electric cast with distinct playstyles and personalities</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Release Section -->
+    <section class="latest-release">
+        <div class="release-content"> <!-- Text info about the new character -->
+            <h2>LATEST RELEASE: VENOM</h2>
+            <p>Deep Purple Billiard Phantom returns as the Season 4's second DLC character!</p>
+            <ul class="feature-list"> <!-- List of Venom's features -->
+                <li>Master the art of precision with Venom’s billiard-based offense</li>
+                <li>Unleash stylish setups with enhanced control and fluid animations</li>
+                <li>He is the Unrelenting Pursuer in the Dark of Night and the Deep Purple Billiard Phantom</li>
+                <li>The assassin returns, cue in hand, vengeance in his heart
+                    A loyal shadow of the Guild, bound by duty and the ghost of Zato
+                    Every strike is a calculated tribute to order amid chaos
+                    His silence speaks louder than war—Venom plays for keeps</li>
+            </ul>
+        </div>
+        <div class="release-media"> <!-- Video preview of the new release -->
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <iframe width="560" height="315" src="https://youtube.com/embed/0Ds4zgV8ZW4?autoplay=1&mute=1" 
+                        title="Guilty Gear Strive Venom Trailer" frameborder="0" allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="stat-card fade-in">
-                        <span class="stat-number" data-count="18">0</span>
-                        <span class="stat-label">Years of Life</span>
-                    </div>
+    <!-- News Section -->
+    <section class="news-section">
+        <h2>LATEST NEWS</h2> <!-- Section title -->
+        <div class="news-container"> <!-- Container for the news cards -->
+            
+            <!-- First News Card -->
+            <article class="news-card">
+                <img src="/images/IMAGE_2.png" alt="News image"> <!-- News image -->
+                <div class="news-content">
+                    <h3>New DLC Character Venom Announced!</h3>
+                    <p class="date">March 24, 2025</p>
+                    <p>The newest addition to the roster has been revealed. Check out the gameplay trailer!</p>
+                    <a href="https://youtu.be/gh0aqa-3xWs?si=Mxu8M5nsJtkIhvwA" class="read-more">Read More</a>
                 </div>
-                <div class="col-md-3">
-                    <div class="stat-card fade-in">
-                        <span class="stat-number" data-count="18">0</span>
-                        <span class="stat-label">Projects Completed</span>
-                    </div>
+            </article>
+
+            <!-- Second News Card -->
+            <article class="news-card">
+                <img src="/images/IMAGE_3.png" alt="News image">
+                <div class="news-content">
+                    <h3>Arc World Tour Championship Series Dates</h3>
+                    <p class="date">March 23, 2025</p>
+                    <p>The official tournament circuit has been announced with stops in major cities worldwide.</p>
+                    <a href="https://www.arcsystemworks.asia/awt2025/" class="read-more">Read More</a>
                 </div>
-                <div class="col-md-3">
-                    <div class="stat-card fade-in">
-                        <span class="stat-number" data-count="2">0</span>
-                        <span class="stat-label">Years of Coding</span>
-                    </div>
+            </article>
+
+            <!-- Third News Card -->
+            <article class="news-card">
+                <img src="/images/IMAGE_4.png" alt="News image">
+                <div class="news-content">
+                    <h3>Update Patch 1.44 Notes</h3>
+                    <p class="date">March 24, 2025</p>
+                    <p>With the addition of Venom; Many changes will come to Chipp, Faust, Happy Chaos, Goldlewis, Johnny, and DIzzy in the latest balance update.</p>
+                    <a href="https://www.guiltygear.com/ggst/en/news/post-2426/" class="read-more">Read More</a>
                 </div>
-                <div class="col-md-3">
-                    <div class="stat-card fade-in">
-                        <span class="stat-number" data-count="9">0</span>
-                        <span class="stat-label">Achievements Unlocked</span>
-                    </div>
-                </div>
-            </div>
+            </article>
+
         </div>
     </section>
 
-    <section id="skills" class="skills-section">
-       <div class="container">
-           <h2 class="section-title fade-in">SKILL TREE</h2>
-           <div class="row">
-               <div class="col-lg-3 col-md-6">
-                   <div class="skill-card fade-in">
-                       <div class="skill-icon">
-                           <i class="fab fa-html5"></i>
-                       </div>
-                       <h3 class="skill-title">Frontend Development</h3>
-                       <p class="skill-description">
-                           Master of HTML5, CSS3, and JavaScript. Building responsive and interactive user interfaces 
-                           with Bootstrap 5 and modern web technologies.
-                       </p>
-                   </div>
-               </div>
-               <div class="col-lg-3 col-md-6">
-                   <div class="skill-card fade-in">
-                       <div class="skill-icon">
-                           <i class="fas fa-database"></i>
-                       </div>
-                       <h3 class="skill-title">Data Analysis</h3>
-                       <p class="skill-description">
-                           Proficient in Python with Pandas for data manipulation, analysis, and visualization. 
-                           Turning raw data into meaningful insights.
-                       </p>
-                   </div>
-               </div>
-               <div class="col-lg-3 col-md-6">
-                   <div class="skill-card fade-in">
-                       <div class="skill-icon">
-                           <i class="fas fa-code"></i>
-                       </div>
-                       <h3 class="skill-title">Backend Development</h3>
-                       <p class="skill-description">
-                           Building robust server-side applications with Python, Node.js, and database management. 
-                           Creating APIs and handling server logic.
-                       </p>
-                   </div>
-               </div>
-               <div class="col-lg-3 col-md-6">
-                   <div class="skill-card fade-in">
-                       <div class="skill-icon">
-                           <i class="fas fa-broadcast-tower"></i>
-                       </div>
-                       <h3 class="skill-title">Broadcast Operations</h3>
-                       <p class="skill-description">
-                           Expert in OBS streaming, live production, and PA system operations. Proficient with 
-                           audio mixers, microphones, speakers, and broadcast equipment setup.
-                       </p>
-                   </div>
-               </div>
-           </div>
-       </div>
-    </section>
-
-    <!-- Social Links Section -->
-    <section class="social-section">
-        <div class="container">
-            <h2 class="section-title fade-in">CONNECT & COLLABORATE</h2>
-            <p class="fade-in" style="font-size: 1.2rem; color: var(--light-blue); margin-bottom: 2rem;">
-                Please hire me! Find me on these platforms:
-            </p>
-            <div class="social-links fade-in">
-                <a href="https://github.com/joshmartommarcelino" class="social-link" title="GitHub">
-                    <i class="fab fa-github"></i>
+<!-- Footer section -->
+<footer>
+    <div class="footer-content"> <!-- Main footer layout -->
+        <div class="footer-logo">
+            <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo"> <!-- Logo in the footer -->
+            <p>Guilty Gear Strive - The most accessible yet technically deep fighting game in the series.</p>
+        </div>
+        <div class="footer-links"> <!-- List of quick navigation links -->
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/characters/index.html">Characters</a></li>
+                <li><a href="/game mechanics/index.html">Game Mechanics</a></li>
+                <li><a href="/history/index.html">History</a></li>
+                <li><a href="/news/index.html">News</a></li>
+            </ul>
+        </div>
+        <div class="footer-social"> <!-- Social media icons -->
+            <h4>Follow Guilty Gear</h4>
+            <div class="social-icons">
+                <a href="https://x.com/ArcSystemWorksU" class="social-icon">
+                    <img src="/images/IMAGE_6.png" alt="Twitter">
                 </a>
-                <a href="https://www.linkedin.com/in/josh-martom-marcelino-6578a6336/" class="social-link" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
+                <a href="https://discord.com/invite/MXGC8JAGyH" class="social-icon">
+                    <img src="/images/IMAGE_7.png" alt="Discord">
                 </a>
-                <a href="https://www.facebook.com/profile.php/?id=100084775142561" class="social-link" title="Facebook">
-                    <i class="fab fa-facebook"></i>
+                <a href="https://www.youtube.com/@arcsystemworksjapan" class="social-icon">
+                    <img src="/images/IMAGE_8.png" alt="YouTube">
                 </a>
-                <a href="https://www.instagram.com/martomismymiddlename/" class="social-link" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="social-link" title="Email">
-                    <i class="fab fa-google"></i>
-                </a>
-                <a href="https://t.me/joshmartommarcelino" class="social-link" title="Telegram">
-                    <i class="fab fa-telegram"></i>
+                <a href="https://www.twitch.tv/directory/category/guilty-gear-strive" class="social-icon">
+                    <img src="/images/IMAGE_9.png" alt="Twitch">
                 </a>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <p style="font-family: var(--minecraft-font); color: var(--accent-blue); font-size: 1.2rem;">
-                        &copy; 2025 Josh Martom Marcelino. Crafted with <i class="fas fa-heart" style="color: #448eef;"></i> and lots of <i class="fas fa-coffee"></i>
-                    </p>
-                    <p style="color: #cbd5e1; margin-top: 1rem;">
-                        "This footer is a placeholder for when this guy makes up a good quote."
-                    </p>
-                </div>
-            </div>
+        <div class="footer-newsletter"> <!-- Newsletter signup form -->
+            <h4>Stay Updated</h4>
+            <form id="newsletter-form">
+                <input type="email" placeholder="Your email address" required> <!-- Email input box -->
+                <button type="submit">Subscribe</button> <!-- Submit button -->
+            </form>
         </div>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    </div>
+    <div class="footer-bottom"> <!-- Bottom footer text -->
+        <p>&copy; 2025 Guilty Gear Fan Site. This is a student project. All game content belongs to Arc System Works.</p>
+    </div>
+</footer>
+
 </body>
 </html>
