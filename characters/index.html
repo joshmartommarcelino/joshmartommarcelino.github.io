@@ -1,421 +1,433 @@
-<!DOCTYPE html> <!-- This declares the document as HTML5 -->
-<html lang="en"> <!-- Start of the HTML document, 'lang' attribute sets the language to English -->
-<head> <!-- Container for metadata (information about the web page) -->
-    <meta charset="UTF-8"> <!-- Sets the character encoding to UTF-8 (supports a wide range of characters) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the website responsive to different screen sizes -->
-    <title>Guilty Gear - Characters</title> <!-- Sets the title that appears in the browser tab -->
-    <link rel="icon" type="image/x-icon" href="/images/LOGO.png"> <!-- Sets the favicon (small icon in browser tab) -->
-    <link rel="stylesheet" href="style.css"> <!-- Links to an external CSS file for styling -->
-    <script src="index.js" defer></script> <!-- Links to a JavaScript file for functionality, 'defer' means it loads after HTML -->
-    <script src="character-popup.js" defer></script> <!-- Links to another JavaScript file for character popup functionality -->
-    <script src="responsive-popups.js" defer></script> <!-- Links to JavaScript for responsive popups on different screen sizes -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilty Gear - Characters</title>
+    <link rel="icon" type="image/x-icon" href="/images/LOGO.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <script src="character-popup.js" defer></script>
+    <script src="responsive-popups.js" defer></script>
 </head>
-<body> <!-- The main content of the webpage that's visible to users -->
-<header> <!-- The top section of the webpage -->
-    <div class="logo-container"> <!-- Container for the website logo -->
-        <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo" class="logo"> <!-- Logo image with alternative text for accessibility -->
+<body>
+<header>
+    <div class="logo-container">
+        <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo" class="logo">
     </div>
     
-    <div id="menu-toggle" class="hamburger"> <!-- Mobile menu toggle button (hamburger icon) -->
-        <span></span> <!-- First line of the hamburger icon -->
-        <span></span> <!-- Second line of the hamburger icon -->
-        <span></span> <!-- Third line of the hamburger icon -->
+    <div id="menu-toggle" class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 
-    <nav id="main-nav"> <!-- Navigation menu container -->
-        <ul> <!-- Unordered list for navigation links -->
-            <li><a href="/index.html" class="active">Home</a></li> <!-- Home link, marked as active -->
-            <li><a href="/characters/index.html">Characters</a></li> <!-- Characters page link -->
-            <li><a href="/game mechanics/index.html">Game Mechanics</a></li> <!-- Game Mechanics page link -->
-            <li><a href="/history/index.html">History</a></li> <!-- History page link -->
-            <li><a href="/news/index.html">News</a></li> <!-- News page link -->
+    <nav id="main-nav">
+        <ul>
+            <li><a href="/index.html" class="active">Home</a></li>
+            <li><a href="/characters/index.html">Characters</a></li>
+            <li><a href="/game mechanics/index.html">Game Mechanics</a></li>
+            <li><a href="/history/index.html">History</a></li>
+            <li><a href="/news/index.html">News</a></li>
         </ul>
     </nav>
 </header>
 
-    <main> <!-- Main content area of the webpage -->
-        <section class="character-banner"> <!-- Banner section at the top of the characters page -->
-            <div class="banner-overlay"> <!-- Overlay that sits on top of the banner background -->
-              <h1>CHARACTERS</h1> <!-- Main heading for the page -->
+    <main>
+        <section class="character-banner">
+            <div class="banner-overlay">
+              <h1>CHARACTERS</h1>
             </div>
           </section>
           
-        <section class="character-filter"> <!-- Section for character filtering options -->
-          <div class="filter-container"> <!-- Container for all filter options -->
-              <div class="filter-group"> <!-- Group for season filter options -->
-                  <h3>Season</h3> <!-- Heading for the season filter group -->
-                  <div class="filter-buttons season-filters"> <!-- Container for season filter buttons -->
-                      <button class="season-filter-btn" data-filter="all">ALL</button> <!-- Button to show all seasons -->
-                      <button class="season-filter-btn" data-filter="season4">Season Pass 4</button> <!-- Button to filter Season 4 characters -->
-                      <button class="season-filter-btn" data-filter="season3">Season Pass 3</button> <!-- Button to filter Season 3 characters -->
-                      <button class="season-filter-btn" data-filter="season2">Season Pass 2</button> <!-- Button to filter Season 2 characters -->
-                      <button class="season-filter-btn" data-filter="season1">Season Pass 1</button> <!-- Button to filter Season 1 characters -->
-                      <button class="season-filter-btn" data-filter="base">Base Roster</button> <!-- Button to filter base game characters -->
+        <section class="character-filter">
+          <div class="filter-container">
+              <div class="filter-group">
+                  <h3>Season</h3>
+                  <div class="filter-buttons season-filters">
+                      <button class="season-filter-btn" data-filter="all">ALL</button>
+                      <button class="season-filter-btn" data-filter="season4">Season Pass 4</button>
+                      <button class="season-filter-btn" data-filter="season3">Season Pass 3</button>
+                      <button class="season-filter-btn" data-filter="season2">Season Pass 2</button>
+                      <button class="season-filter-btn" data-filter="season1">Season Pass 1</button>
+                      <button class="season-filter-btn" data-filter="base">Base Roster</button>
                   </div>
               </div>
               
-              <div class="filter-group"> <!-- Group for battle type filter options -->
-                <h3>Battle Type</h3> <!-- Heading for the battle type filter group -->
-                <div class="filter-buttons type-filters"> <!-- Container for battle type filter buttons -->
-                    <button class="type-filter-btn" data-filter="all">ALL</button> <!-- Button to show all battle types -->
-                    <button class="type-filter-btn battle-type balance" data-filter="balance">Balance</button> <!-- Button to filter Balance type characters -->
-                    <button class="type-filter-btn battle-type power" data-filter="power">Power</button> <!-- Button to filter Power type characters -->
-                    <button class="type-filter-btn battle-type zoning" data-filter="zoning">Zoning</button> <!-- Button to filter Zoning type characters -->
-                    <button class="type-filter-btn battle-type rushdown" data-filter="rushdown">Rushdown</button> <!-- Button to filter Rushdown type characters -->
-                    <button class="type-filter-btn battle-type oneshot" data-filter="oneshot">One Shot</button> <!-- Button to filter One Shot type characters -->
-                    <button class="type-filter-btn battle-type shooting" data-filter="shooting">Shooting</button> <!-- Button to filter Shooting type characters -->
-                    <button class="type-filter-btn battle-type unique" data-filter="unique">Unique</button> <!-- Button to filter Unique type characters -->
+              <div class="filter-group">
+                <h3>Battle Type</h3>
+                <div class="filter-buttons type-filters">
+                    <button class="type-filter-btn" data-filter="all">ALL</button>
+                    <button class="type-filter-btn battle-type balance" data-filter="balance">Balance</button>
+                    <button class="type-filter-btn battle-type power" data-filter="power">Power</button>
+                    <button class="type-filter-btn battle-type zoning" data-filter="zoning">Zoning</button>
+                    <button class="type-filter-btn battle-type rushdown" data-filter="rushdown">Rushdown</button>
+                    <button class="type-filter-btn battle-type oneshot" data-filter="oneshot">One Shot</button>
+                    <button class="type-filter-btn battle-type shooting" data-filter="shooting">Shooting</button>
+                    <button class="type-filter-btn battle-type unique" data-filter="unique">Unique</button>
                 </div>
             </div>
           </div>
           
-          <div class="filter-actions"> <!-- Container for filter-related actions -->
-              <div id="character-counter" class="character-counter">Showing all characters</div> <!-- Text that shows how many characters are being displayed -->
-              <button id="reset-filters" class="reset-filters-btn">Reset Filters</button> <!-- Button to reset all filters -->
+          <div class="filter-actions">
+              <div id="character-counter" class="character-counter">Showing all characters</div>
+              <button id="reset-filters" class="reset-filters-btn">Reset Filters</button>
           </div>
       </section>
 
-        <section class="character-grid"> <!-- Grid layout for displaying character cards -->
+        <section class="character-grid">
             <!-- Base Roster Characters -->
-            <div class="character-card" data-season="base"> <!-- Character card for Sol Badguy, marked as base roster -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_11.png" alt="Sol Badguy" class="character-img"> <!-- Character image -->
-                    <div class="character-type balance">Balance</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="base" data-type="balance" data-ease="3" data-description="The main protagonist and a skilled bounty hunter. Sol excels at close-range combat with powerful strikes and mix-ups.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_11.png" alt="Sol Badguy" class="character-img">
+                    <div class="character-type balance">Balance</div>
                 </div>
-                <div class="character-name">SOL BADGUY</div> <!-- Character's name -->
+                <div class="character-name">SOL BADGUY</div>
             </div>
 
-            <div class="character-card" data-season="base"> <!-- Character card for Ky Kiske, marked as base roster -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_13.png" alt="Ky Kiske" class="character-img"> <!-- Character image -->
-                    <div class="character-type balance">Balance</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="base" data-type="balance" data-ease="4" data-description="The captain of the Sacred Order of Holy Knights. Ky is a well-rounded fighter with excellent zoning and pressure tools.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_13.png" alt="Ky Kiske" class="character-img">
+                    <div class="character-type balance">Balance</div>
                 </div>
-                <div class="character-name">KY KISKE</div> <!-- Character's name -->
+                <div class="character-name">KY KISKE</div>
             </div>
 
-            <div class="character-card" data-season="base"> <!-- Character card for May, marked as base roster -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_15.png" alt="May" class="character-img"> <!-- Character image -->
-                    <div class="character-type power">Power</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="base" data-type="power" data-ease="4" data-description="A cheerful pirate captain who fights with a giant anchor. May specializes in high damage and strong aerial options.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_15.png" alt="May" class="character-img">
+                    <div class="character-type power">Power</div>
                 </div>
-                <div class="character-name">MAY</div> <!-- Character's name -->
+                <div class="character-name">MAY</div>
             </div>
 
-            <div class="character-card" data-season="base"> <!-- Character card for Axl Low, marked as base roster -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_17.png" alt="Axl Low" class="character-img"> <!-- Character image -->
-                    <div class="character-type zoning">Zoning</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="base" data-type="zoning" data-ease="3" data-description="A time-traveling fighter who controls space with his chain sickles. Axl excels at keeping opponents at bay with long-range attacks.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_17.png" alt="Axl Low" class="character-img">
+                    <div class="character-type zoning">Zoning</div>
                 </div>
-                <div class="character-name">AXL LOW</div> <!-- Character's name -->
+                <div class="character-name">AXL LOW</div>
             </div>
 
-            <div class="character-card" data-season="base"> <!-- Character card for Chipp Zanuff, marked as base roster -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_19.png" alt="Chipp Zanuff" class="character-img"> <!-- Character image -->
-                    <div class="character-type rushdown">Rushdown</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="base" data-type="rushdown" data-ease="2" data-description="The president of the Eastern Chipp Kingdom and a lightning-fast ninja. Chipp overwhelms opponents with incredible speed and mix-ups.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_19.png" alt="Chipp Zanuff" class="character-img">
+                    <div class="character-type rushdown">Rushdown</div>
                 </div>
-                <div class="character-name">CHIPP ZANUFF</div> <!-- Character's name -->
+                <div class="character-name">CHIPP ZANUFF</div>
             </div>
 
-            <div class="character-card" data-season="base"> <!-- Character card for Potemkin, marked as base roster -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_21.png" alt="Potemkin" class="character-img"> <!-- Character image -->
-                    <div class="character-type power">Power</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="base" data-type="power" data-ease="3" data-description="A massive soldier of Zepp with devastating command grabs. Potemkin is the ultimate grappler with incredible damage output.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_21.png" alt="Potemkin" class="character-img">
+                    <div class="character-type power">Power</div>
                 </div>
-                <div class="character-name">POTEMKIN</div> <!-- Character's name -->
+                <div class="character-name">POTEMKIN</div>
             </div>
 
-            <div class="character-card" data-season="base"> <!-- Character card for Faust, marked as base roster -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_23.png" alt="Faust" class="character-img"> <!-- Character image -->
-                    <div class="character-type unique">Unique</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="base" data-type="unique" data-ease="2" data-description="A deranged former doctor who uses unpredictable item tosses. Faust's random nature makes every match unique and chaotic.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_23.png" alt="Faust" class="character-img">
+                    <div class="character-type unique">Unique</div>
                 </div>
-                <div class="character-name">FAUST</div> <!-- Character's name -->
+                <div class="character-name">FAUST</div>
             </div>
 
-            <div class="character-card" data-season="base"> <!-- Character card for Milia Rage, marked as base roster -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_25.png" alt="Milia Rage" class="character-img"> <!-- Character image -->
-                    <div class="character-type rushdown">Rushdown</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="base" data-type="rushdown" data-ease="3" data-description="An assassin who controls her hair as a weapon. Millia excels at air mobility and creating tricky okizeme situations.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_25.png" alt="Millia Rage" class="character-img">
+                    <div class="character-type rushdown">Rushdown</div>
                 </div>
-                <div class="character-name">MILIA RAGE</div> <!-- Character's name -->
+                <div class="character-name">MILLIA RAGE</div>
             </div>
 
-            <div class="character-card" data-season="base"> <!-- Character card for Zato, marked as base roster -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_27.png" alt="Zato" class="character-img"> <!-- Character image -->
-                    <div class="character-type unique">Unique</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="base" data-type="unique" data-ease="1" data-description="A blind assassin who controls the shadow demon Eddie. Zato requires precise execution to manage two characters simultaneously.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_27.png" alt="Zato" class="character-img">
+                    <div class="character-type unique">Unique</div>
                 </div>
-                <div class="character-name">ZATO=1</div> <!-- Character's name -->
+                <div class="character-name">ZATO=1</div>
             </div>
 
-            <div class="character-card" data-season="base"> <!-- Character card for Ramlethal Valentine, marked as base roster -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_29.png" alt="Ramlethal Valentine" class="character-img"> <!-- Character image -->
-                    <div class="character-type balance">Balance</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="base" data-type="balance" data-ease="3" data-description="A Valentine sister who wields massive greatswords. Ramlethal has strong neutral and powerful corner pressure.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_29.png" alt="Ramlethal Valentine" class="character-img">
+                    <div class="character-type balance">Balance</div>
                 </div>
-                <div class="character-name">RAMLETHAL VALENTINE</div> <!-- Character's name -->
+                <div class="character-name">RAMLETHAL VALENTINE</div>
             </div>
 
-            <div class="character-card" data-season="base"> <!-- Character card for Leo Whitefang, marked as base roster -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_31.png" alt="Leo Whitefang" class="character-img"> <!-- Character image -->
-                    <div class="character-type rushdown">Rushdown</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="base" data-type="rushdown" data-ease="4" data-description="The former king of Illyria with a stance-based playstyle. Leo has devastating pressure with his backturn stance.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_31.png" alt="Leo Whitefang" class="character-img">
+                    <div class="character-type rushdown">Rushdown</div>
                 </div>
-                <div class="character-name">LEO WHITEFANG</div> <!-- Character's name -->
+                <div class="character-name">LEO WHITEFANG</div>
             </div>
 
-            <div class="character-card" data-season="base"> <!-- Character card for Nagoriyuki, marked as base roster -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_33.png" alt="Nagoriyuki" class="character-img"> <!-- Character image -->
-                    <div class="character-type oneshot">One Shot</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="base" data-type="oneshot" data-ease="2" data-description="A vampire samurai who must manage his blood rage meter. Nagoriyuki deals massive damage but requires careful resource management.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_33.png" alt="Nagoriyuki" class="character-img">
+                    <div class="character-type oneshot">One Shot</div>
                 </div>
-                <div class="character-name">NAGORIYUKI</div> <!-- Character's name -->
+                <div class="character-name">NAGORIYUKI</div>
             </div>
 
-            <div class="character-card" data-season="base"> <!-- Character card for Giovanna, marked as base roster -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_35.png" alt="Giovanna" class="character-img"> <!-- Character image -->
-                    <div class="character-type rushdown">Rushdown</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="base" data-type="rushdown" data-ease="5" data-description="A special operations officer with her wolf spirit companion. Giovanna is straightforward with fast normals and great pressure.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_35.png" alt="Giovanna" class="character-img">
+                    <div class="character-type rushdown">Rushdown</div>
                 </div>
-                <div class="character-name">GIOVANNA</div> <!-- Character's name -->
+                <div class="character-name">GIOVANNA</div>
             </div>
 
-            <div class="character-card" data-season="base"> <!-- Character card for Anji Mito, marked as base roster -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_37.png" alt="Anji Mito" class="character-img"> <!-- Character image -->
-                    <div class="character-type balance">Balance</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="base" data-type="balance" data-ease="3" data-description="A Japanese dancer who uses his fans and counters. Anji has unique defensive options with his Fujin stance.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_37.png" alt="Anji Mito" class="character-img">
+                    <div class="character-type balance">Balance</div>
                 </div>
-                <div class="character-name">ANJI MITO</div> <!-- Character's name -->
+                <div class="character-name">ANJI MITO</div>
             </div>
 
-            <div class="character-card" data-season="base"> <!-- Character card for I-no, marked as base roster -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_39.png" alt="I-no" class="character-img"> <!-- Character image -->
-                    <div class="character-type rushdown">Rushdown</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="base" data-type="rushdown" data-ease="3" data-description="A time-witch who controls space with musical notes. I-No has excellent air mobility and oppressive offense.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_39.png" alt="I-no" class="character-img">
+                    <div class="character-type rushdown">Rushdown</div>
                 </div>
-                <div class="character-name">I-NO</div> <!-- Character's name -->
-            </div>
-            <!--Season Pass 1 Characters-->
-            <div class="character-card" data-season="season1"> <!-- Character card for Goldlewis Dickinson, marked as season 1 -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_41.png" alt="Goldlewis Dickinson" class="character-img"> <!-- Character image -->
-                    <div class="character-type power">Power</div> <!-- Character's battle type badge -->
-                </div>
-                <div class="character-name">GOLDLEWIS DICKINSON</div> <!-- Character's name -->
+                <div class="character-name">I-NO</div>
             </div>
 
-            <div class="character-card" data-season="season1"> <!-- Character card for Jack'O Valentine, marked as season 1 -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_43.png" alt="Jack'O Valentine" class="character-img"> <!-- Character image -->
-                    <div class="character-type unique">Unique</div> <!-- Character's battle type badge -->
+            <!-- Season Pass 1 Characters -->
+            <div class="character-card" data-season="season1" data-type="power" data-ease="2" data-description="The Secretary of Defense wielding a massive coffin. Goldlewis has incredible damage with his Behemoth Typhoon specials.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_41.png" alt="Goldlewis Dickinson" class="character-img">
+                    <div class="character-type power">Power</div>
                 </div>
-                <div class="character-name">JACK'O VALENTINE</div> <!-- Character's name -->
+                <div class="character-name">GOLDLEWIS DICKINSON</div>
             </div>
 
-            <div class="character-card" data-season="season1"> <!-- Character card for Happy Chaos, marked as season 1 -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_45.png" alt="Happy Chaos" class="character-img"> <!-- Character image -->
-                    <div class="character-type shooting">Shooting</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="season1" data-type="unique" data-ease="2" data-description="A Valentine who summons minions to fight. Jack-O' requires strategic placement and management of her ghost servants.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_43.png" alt="Jack'O Valentine" class="character-img">
+                    <div class="character-type unique">Unique</div>
                 </div>
-                <div class="character-name">HAPPY CHAOS</div> <!-- Character's name -->
+                <div class="character-name">JACK'O VALENTINE</div>
             </div>
 
-            <div class="character-card" data-season="season1"> <!-- Character card for Baiken, marked as season 1 -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_47.png" alt="Baiken" class="character-img"> <!-- Character image -->
-                    <div class="character-type balance">Balance</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="season1" data-type="shooting" data-ease="1" data-description="A chaotic gunslinger with resource management. Happy Chaos controls the pace with his gun and concentration mechanics.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_45.png" alt="Happy Chaos" class="character-img">
+                    <div class="character-type shooting">Shooting</div>
                 </div>
-                <div class="character-name">BAIKEN</div> <!-- Character's name -->
+                <div class="character-name">HAPPY CHAOS</div>
             </div>
 
-            <div class="character-card" data-season="season1"> <!-- Character card for Testament, marked as season 1 -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_49.png" alt="Testament" class="character-img"> <!-- Character image -->
-                    <div class="character-type zoning">Zoning</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="season1" data-type="balance" data-ease="3" data-description="A one-armed samurai with powerful counters. Baiken excels at reading opponents and punishing with devastating parries.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_47.png" alt="Baiken" class="character-img">
+                    <div class="character-type balance">Balance</div>
                 </div>
-                <div class="character-name">TESTAMENT</div> <!-- Character's name -->
-            </div>
-            <!--Season Pass 2 Characters-->
-            <div class="character-card" data-season="season2"> <!-- Character card for Bridget, marked as season 2 -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_51.png" alt="Bridget" class="character-img"> <!-- Character image -->
-                    <div class="character-type balance">Balance</div> <!-- Character's battle type badge -->
-                </div>
-                <div class="character-name">Bridget</div> <!-- Character's name -->
+                <div class="character-name">BAIKEN</div>
             </div>
 
-            <div class="character-card" data-season="season2"> <!-- Character card for Sin Kiske, marked as season 2 -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_53.png" alt="Sin Kiske" class="character-img"> <!-- Character image -->
-                    <div class="character-type balance">Balance</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="season1" data-type="zoning" data-ease="3" data-description="A non-binary Gear who controls space with traps and projectiles. Testament has excellent stage control and keepaway tools.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_49.png" alt="Testament" class="character-img">
+                    <div class="character-type zoning">Zoning</div>
                 </div>
-                <div class="character-name">SIN KISKE</div> <!-- Character's name -->
+                <div class="character-name">TESTAMENT</div>
             </div>
 
-            <div class="character-card" data-season="season2"> <!-- Character card for Bedman?, marked as season 2 -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_55.png" alt="Bedman?" class="character-img"> <!-- Character image -->
-                    <div class="character-type unique">Unique</div> <!-- Character's battle type badge -->
+            <!-- Season Pass 2 Characters -->
+            <div class="character-card" data-season="season2" data-type="balance" data-ease="4" data-description="A bounty hunter who uses a yo-yo. Bridget has great mobility and setplay with her mechanical teddy bear Roger.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_51.png" alt="Bridget" class="character-img">
+                    <div class="character-type balance">Balance</div>
                 </div>
-                <div class="character-name">BEDMAN?</div> <!-- Character's name -->
+                <div class="character-name">BRIDGET</div>
             </div>
 
-            <div class="character-card" data-season="season2"> <!-- Character card for Asuka R#, marked as season 2 -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_57.png" alt="Asuka R#" class="character-img"> <!-- Character image -->
-                    <div class="character-type unique">Unique</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="season2" data-type="balance" data-ease="4" data-description="Ky's son with overwhelming offense. Sin has a unique calorie management system that powers up his special moves.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_53.png" alt="Sin Kiske" class="character-img">
+                    <div class="character-type balance">Balance</div>
                 </div>
-                <div class="character-name">ASUKA R#</div> <!-- Character's name -->
-            </div>
-            <!--Season Pass 3 Characters-->
-            <div class="character-card" data-season="season3"> <!-- Character card for Johnny, marked as season 3 -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_59.png" alt="Johnny" class="character-img"> <!-- Character image -->
-                    <div class="character-type zoning">Zoning</div> <!-- Character's battle type badge -->
-                </div>
-                <div class="character-name">JOHNNY</div> <!-- Character's name -->
+                <div class="character-name">SIN KISKE</div>
             </div>
 
-            <div class="character-card" data-season="season3"> <!-- Character card for Elphelt Valentine, marked as season 3 -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_61.png" alt="Elphelt Valentine" class="character-img"> <!-- Character image -->
-                    <div class="character-type rushdown">Rushdown</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="season2" data-type="unique" data-ease="2" data-description="A sentient bed that controls space with projectiles. Bedman? has exceptional zoning and unique movement options.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_55.png" alt="Bedman?" class="character-img">
+                    <div class="character-type unique">Unique</div>
                 </div>
-                <div class="character-name">ELPHELT VALENTINE</div> <!-- Character's name -->
+                <div class="character-name">BEDMAN?</div>
             </div>
 
-            <div class="character-card" data-season="season3"> <!-- Character card for A.B.A, marked as season 3 -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_63.png" alt="A.B.A" class="character-img"> <!-- Character image -->
-                    <div class="character-type unique">Unique</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="season2" data-type="unique" data-ease="1" data-description="The Original Mage who uses spell cubes. Asuka has the most complex moveset with customizable spell combinations.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_57.png" alt="Asuka R#" class="character-img">
+                    <div class="character-type unique">Unique</div>
                 </div>
-                <div class="character-name">A.B.A</div> <!-- Character's name -->
+                <div class="character-name">ASUKA R#</div>
             </div>
 
-            <div class="character-card" data-season="season3"> <!-- Character card for Slayer, marked as season 3 -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_65.png" alt="SLayer" class="character-img"> <!-- Character image -->
-                    <div class="character-type power">Power</div> <!-- Character's battle type badge -->
+            <!-- Season Pass 3 Characters -->
+            <div class="character-card" data-season="season3" data-type="zoning" data-ease="2" data-description="A master swordsman with devastating Mist Finer stance. Johnny controls neutral with long-range sword slashes and coin tricks.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_59.png" alt="Johnny" class="character-img">
+                    <div class="character-type zoning">Zoning</div>
                 </div>
-                <div class="character-name">SLAYER</div> <!-- Character's name -->
-            </div>
-            <!--Season Pass 4 Characters-->
-            <div class="character-card" data-season="season4"> <!-- Character card for Queen Dizzy, marked as season 4 -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_67.png" alt="Queen Dizzy" class="character-img"> <!-- Character image -->
-                    <div class="character-type unique">Unique</div> <!-- Character's battle type badge -->
-                </div>
-                <div class="character-name">QUEEN DIZZY</div> <!-- Character's name -->
+                <div class="character-name">JOHNNY</div>
             </div>
 
-            <div class="character-card" data-season="season4"> <!-- Character card for Venom, marked as season 4 -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_69.png" alt="Venom" class="character-img"> <!-- Character image -->
-                    <div class="character-type zoning">Zoning</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="season3" data-type="rushdown" data-ease="3" data-description="A Valentine armed with various firearms. Elphelt has strong pressure and can transition between close and mid-range combat.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_61.png" alt="Elphelt Valentine" class="character-img">
+                    <div class="character-type rushdown">Rushdown</div>
                 </div>
-                <div class="character-name">VENOM</div> <!-- Character's name -->
+                <div class="character-name">ELPHELT VALENTINE</div>
             </div>
 
-            <div class="character-card" data-season="season4"> <!-- Character card for Venom, marked as season 4 -->
-                <div class="character-img-container"> <!-- Container for character image and type -->
-                    <img src="/images/IMAGE_123.png" alt="Unika" class="character-img"> <!-- Character image -->
-                    <div class="character-type balance">Balance</div> <!-- Character's battle type badge -->
+            <div class="character-card" data-season="season3" data-type="unique" data-ease="2" data-description="An artificial being who powers up with her key Paracelsus. A.B.A transforms into an aggressive rushdown character in Jealous Rage mode.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_63.png" alt="A.B.A" class="character-img">
+                    <div class="character-type unique">Unique</div>
                 </div>
-                <div class="character-name">UNIKA</div> <!-- Character's name -->
+                <div class="character-name">A.B.A</div>
+            </div>
+
+            <div class="character-card" data-season="season3" data-type="power" data-ease="3" data-description="A refined vampire with powerful command grabs. Slayer is a stylish grappler with incredible burst damage potential.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_65.png" alt="Slayer" class="character-img">
+                    <div class="character-type power">Power</div>
+                </div>
+                <div class="character-name">SLAYER</div>
+            </div>
+
+            <!-- Season Pass 4 Characters -->
+            <div class="character-card" data-season="season4" data-type="unique" data-ease="3" data-description="A half-Gear queen who controls ice and lightning. Dizzy summons her wings Necro and Undine for diverse offensive and defensive options.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_67.png" alt="Queen Dizzy" class="character-img">
+                    <div class="character-type unique">Unique</div>
+                </div>
+                <div class="character-name">QUEEN DIZZY</div>
+            </div>
+
+            <div class="character-card" data-season="season4" data-type="zoning" data-ease="2" data-description="A master pool player who sets up billiard balls as projectiles. Venom has exceptional stage control and setplay potential.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_69.png" alt="Venom" class="character-img">
+                    <div class="character-type zoning">Zoning</div>
+                </div>
+                <div class="character-name">VENOM</div>
+            </div>
+
+            <div class="character-card" data-season="season4" data-type="balance" data-ease="4" data-description="A newcomer to the series with versatile combat options. Unika brings fresh gameplay mechanics to the roster.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_123.png" alt="Unika" class="character-img">
+                    <div class="character-type balance">Balance</div>
+                </div>
+                <div class="character-name">UNIKA</div>
+            </div>
+
+            <div class="character-card" data-season="season4" data-type="balance" data-ease="4" data-description="A balanced fighter with well-rounded tools. Lucy offers accessible gameplay with depth for advanced players.">
+                <div class="character-img-container">
+                    <img src="/images/IMAGE_130.png" alt="Lucy" class="character-img">
+                    <div class="character-type balance">Balance</div>
+                </div>
+                <div class="character-name">LUCY</div>
             </div>
         </section>
 
 <!-- Character Details Pop-up -->
-<div id="character-popup-overlay" class="popup-overlay"> <!-- Overlay that darkens the background when popup is active -->
-    <div id="character-popup" class="character-popup"> <!-- Pop-up window for character details -->
-        <div class="popup-header"> <!-- Header section of the popup -->
-            <h2 id="popup-character-name">CHARACTER NAME</h2> <!-- Character name heading (will be replaced with JavaScript) -->
-            <button id="popup-close" class="popup-close">&times;</button> <!-- Close button for the popup -->
+<div id="character-popup-overlay" class="popup-overlay">
+    <div id="character-popup" class="character-popup">
+        <div class="popup-header">
+            <h2 id="popup-character-name">CHARACTER NAME</h2>
+            <button id="popup-close" class="popup-close" aria-label="Close popup">&times;</button>
         </div>
-        <div class="popup-content"> <!-- Main content area of the popup -->
-            <div class="character-sprite"> <!-- Container for character image in the popup -->
-                <img id="popup-sprite" src="" alt="Character Sprite"> <!-- Character image (source will be set with JavaScript) -->
-                <div class="character-type-badge" id="popup-type">Balance</div> <!-- Character type badge (will be updated with JavaScript) -->
+        <div class="popup-content">
+            <div class="character-sprite">
+                <img id="popup-sprite" src="" alt="Character Sprite">
+                <div class="character-type-badge" id="popup-type">Balance</div>
             </div>
-            <div class="character-details"> <!-- Container for character information -->
-                <div class="ease-of-use"> <!-- Character difficulty rating section -->
-                    <h3>Ease of Use</h3> <!-- Heading for difficulty section -->
-                    <div class="star-rating" id="popup-ease"> <!-- Star rating container -->
-                        <span class="star filled">★</span> <!-- Filled star (indicating difficulty level) -->
-                        <span class="star filled">★</span> <!-- Filled star (indicating difficulty level) -->
-                        <span class="star filled">★</span> <!-- Filled star (indicating difficulty level) -->
-                        <span class="star">★</span> <!-- Empty star -->
-                        <span class="star">★</span> <!-- Empty star -->
+            <div class="character-details">
+                <div class="ease-of-use">
+                    <h3>Ease of Use</h3>
+                    <div class="star-rating" id="popup-ease">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
                     </div>
                 </div>
-                <div class="character-description"> <!-- Character description section -->
-                    <h3>Character Overview</h3> <!-- Heading for description -->
-                    <p id="popup-description">Character description goes here. This will include details about the character's playstyle, strengths, and a bit about their backstory.</p> <!-- Character description (will be updated with JavaScript) -->
+                <div class="character-description">
+                    <h3>Character Overview</h3>
+                    <p id="popup-description">Character description goes here. This will include details about the character's playstyle, strengths, and a bit about their backstory.</p>
                 </div>
-                <button id="command-list-btn" class="command-list-btn">VIEW COMMAND LIST</button> <!-- Button to view character's move commands -->
+                <button id="command-list-btn" class="command-list-btn">VIEW COMMAND LIST</button>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Command List Modal -->
-<div id="command-list-overlay" class="command-list-overlay"> <!-- Overlay for the command list modal -->
-    <div id="command-list-modal" class="command-list-modal"> <!-- Modal window for command list -->
-        <div class="command-list-header"> <!-- Header of the command list modal -->
-            <h2 id="command-list-title">COMMAND LIST</h2> <!-- Title for the command list -->
-            <button id="command-list-close" class="popup-close">&times;</button> <!-- Close button for the command list -->
+<div id="command-list-overlay" class="command-list-overlay">
+    <div id="command-list-modal" class="command-list-modal">
+        <div class="command-list-header">
+            <h2 id="command-list-title">COMMAND LIST</h2>
+            <button id="command-list-close" class="popup-close" aria-label="Close command list">&times;</button>
         </div>
-        <div class="command-list-content"> <!-- Content area for command list -->
-            <img id="command-list-img" src="" alt="Character Command List"> <!-- Image showing the character's moves/commands (set by JavaScript) -->
+        <div class="command-list-content">
+            <img id="command-list-img" src="" alt="Character Command List">
         </div>
-        <button id="back-to-character" class="back-btn">BACK TO CHARACTER</button> <!-- Button to return to character details -->
+        <button id="back-to-character" class="back-btn">BACK TO CHARACTER</button>
     </div>
 </div>
 
-    <footer> <!-- Footer section of the webpage -->
-        <div class="footer-content"> <!-- Container for footer content -->
-            <div class="footer-logo"> <!-- Logo in the footer -->
-                <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo"> <!-- Guilty Gear logo image -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="/images/IMAGE_1.png" alt="Guilty Gear Logo">
                 <p>Guilty Gear Strive - The most accessible yet technically deep fighting game in the series.</p>
             </div>
-            <div class="footer-links"> <!-- Navigation links in the footer -->
-                <h4>Quick Links</h4> <!-- Heading for navigation links -->
-                <ul> <!-- Unordered list of links -->
-                    <li><a href="/index.html">Home</a></li> <!-- Link to home page -->
-                    <li><a href="/characters/index.html">Characters</a></li> <!-- Link to characters page -->
-                    <li><a href="/game mechanics/index.html">Game Mechanics</a></li> <!-- Link to game mechanics page -->
-                    <li><a href="/history/index.html">History</a></li> <!-- Link to history page -->
-                    <li><a href="/news/index.html">News</a></li> <!-- Link to news page -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/characters/index.html">Characters</a></li>
+                    <li><a href="/game mechanics/index.html">Game Mechanics</a></li>
+                    <li><a href="/history/index.html">History</a></li>
+                    <li><a href="/news/index.html">News</a></li>
                 </ul>
             </div>
-            <div class="footer-social"> <!-- Social media links section -->
-                <h4>Follow Guilty Gear</h4> <!-- Heading for social media section -->
-                <div class="social-icons"> <!-- Container for social media icons -->
-                    <a href="https://x.com/ArcSystemWorksU" class="social-icon"> <!-- Link to Twitter/X -->
-                        <img src="/images/IMAGE_6.png" alt="Twitter"> <!-- Twitter/X icon -->
+            <div class="footer-social">
+                <h4>Follow Guilty Gear</h4>
+                <div class="social-icons">
+                    <a href="https://x.com/ArcSystemWorksU" class="social-icon" aria-label="Follow on X (Twitter)">
+                        <img src="/images/IMAGE_6.png" alt="Twitter">
                     </a>
-                    <a href="https://discord.com/invite/MXGC8JAGyH" class="social-icon"> <!-- Link to Discord -->
-                        <img src="/images/IMAGE_7.png" alt="Discord"> <!-- Discord icon -->
+                    <a href="https://discord.com/invite/MXGC8JAGyH" class="social-icon" aria-label="Join Discord server">
+                        <img src="/images/IMAGE_7.png" alt="Discord">
                     </a>
-                    <a href="https://www.youtube.com/@arcsystemworksjapan" class="social-icon"> <!-- Link to YouTube -->
-                        <img src="/images/IMAGE_8.png" alt="YouTube"> <!-- YouTube icon -->
+                    <a href="https://www.youtube.com/@arcsystemworksjapan" class="social-icon" aria-label="Subscribe on YouTube">
+                        <img src="/images/IMAGE_8.png" alt="YouTube">
                     </a>
-                    <a href="https://www.twitch.tv/directory/category/guilty-gear-strive" class="social-icon"> <!-- Link to Twitch -->
-                        <img src="/images/IMAGE_9.png" alt="Twitch"> <!-- Twitch icon -->
+                    <a href="https://www.twitch.tv/directory/category/guilty-gear-strive" class="social-icon" aria-label="Watch on Twitch">
+                        <img src="/images/IMAGE_9.png" alt="Twitch">
                     </a>
                 </div>
             </div>
-            <div class="footer-newsletter"> <!-- Newsletter signup section -->
-                <h4>Stay Updated</h4> <!-- Heading for newsletter section -->
-                <form id="newsletter-form"> <!-- Form for newsletter subscription -->
-                    <input type="email" placeholder="Your email address" required> <!-- Email input field (required) -->
-                    <button type="submit">Subscribe</button> <!-- Submit button for the form -->
+            <div class="footer-newsletter">
+                <h4>Stay Updated</h4>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Your email address" required aria-label="Email address for newsletter">
+                    <button type="submit">Subscribe</button>
                 </form>
             </div>
         </div>
-        <div class="footer-bottom"> <!-- Bottom section of the footer -->
-            <p>&copy; 2025 Guilty Gear Fan Site. This is a student project. All game content belongs to Arc System Works.</p> <!-- Copyright and disclaimer text -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Guilty Gear Fan Site. This is a student project. All game content belongs to Arc System Works.</p>
         </div>
     </footer>
 </body>

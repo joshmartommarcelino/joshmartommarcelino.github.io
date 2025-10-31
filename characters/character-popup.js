@@ -250,6 +250,14 @@ document.addEventListener('DOMContentLoaded', () => {
             description: " Untarnished resounding thunderclap Trick weapon wielding super rookie A girl from the future after the destruction of the Second Crusades. Daughter of Ky and Dizzy, she inherits Gear blood like her brother Sin. In the ruined future, Nerville discovers her while still inside her egg and raises her to faithfully follow his orders. She travels to the past from the future where mankind is on the brink of extinction, convinced by Nerville that this is how to save the world, and engages Sol and the others in combat. Her feelings begin to waver after meeting Sin and Bridget, leading to her parting ways with Nerville. She teams up with Sin and the others to thwart Nerville’s attempted invasion. Aware that her origins left her unfamiliar with the world and humanity, Unika sets off on a journey under supervision of the United States. Through her many encounters with others during her travels, she learns of peace and herself. She decides to use her power to ensure people like her future self do not come to be. After a long journey, she refuses the offer to stay with her family in Vialattea and instead ends up working as Presidential Bodyguard Trainee. She is allowed to handle missions on her own, although the United States constantly tracks her using magic",
             commandList: '/images/IMAGE_125.png'
         },
+        'LUCY': {
+            name: 'LUCY',
+            sprite: '/images/IMAGE_131.png',
+            type: 'balance',
+            ease: 4,
+            description: " Elite hacker, cyberspace surfer THE MYSTERIOUS NETRUNNER Lucy turns heads with her mysterious aura and pastel-gradient hair, but her icy attitude keeps most people at arm's length. Information on her is scarce, meaning her identity and past are largely unknown. In combat, she wields a monowire – a whip-like cybernetic weapon capable of restraining and even dismembering enemies. Agility and hacking skills also serve as formidable parts of her arsenal. She is a netrunner based in Night City, a metropolis built upon the elusive promise of fame and fortune. While in search of information, she plunged into the Net on a 'deep dive', a method of accessing networks used only by the most talented hackers. Then something bizarre happened... ",
+            commandList: '/images/IMAGE_132.png'
+        },
     };
     // Get elements from the HTML
     // DOM Elements
